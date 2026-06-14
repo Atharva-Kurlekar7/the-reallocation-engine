@@ -8,6 +8,7 @@
     "doctor": "node scripts/doctor.mjs",
     "build-instructions": "node scripts/build-instructions.mjs",
     "to-markdown": "node scripts/to-markdown.mjs",
+    "score": "node scripts/score/role-scorer.mjs",
     "ats:dedup": "node scripts/ats/dedup-tracker.mjs",
     "ats:liveness": "node scripts/ats/check-liveness.mjs",
     "ats:merge": "node scripts/ats/merge-tracker.mjs",
