@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // conformance.mjs
-// The MACHINE half of MYCROFT P4 — "machines verify conformance; humans verify
+// The MACHINE half of SNICKERDOODLE P4 — "machines verify conformance; humans verify
 // adequacy." Deterministically checks that every machine-readable file is
 // well-formed: JSON parses, YAML parses (PyYAML), JS/MJS compiles (node --check),
 // Python compiles (py_compile), shell parses (bash -n), Markdown is well-formed
@@ -31,7 +31,7 @@ const KIND = {
 
 const DEFAULT_PATHS = [
   'prompts', 'brand', 'recipes', 'scripts',
-  'DOMAIN.md', 'CLAUDE.md', 'AGENTS.md', 'MYCROFT.md', 'README.md',
+  'DOMAIN.md', 'CLAUDE.md', 'AGENTS.md', 'SNICKERDOODLE.md', 'README.md',
   'metadata.yaml', 'package.json',
 ];
 

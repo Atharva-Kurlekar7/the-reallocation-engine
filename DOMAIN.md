@@ -1,7 +1,7 @@
 # DOMAIN — The Reallocation Engine
 
 **Domain:** evidence-first job-search system for international students (F-1/OPT/STEM OPT), and the working repository for the book *The Reallocation Engine*.
-**Governed by:** `MYCROFT.md` (read it first). This file states what is specific to this repository: its data, its scripts, what is runnable today, and what is not.
+**Governed by:** `SNICKERDOODLE.md` (read it first). This file states what is specific to this repository: its data, its scripts, what is runnable today, and what is not.
 
 ## What this domain does
 
@@ -17,7 +17,7 @@ Reallocates scarce application effort using five evidence components: company fu
 | `data/bls/` | BLS/O*NET/OEWS source + `data/bls/compact/` extracts |
 | `data/ats/` | ATS working data — **private by default**, review before commit |
 | `scripts/sec/`, `scripts/ats/`, `scripts/bls/`, `scripts/resumes/` | maintained automation (lowercase `scripts/` only; never `SCRIPTS/`) |
-| `recipes/` | recipe specs with lifecycle frontmatter per MYCROFT.md |
+| `recipes/` | recipe specs with lifecycle frontmatter per SNICKERDOODLE.md |
 | `chapters/` | book manuscript — no scripts or data in here |
 | `pantry/` | research/reference material (currently empty) |
 | `logs/RUN_LOG.md` | ground-truth run history |

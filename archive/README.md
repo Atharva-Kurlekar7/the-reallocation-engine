@@ -1,7 +1,7 @@
 # archive/
 
 Superseded or retired files, kept (never deleted) per the no-delete rule in
-`MYCROFT.md` / `AGENTS.md`. Nothing here is canonical; ignore unless explicitly asked.
+`SNICKERDOODLE.md` / `AGENTS.md`. Nothing here is canonical; ignore unless explicitly asked.
 
 | File | Why archived | Date |
 |---|---|---|

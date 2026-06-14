@@ -1,6 +1,6 @@
 ## The Reallocation Engine
 
-An **evidence-first job-search system for international students** (F-1/OPT/STEM OPT), and the working repository for the book *The Reallocation Engine*. It reallocates scarce application effort using five evidence components — company funding (SEC Form D), sponsorship history (DOL/H-1B), posting liveness (ATS), role quality (BLS/O*NET), and visa timeline — where liveness and timeline are **gates, not votes** (a healthy run skips at least half of evaluated roles). It is a domain built on the Mycroft framework. Project-specific rules:
+An **evidence-first job-search system for international students** (F-1/OPT/STEM OPT), and the working repository for the book *The Reallocation Engine*. It reallocates scarce application effort using five evidence components — company funding (SEC Form D), sponsorship history (DOL/H-1B), posting liveness (ATS), role quality (BLS/O*NET), and visa timeline — where liveness and timeline are **gates, not votes** (a healthy run skips at least half of evaluated roles). It is a domain built on the Snickerdoodle framework. Project-specific rules:
 
 - Use lowercase `scripts/`; never create `SCRIPTS/`.
 - Manuscript content lives in `chapters/` — no scripts or data there.
@@ -11,7 +11,7 @@ An **evidence-first job-search system for international students** (F-1/OPT/STEM
 When the user's message is just `help` (or `/help`), reply with **exactly** the fenced block below — verbatim, nothing before or after — then stop and wait:
 
 ```
-THE REALLOCATION ENGINE — evidence-first job search (a Mycroft domain)
+THE REALLOCATION ENGINE — evidence-first job search (a Snickerdoodle domain)
 Reallocate scarce application effort by evidence. The rule of the house:
 fluency is the first sign of trouble — the human owns the irreducible judgment.
 
@@ -29,7 +29,7 @@ WHAT YOU CAN DO
 HOW IT WORKS
   Every finding traces report -> log -> recipe -> source. Gates are hard stops a named
   human clears. Skip is a successful outcome. Machines verify conformance; humans verify
-  adequacy. (Constitution: MYCROFT.md)
+  adequacy. (Constitution: SNICKERDOODLE.md)
 
 TRY
   "run the ats scan dry-run and read the report"   ·   "what's runnable today?"

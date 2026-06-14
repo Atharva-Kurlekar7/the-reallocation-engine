@@ -6,11 +6,11 @@
 
 ## Executive Summary
 
-The Reallocation Engine is already well ahead of a typical agent-facing repository. It has generated `AGENTS.md` / `CLAUDE.md` instructions, a domain constitution (`MYCROFT.md`), a current domain map (`DOMAIN.md`), maintained script families, runnable npm commands, conformance checks, Claude hooks, recipe lifecycle frontmatter, and explicit no-delete / provenance / verification rules.
+The Reallocation Engine is already well ahead of a typical agent-facing repository. It has generated `AGENTS.md` / `CLAUDE.md` instructions, a domain constitution (`SNICKERDOODLE.md`), a current domain map (`DOMAIN.md`), maintained script families, runnable npm commands, conformance checks, Claude hooks, recipe lifecycle frontmatter, and explicit no-delete / provenance / verification rules.
 
-The main gap is not instruction quality. The main gap is **portable context architecture**: the repo has strong Claude/Codex-readable instructions, but it does not yet expose the guide's recommended cross-tool layer as first-class files: `_MANIFEST.md`, `PROJECT_RULES.md`, `status.md`, `session-handoff.md`, and `.ai/manifest.yaml`. Some of those roles are partially covered by `MYCROFT.md`, `DOMAIN.md`, `logs/RUN_LOG.md`, and `instructions/manifest.yml`, but the names and semantics are not obvious to every tool or future agent.
+The main gap is not instruction quality. The main gap is **portable context architecture**: the repo has strong Claude/Codex-readable instructions, but it does not yet expose the guide's recommended cross-tool layer as first-class files: `_MANIFEST.md`, `PROJECT_RULES.md`, `status.md`, `session-handoff.md`, and `.ai/manifest.yaml`. Some of those roles are partially covered by `SNICKERDOODLE.md`, `DOMAIN.md`, `logs/RUN_LOG.md`, and `instructions/manifest.yml`, but the names and semantics are not obvious to every tool or future agent.
 
-Recommended near-term move: do not replace the existing Mycroft system. Add a thin compatibility layer that maps the existing system into the portable conventions.
+Recommended near-term move: do not replace the existing Snickerdoodle system. Add a thin compatibility layer that maps the existing system into the portable conventions.
 
 ## What Is Already Strong
 
@@ -18,7 +18,7 @@ Recommended near-term move: do not replace the existing Mycroft system. Add a th
 |---|---|---|
 | Canonical agent instructions | `AGENTS.md` is generated from `instructions/`; `CLAUDE.md` imports `AGENTS.md` and adds Claude-specific rules | Strong. This matches the guide's "canonical source + thin adapter" recommendation. |
 | Instruction source pipeline | `instructions/manifest.yml`, `instructions/_shared/*.md`, `scripts/build-instructions.mjs` | Strong. Better than hand-maintained duplicated instruction files. |
-| Project constitution | `MYCROFT.md` defines precedence, verification stack, recipe lifecycle, logging, and gates | Strong. This is more rigorous than a generic `PROJECT_RULES.md`. |
+| Project constitution | `SNICKERDOODLE.md` defines precedence, verification stack, recipe lifecycle, logging, and gates | Strong. This is more rigorous than a generic `PROJECT_RULES.md`. |
 | Project/domain map | `DOMAIN.md` describes layout, runnable commands, known gaps, privacy notes, and first win | Strong, though it doubles as both manifest and status file. |
 | Runnable command surface | `package.json` exposes `verify`, `doctor`, ATS, resume, scoring, and rendering commands | Strong. Easy for agents and humans to discover. |
 | Local verification | `npm run verify` and `npm run doctor` both pass | Strong. Machine conformance is actually executable. |
@@ -46,7 +46,7 @@ next: promote a recipe past DRAFT with a logged run
 
 The guide recommends `_MANIFEST.md` as the first file an agent should read. This repo has `DOMAIN.md`, which performs part of that job, and `instructions/manifest.yml`, which builds instruction files. But there is no root `_MANIFEST.md`, and no `.ai/manifest.yaml` structured twin.
 
-Why it matters: tools that do not know the Mycroft convention will not immediately know which files are canonical, task-relevant, generated, private, or archived. The repo depends on agents reading `AGENTS.md` and then following the instruction to read `MYCROFT.md` and `DOMAIN.md`.
+Why it matters: tools that do not know the Mycroft convention will not immediately know which files are canonical, task-relevant, generated, private, or archived. The repo depends on agents reading `AGENTS.md` and then following the instruction to read `SNICKERDOODLE.md` and `DOMAIN.md`.
 
 Recommendation:
 
@@ -57,7 +57,7 @@ Recommendation:
 Suggested mapping:
 
 ```text
-Tier 1: MYCROFT.md, DOMAIN.md, AGENTS.md, DATA_CONTRACT.md, logs/RUN_LOG.md
+Tier 1: SNICKERDOODLE.md, DOMAIN.md, AGENTS.md, DATA_CONTRACT.md, logs/RUN_LOG.md
 Tier 2: docs/, recipes/, scripts/, data/* domain folders, chapters/
 Tier 3: output/, node_modules/, __pycache__/, generated reports, private ATS outputs
 ```
@@ -106,12 +106,12 @@ Recommendation:
 
 ### P2 - `PROJECT_RULES.md` Role Is Covered But Not Portable By Name
 
-`MYCROFT.md` plus `DOMAIN.md` are stronger than a generic `PROJECT_RULES.md`. However, tools and future maintainers expecting the guide's convention will not find `PROJECT_RULES.md`.
+`SNICKERDOODLE.md` plus `DOMAIN.md` are stronger than a generic `PROJECT_RULES.md`. However, tools and future maintainers expecting the guide's convention will not find `PROJECT_RULES.md`.
 
 Recommendation:
 
 - Add a thin `PROJECT_RULES.md` compatibility file that states:
-  - `MYCROFT.md` governs.
+  - `SNICKERDOODLE.md` governs.
   - `DOMAIN.md` contains repo-specific layout and runnable surface.
   - `AGENTS.md` is the generated cross-agent instruction file.
   - `logs/RUN_LOG.md` is the run-history ground truth.
@@ -148,7 +148,7 @@ Both `.claude/hooks/archive-guard.sh` and `.claude/hooks/conformance-check.sh` d
 
 Recommendation:
 
-- Rename those user-facing messages to "Mycroft" or "The Reallocation Engine."
+- Rename those user-facing messages to "Snickerdoodle" or "The Reallocation Engine."
 - Keep the behavior unchanged.
 
 ### P2 - Privacy Boundary Needs Enforcement Beyond Prose
@@ -238,12 +238,12 @@ Once `.ai/manifest.yaml` exists, teach `scripts/doctor.mjs` or a new audit scrip
 
 | File | Purpose in this repo |
 |---|---|
-| `MYCROFT.md` | Constitution and precedence root. |
+| `SNICKERDOODLE.md` | Constitution and precedence root. |
 | `DOMAIN.md` | Repo-specific domain map and runnable surface. |
 | `AGENTS.md` | Generated cross-agent operational instructions. |
 | `CLAUDE.md` | Claude-specific adapter. |
 | `_MANIFEST.md` | Portable read-first context map. |
-| `PROJECT_RULES.md` | Thin compatibility pointer to `MYCROFT.md` / `DOMAIN.md`. |
+| `PROJECT_RULES.md` | Thin compatibility pointer to `SNICKERDOODLE.md` / `DOMAIN.md`. |
 | `status.md` | Short current-state dashboard. |
 | `session-handoff.md` | Current session continuation file. |
 | `.ai/manifest.yaml` | Machine-readable project map and policy hints. |
@@ -257,7 +257,7 @@ Once `.ai/manifest.yaml` exists, teach `scripts/doctor.mjs` or a new audit scrip
 ## Tier 1 - Canonical
 | File | Purpose |
 |---|---|
-| MYCROFT.md | Constitution and precedence root |
+| SNICKERDOODLE.md | Constitution and precedence root |
 | DOMAIN.md | Current repo layout, runnable commands, known gaps |
 | AGENTS.md | Generated cross-agent instructions |
 | DATA_CONTRACT.md | Data contract |
@@ -284,6 +284,6 @@ Once `.ai/manifest.yaml` exists, teach `scripts/doctor.mjs` or a new audit scrip
 
 ## Bottom Line
 
-The repo's Mycroft architecture is good. The missing piece is a small compatibility layer that lets any CLI, agent, or human immediately see the same map without knowing the Mycroft vocabulary first.
+The repo's Snickerdoodle architecture is good. The missing piece is a small compatibility layer that lets any CLI, agent, or human immediately see the same map without knowing the Mycroft vocabulary first.
 
 Best next action: add `_MANIFEST.md`, `PROJECT_RULES.md`, `status.md`, `session-handoff.md`, and `.ai/manifest.yaml` as thin indexes over the existing system, then wire `doctor` to check them.

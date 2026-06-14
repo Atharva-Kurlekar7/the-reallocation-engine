@@ -35,7 +35,7 @@ Everything in `search/` is yours: your history, your visa dates, your target lis
 Put your resume file somewhere the agent can read it (e.g. `search/resume-original.pdf`). Then paste this into Claude Code:
 
 ```
-Read MYCROFT.md and DOMAIN.md first and operate under that contract.
+Read SNICKERDOODLE.md and DOMAIN.md first and operate under that contract.
 
 We are doing Tutorial 00 (docs/tutorials/00-personal-layer.md). Three tasks,
 strictly in order, each ending with a stop for my review:

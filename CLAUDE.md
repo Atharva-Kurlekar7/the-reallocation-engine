@@ -6,5 +6,5 @@
 @AGENTS.md
 
 ## Claude Code
-@MYCROFT.md
+@SNICKERDOODLE.md
 - Use plan mode before edits under recipes/, data/, or anything touching data/ats/ (private).

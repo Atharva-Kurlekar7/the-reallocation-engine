@@ -1,6 +1,6 @@
 name: verify
 
-# Machine half of P4 (MYCROFT.md): every push/PR must conform, and the generated
+# Machine half of P4 (SNICKERDOODLE.md): every push/PR must conform, and the generated
 # instruction files must match their source. Humans still verify adequacy.
 on:
   push:

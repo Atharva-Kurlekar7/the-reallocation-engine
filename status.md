@@ -2,7 +2,7 @@
 project: the-reallocation-engine
 status: active
 updated: 2026-06-14
-canonical: [MYCROFT.md, DOMAIN.md, AGENTS.md, outline.md, book.md, chapters/]
+canonical: [SNICKERDOODLE.md, DOMAIN.md, AGENTS.md, outline.md, book.md, chapters/]
 next:
   - "Attest adequacy of the honest run (review reports/generated/oferta-2026-06-14.md) to promote `oferta` past DRAFT (gap #4)"
   - "Confirm the scorer [VERIFY] defaults (role_quality weight, Consider-band floor) vs docs/search-profile-design.md"

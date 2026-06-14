@@ -55,7 +55,7 @@ Before running, write down (really — in a scratch file or notebook):
 2. Roughly how many jobs do you expect a company like Databricks to have posted? 10? 100? 1,000?
 3. Of those, what fraction will survive the title and location filters?
 
-This isn't busywork. The entire point of this system is that you, not the tool, are the judge of whether output makes sense — and you can't judge output against an expectation you never formed. (MYCROFT.md P1: machines verify conformance; humans verify adequacy.)
+This isn't busywork. The entire point of this system is that you, not the tool, are the judge of whether output makes sense — and you can't judge output against an expectation you never formed. (SNICKERDOODLE.md P1: machines verify conformance; humans verify adequacy.)
 
 ## Step 3 — Make the config real
 
@@ -145,11 +145,11 @@ Every exercise ends with a RUN_LOG entry. The log entry *is* the deliverable —
 
 **3. Single-company scan.** `npm run ats:scan -- --dry-run --company Databricks`. When would you reach for this flag instead of a full scan?
 
-**4. Break it on purpose.** Set `provider: greenhose` (typo intended) on a company and run. Read the actual message. Is this failure a halt or a report? Should it be? Now you've met the conformance/adequacy boundary from MYCROFT.md in the wild — say which side this error sits on and whether the script agrees with you.
+**4. Break it on purpose.** Set `provider: greenhose` (typo intended) on a company and run. Read the actual message. Is this failure a halt or a report? Should it be? Now you've met the conformance/adequacy boundary from SNICKERDOODLE.md in the wild — say which side this error sits on and whether the script agrees with you.
 
 **5. The discrepancy hunt.** Compare the scan's `Total jobs found` for one company against its public board in a browser. They will rarely match exactly. Find one specific posting that explains part of the gap (a department the API exposes but the page hides, a location variant your filter eats, a posting added since your scan). Name it.
 
-**6. Attest.** Write an attestation-format record (MYCROFT.md format: Ran/Saw/Expected table, mandatory *Did not test* section) covering exercises 1–5. At least one row must be exercise 4 — a deliberate break. This is a rehearsal: the format you just used on a tutorial is the same one that graduates a real recipe to VERIFIED.
+**6. Attest.** Write an attestation-format record (SNICKERDOODLE.md format: Ran/Saw/Expected table, mandatory *Did not test* section) covering exercises 1–5. At least one row must be exercise 4 — a deliberate break. This is a rehearsal: the format you just used on a tutorial is the same one that graduates a real recipe to VERIFIED.
 
 ---
 

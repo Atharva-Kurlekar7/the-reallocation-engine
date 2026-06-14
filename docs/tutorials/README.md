@@ -1,6 +1,6 @@
 # Tutorials
 
-Hands-on, step-by-step walkthroughs of the engine's runnable surface. Every tutorial follows the same loop — **predict → run → inspect → judge → record** — and every exercise's deliverable is a `logs/RUN_LOG.md` entry, not a screenshot. The tutorials assume you have read `MYCROFT.md` (the contract) and `DOMAIN.md` (what this repository is).
+Hands-on, step-by-step walkthroughs of the engine's runnable surface. Every tutorial follows the same loop — **predict → run → inspect → judge → record** — and every exercise's deliverable is a `logs/RUN_LOG.md` entry, not a screenshot. The tutorials assume you have read `SNICKERDOODLE.md` (the contract) and `DOMAIN.md` (what this repository is).
 
 | # | Tutorial | Status | What you'll be able to do |
 |---|---|---|---|
@@ -15,4 +15,4 @@ Status is honest per the data contract: "planned" means a title and a goal, not 
 
 ## Conventions
 
-Commands are run from the repo root. Anything written under `data/ats/` is private by default — check `git status` before committing. A tutorial never asks you to trust a number you can't trace; if one does, that's a bug — log it (MYCROFT.md P3).
+Commands are run from the repo root. Anything written under `data/ats/` is private by default — check `git status` before committing. A tutorial never asks you to trust a number you can't trace; if one does, that's a bug — log it (SNICKERDOODLE.md P3).

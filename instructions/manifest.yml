@@ -3,7 +3,7 @@ title: "The Reallocation Engine agent instructions (source for AGENTS.md + CLAUD
 
 # Shared rule modules — the portable ~95%, the SAME library Madison and Mycroft
 # draw from (vendored per-repo so the three can diverge without coupling).
-# Selects all six: backing tools/files all present (MYCROFT.md, DOMAIN.md,
+# Selects all six: backing tools/files all present (SNICKERDOODLE.md, DOMAIN.md,
 # conformance.mjs, to-markdown.mjs). Order = output order.
 shared:
   - governance.md
@@ -19,7 +19,7 @@ project: reallocation-engine.md
 # Appended ONLY to CLAUDE.md (Claude supports @import; other tools read AGENTS.md).
 claude_only:
   - "## Claude Code"
-  - "@MYCROFT.md"
+  - "@SNICKERDOODLE.md"
   - "- Use plan mode before edits under recipes/, data/, or anything touching data/ats/ (private)."
 
 targets:
