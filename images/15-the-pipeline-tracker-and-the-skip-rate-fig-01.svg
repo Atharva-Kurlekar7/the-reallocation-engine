@@ -17,7 +17,7 @@
 
     <!-- pointer in healthy band (~57%) -->
     <polygon points="331,-6 323,-22 339,-22" fill="#2a1a0e"/>
-    <text x="331" y="-30" text-anchor="middle" font-size="11" fill="#2a1a0e" font-family="JetBrains Mono, monospace">57%</text>
+    <text x="348" y="-26" text-anchor="start" font-size="11" fill="#2a1a0e" font-family="JetBrains Mono, monospace">57%</text>
 
     <!-- band labels -->
     <text x="116" y="62" text-anchor="middle" font-size="11" fill="#545454">too loose</text>
