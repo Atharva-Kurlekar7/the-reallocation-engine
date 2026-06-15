@@ -29,17 +29,17 @@
 <!-- Role A: past authorization, longest, blocking -->
 <rect x="160" y="110" width="480" height="36" rx="0" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
 <text x="150" y="132" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Role A</text>
-<text x="650" y="132" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#FFFFFF">skip regardless</text>
+<text x="632" y="132" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#FFFFFF">skip regardless</text>
 
 <!-- Role B: short, comfortable (well before buffer) -->
 <rect x="160" y="170" width="230" height="36" rx="0" fill="#2a1a0e" stroke="#2a1a0e" stroke-width="1"/>
 <text x="150" y="192" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Role B</text>
-<text x="398" y="192" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">comfortable</text>
+<text x="382" y="192" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#FFFFFF">comfortable</text>
 
 <!-- Role C: between buffer and authorization, transitional -->
 <rect x="160" y="230" width="370" height="36" rx="0" fill="#787878" stroke="#2a1a0e" stroke-width="1"/>
 <text x="150" y="252" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Role C</text>
-<text x="538" y="252" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">kept, penalized</text>
+<text x="522" y="252" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#FFFFFF">kept, penalized</text>
 
 <text x="350" y="350" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">bar length = time to expected start; the lines decide whether the role survives</text>
 </svg>
