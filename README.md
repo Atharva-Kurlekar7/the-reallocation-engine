@@ -2,7 +2,7 @@
 
 *An F-1/OPT job-search engine — using AI without surrendering the judgment the search depends on.*
 
-**Nik Bear Brown** · Published by Bear Brown, LLC · First edition, 2026
+**Nik Bear Brown** and **Humanitarians AI** · Published by Humanitarians AI · First edition, 2026
 
 ---
 
@@ -61,4 +61,4 @@ These are Kindle / online editions, designed for integration with **Medhavy** (a
 
 ---
 
-Copyright © 2026 Nik Bear Brown. Published by Bear Brown, LLC.
+Copyright © 2026 Nik Bear Brown and Humanitarians AI. Published by Humanitarians AI, a 501(c)(3) nonprofit organization.

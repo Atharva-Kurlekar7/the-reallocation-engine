@@ -6,15 +6,15 @@
 
 # The Reallocation Engine
 
-**Nik Bear Brown**
+**Nik Bear Brown · Humanitarians AI**
 
 ---
 
 ## Copyright
 
-Copyright © 2026 Nik Bear Brown. All rights reserved.
+Copyright © 2026 Nik Bear Brown and Humanitarians AI. All rights reserved.
 
-Published by Bear Brown, LLC.
+Published by Humanitarians AI, a 501(c)(3) nonprofit organization.
 
 No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the publisher, except in the case of brief quotations in critical reviews and certain other noncommercial uses permitted by copyright law.
 

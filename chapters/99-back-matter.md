@@ -7,7 +7,7 @@
 
 ## Acknowledgments
 
-This book was drafted with the help of the students, advisors, and reviewers who pressure-tested its claims against real searches, and it owes a particular debt to the Humanitarians AI fellows — international graduates on OPT who built and ran production AI against a counting clock, and whose work is the lived evidence behind these pages. Thanks also to the collaborators who built and audited the engine's scripts and recipes, and to the AI-assisted production workflow that turned a directory of files into a usable learning object. Specific names will be added after manuscript review. Any errors that survived the verification gates are mine.
+This book was drafted with the help of the students, advisors, and reviewers who pressure-tested its claims against real searches, and it owes a particular debt to the Humanitarians AI fellows — international graduates on OPT who built and ran production AI against a counting clock, and whose work is the lived evidence behind these pages. Thanks also to the collaborators who built and audited the engine's scripts and recipes, and to the AI-assisted production workflow that turned a directory of files into a usable learning object. Specific names will be added after manuscript review. Any errors that survived the verification gates are mine. Above all, this book is written *for* the Humanitarians AI Fellows — the international graduates running this exact race. It is theirs first.
 
 ---
 
@@ -18,6 +18,8 @@ This book was drafted with the help of the students, advisors, and reviewers who
 He is the founder of **Humanitarians AI**, a 501(c)(3) nonprofit whose fellows program supports international graduates on OPT as they build production-scale AI with public evidence of real work — people living the exact ninety-day deadline this book is built around. The Reallocation Engine grew directly out of that work and its associated "80 Days to Stay" build, which turns funding records, sponsorship history, and visa timelines into a sourced Apply / Consider / Skip decision rather than a feeling. His broader framework, *Irreducibly Human*, asks what people should get better at as machines improve; the engine is one answer, aimed at a search where the cost of confusing fluency with progress is measured in days you do not have.
 
 [nikbearbrown.com](https://www.nikbearbrown.com) · [humanitarians.ai](https://www.humanitarians.ai/) · [irreducibly.xyz](https://irreducibly.xyz) · bear@bearbrown.co
+
+**Humanitarians AI** — co-author and publisher of this book — is a 501(c)(3) nonprofit (EIN 33-1984805), founded in 2019 and based in Boston. It connects international graduates on Optional Practical Training (OPT) with real projects, experienced mentors, and the *Irreducibly Human* curriculum. The Reallocation Engine grew directly out of its Fellows program and the "80 Days to Stay" build — and the Fellows, living the ninety-day clock this book is built around, are the community it is written for. [humanitarians.ai](https://www.humanitarians.ai/) · [info@humanitarians.ai](mailto:info@humanitarians.ai)
 
 ---
 
