@@ -42,11 +42,15 @@ ignore:
   - .build/
   - archive/
 
-# Private by default — reveals personal job-search activity. Never commit without review.
+# Private by default — reveals personal job-search activity. Gitignored AND never committed.
+# `private/` holds the student's real data (real résumé, real tracker); only private/README.md is tracked.
+# `npm run doctor` fails if any path here is git-tracked (see the privacy check in scripts/doctor.mjs).
 private:
+  - private/            # real résumé, real ATS tracker, real contacts (only README.md tracked)
   - data/ats/
   - "**/*.resume.pdf"
   - resumes/**/*.pdf
+  - resume.json
   - .env
   - .env.*
 

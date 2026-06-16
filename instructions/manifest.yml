@@ -10,6 +10,7 @@ shared:
   - markdown-default.md
   - visual-media.md
   - "no-delete.md"
+  - personal-data.md
   - conformance-gate.md
   - subagent-scoping.md
   - completion-report.md

@@ -51,6 +51,30 @@ console.log('\nDOMAIN DIRECTORIES');
 for (const d of ['data/sec', 'data/bls', 'data/ats', 'data/80-days-to-stay', 'scripts/sec', 'scripts/bls', 'scripts/ats', 'scripts/resumes'])
   console.log(`  ${fs.existsSync(d) ? '✓' : '—'} ${d}`);
 
+// --- privacy: no real personal data may be git-tracked --------------------
+// This repo is public. A student's real résumé/tracker live in private/ and must
+// never be committed. A tracked private path is a PII leak — hard fail.
+console.log('\nPRIVACY (no personal data committed)');
+let trackedFiles = [];
+try { trackedFiles = execSync('git ls-files', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().split('\n').filter(Boolean); }
+catch { console.log('  — not a git repo (skipped)'); }
+if (trackedFiles.length) {
+  // private zones: real personal data; scaffolding (policy/readme/examples) is OK to track.
+  const inPrivateZone = (f) => /^private\//.test(f) || /^data\/ats\//.test(f);
+  const isScaffold = (f) => /(^|\/)(README\.md|\.gitkeep|\.gitignore)$/i.test(f) || /\.example\./i.test(f);
+  const isResumeArtifact = (f) => /\.resume\.(pdf|json)$|(^|\/)resume\.(json|pdf)$/i.test(f);
+  const leaks = trackedFiles.filter((f) => (inPrivateZone(f) && !isScaffold(f)) || isResumeArtifact(f));
+  if (leaks.length) {
+    hardFail = true;
+    console.log(`  ✗ ${leaks.length} private/PII path(s) are git-tracked — REMOVE before pushing:`);
+    for (const f of leaks.slice(0, 10)) console.log(`      ${f}`);
+    if (leaks.length > 10) console.log(`      … +${leaks.length - 10} more`);
+    console.log('    fix: git rm --cached <file>; move it into private/; re-run npm run doctor');
+  } else {
+    console.log('  ✓ no private/PII paths are tracked');
+  }
+}
+
 // --- recipe status dashboard ---------------------------------------------
 const FM_KEYS = ['status', 'todos_open', 'last_gate', 'attestation', 'recipe_version'];
 function frontmatter(txt) {

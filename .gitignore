@@ -56,3 +56,14 @@ data/BLS/db_30_2_mysql/
 # <<< end large files
 /anki/
 /wayback/
+
+# Personal data — your real résumé, real ATS tracker, real contacts. Never committed.
+# Only private/README.md (the signpost) is tracked; everything else here is yours alone.
+/private/*
+!/private/README.md
+!/private/.gitkeep
+# Belt-and-suspenders: keep résumé artifacts out even if dropped outside private/.
+# (data/ats/ self-manages via its own .gitignore — don't blanket-ignore it here.)
+**/*.resume.pdf
+**/resume.pdf
+resume.json
