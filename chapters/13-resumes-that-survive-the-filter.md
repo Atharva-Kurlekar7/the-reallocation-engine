@@ -3,7 +3,7 @@
 
 There is a particular kind of effort that feels productive but costs you exactly what you spent it on. A candidate spends a weekend on a résumé. Two columns, a sidebar with tasteful skill bars, a small icon next to each section header, the name set large in a header graphic. It is the best-looking document they have ever made. They submit it to forty companies. Most reject it before a human opens it — not because the content was weak, but because the applicant-tracking system that read it first saw a scrambled wall of text. The two columns interleaved into nonsense. The skill bars, rendered as graphics, produced no text at all. The name, trapped in an image, was simply absent. The parser could not find a job title. So it scored the candidate as unqualified for everything, and the beautiful résumé disappeared.
 
-This is not a corner case. By 2025, roughly 82% of companies screened résumés with software, and about one in five candidates were auto-rejected with no human review.[^screening] The first reader of your résumé is a parser. The parser does not care that the document is beautiful. It cares whether it can extract structured text. A résumé a human would admire and a machine cannot read is a résumé no human will ever see.
+This is not a corner case. By 2025, roughly 82% of companies screened résumés with software, and about one in five candidates were auto-rejected with no human review.[^13-screening] The first reader of your résumé is a parser. The parser does not care that the document is beautiful. It cares whether it can extract structured text. A résumé a human would admire and a machine cannot read is a résumé no human will ever see.
 
 ![Two parallel paths from "Submit résumé." The ATS-parseable path: the parser extracts name, title, and dates cleanly, leading to human review and an interview. The designed-layout path: the parser sees scrambled text, the application is auto-rejected, and no human ever opens it. The fork happens before any human judgment.](../images/13-resumes-that-survive-the-filter-fig-01.png)
 *Figure 13.1 — The fork before the human*
@@ -264,6 +264,5 @@ After completing this validation, write a two-sentence AI Use Disclosure:
 
 **Series connection:** This exercise trains **Tier 4 metacognitive supervision** joined to the series' honesty commitment — catching output that is fluent in two directions at once (it looks impressive and it would never reach a human, and it isn't even true). The pipeline guarantees a parseable document; truth and resonance are yours.
 
-[^screening]: ~82% of companies screen résumés with AI; ~21% auto-reject without human review — "The Collapse of the Traditional Résumé" (N. Bear Brown). **[verify]** against primary source.
+[^13-screening]: ~82% of companies screen résumés with AI; ~21% auto-reject without human review — "The Collapse of the Traditional Résumé" (N. Bear Brown). **[verify]** against primary source.
 
-[^proof]: The résumé-as-gate framing and the ~56% validated-AI-skill wage premium are from "The Collapse of the Traditional Résumé." **[verify]** the wage-premium figure before publication.

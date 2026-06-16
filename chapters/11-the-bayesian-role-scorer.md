@@ -87,7 +87,7 @@ And then there is **Override** — the recommendation the system will not give y
 
 ## The cautionary mirror — when scoring goes wrong
 
-A different company built a hiring-match score by training on real managers' past decisions. The system learned to replicate those decisions, including the biases embedded in them — treating "what we did before" as "what is correct." A lawsuit (*Kistler v. Eightfold*) now asks a court to require what good scoring should have demanded from the start: disclose the score, allow disputes, fix the audit.[^eightfold]
+A different company built a hiring-match score by training on real managers' past decisions. The system learned to replicate those decisions, including the biases embedded in them — treating "what we did before" as "what is correct." A lawsuit (*Kistler v. Eightfold*) now asks a court to require what good scoring should have demanded from the start: disclose the score, allow disputes, fix the audit.[^11-eightfold]
 
 Notice what separates that system from this one. The Eightfold scorer learned from opaque history; its weights are unknown even to the company that built it. This scorer's weights are stated — sponsorship 0.35, fit 0.30 — and each factor traces back to a named source. You can look at a recommendation and see exactly why it said what it said.
 
@@ -297,4 +297,4 @@ After completing this validation, write a two-sentence AI Use Disclosure:
 
 [^weights]: Composite form and weights (sponsorship ×0.35, fit ×0.30, liveness and timeline as multipliers, decision threshold ≈0.3) from the system design document (Component 3, Bayesian Role Scorer). **[verify]** — confirm the exact composite expression and per-tier thresholds before publication.
 
-[^eightfold]: Eightfold AI's match score learning manager bias, and *Kistler v. Eightfold* (FCRA: disclose the score, allow disputes, fix the audit), from "The Eightfold AI Match Score" (N. Bear Brown). **[verify]** the litigation specifics before publication.
+[^11-eightfold]: Eightfold AI's match score learning manager bias, and *Kistler v. Eightfold* (FCRA: disclose the score, allow disputes, fix the audit), from "The Eightfold AI Match Score" (N. Bear Brown). **[verify]** the litigation specifics before publication.

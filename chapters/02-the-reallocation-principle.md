@@ -13,7 +13,7 @@ The applicant I have in mind is not a slacker. They are awake at eight, coffee c
 
 This person has optimized hard — for the wrong variable.
 
-Here is what the spreadsheet cannot show. By 2025, around 82% of companies were screening résumés with software, and roughly one in five rejected candidates automatically, with no human in the loop.[^screening] A large fraction of the postings were not even real openings — somewhere between a quarter and 42% of listings at any given moment are "ghost jobs," postings the company has no active intent to fill.[^ghost] Every hour spent clicking Submit was an hour not spent on the two activities that actually move the needle.
+Here is what the spreadsheet cannot show. By 2025, around 82% of companies were screening résumés with software, and roughly one in five rejected candidates automatically, with no human in the loop.[^02-screening] A large fraction of the postings were not even real openings — somewhere between a quarter and 42% of listings at any given moment are "ghost jobs," postings the company has no active intent to fill.[^ghost] Every hour spent clicking Submit was an hour not spent on the two activities that actually move the needle.
 
 The question worth asking is: why does the volume strategy persist? Why does anyone — smart, hardworking, data-literate — continue doing something the numbers have quietly stopped rewarding?
 
@@ -34,7 +34,7 @@ If you have eight hours, and you spend all eight applying cold, you are concentr
 
 This is not a motivational observation. It is a resource-allocation problem. And resource-allocation problems have a structural solution: stop distributing effort by habit and start distributing it by expected return.
 
-The expected return on an hour is not constant across activities. An hour of targeted networking reaches into the 54% channel. An hour building a portfolio piece creates verifiable evidence of capability — and in 2025, workers with validated AI skills were commanding something like a 56% wage premium over peers who only claimed equivalent skills.[^premium] An hour of cold applying, by contrast, feeds a machine that discounts most of what you send it before a human reads a word.
+The expected return on an hour is not constant across activities. An hour of targeted networking reaches into the 54% channel. An hour building a portfolio piece creates verifiable evidence of capability — and in 2025, workers with validated AI skills were commanding something like a 56% wage premium over peers who only claimed equivalent skills.[^02-premium] An hour of cold applying, by contrast, feeds a machine that discounts most of what you send it before a human reads a word.
 
 Once you see the return structure, the reallocation is obvious. Two hours applying — targeted, filtered, not sprayed. Three hours networking. Three hours on portfolio. I call this the 3-3-2 day, and the rest of this book is built to make it actually achievable rather than just strategically correct.
 
@@ -113,7 +113,7 @@ By the end of this chapter, you should be able to explain — not just agree wit
 
 What you do not yet have is a filter trustworthy enough to actually skip on. That is the next problem. A reallocation strategy built on a filter you can't trust is just a different way of guessing. The question the next chapter forces is: what would make a claim about a role's value reliable enough to act on?
 
-[^screening]: AI résumé-screening and auto-rejection rates (~82% screen with AI; ~21% auto-reject) from "The Collapse of the Traditional Résumé" (uploaded essay, N. Bear Brown). **[verify]** — trace to primary survey before publication.
+[^02-screening]: AI résumé-screening and auto-rejection rates (~82% screen with AI; ~21% auto-reject) from "The Collapse of the Traditional Résumé" (uploaded essay, N. Bear Brown). **[verify]** — trace to primary survey before publication.
 
 [^ghost]: Ghost-job rate (≈28–42% depending on source/month) from "What Is a Ghost Job?" and "Can AI Help Detect Ghost Jobs?" (uploaded essays, N. Bear Brown), citing standstill rates held ~28–38% over five years. **[verify]** — trace to the underlying labor-market reports.
 
@@ -121,7 +121,7 @@ What you do not yet have is a filter trustworthy enough to actually skip on. Tha
 
 [^referral]: Referral vs. cold-application conversion (referrals several-fold higher; cold ≈0.2%) — "The 3-3-2 Split." **[verify]** — the "4–10× more likely" figure appears in the plain-summary and must be source-cited.
 
-[^premium]: ~56% wage premium for validated AI skills (2025) — "The Collapse of the Traditional Résumé." **[verify]**
+[^02-premium]: ~56% wage premium for validated AI skills (2025) — "The Collapse of the Traditional Résumé." **[verify]**
 
 ---
 
