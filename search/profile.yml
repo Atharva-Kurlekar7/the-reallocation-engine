@@ -1,0 +1,128 @@
+# search/profile.yml — declared 2026-06-25
+# Role gate, visa constraints, geography, preferences.
+# Every field here should reflect your actual situation, not your hope.
+# CORRECTED 2026-06-25: OPT EAD not yet filed — status changed from "F-1 OPT" to "F-1 student".
+
+roles:
+  # Confirmed at Q1 gate against data/bls/compact/soc_occupation_compact.csv.
+  # UPDATED 2026-06-25: Added AI Engineer track as primary. IT Systems Analyst kept as parallel/fallback.
+  # 15-2051: Data Scientists — $112,590 median, Job Zone 4 — closest BLS code to AI/Gen AI Engineer
+  # 15-1252: Software Developers — $133,080 median, Job Zone 4 — maps to ML Engineer / AI Software Engineer
+  # 15-1211: Computer Systems Analysts — $103,790 median, Job Zone 3 — IT/ERP track (parallel)
+  confirmed_soc:
+    - "15-2051"   # Data Scientists — primary (Applied AI / Gen AI Engineer maps here)
+    - "15-1252"   # Software Developers — primary (ML Engineer / AI Software Engineer track)
+    - "15-1211"   # Computer Systems Analysts — parallel track (IT/ERP/AMS, still active)
+    - "13-1111"   # Management Analysts — fallback (BSA / consulting)
+
+  dream_job_text: >
+    Applied AI Engineer or Gen AI Developer at a funded company (Series B+) —
+    building LLM-powered products, RAG pipelines, or AI-integrated enterprise tools.
+    Secondarily open to IT/ERP Systems Analyst roles where platform depth
+    (Oracle OTM, ServiceNow, SQL) is the differentiator. Sponsorship is non-negotiable
+    on both tracks.
+
+  excluded_soc:
+    - "15-1232"   # Computer User Support Specialists — L1 helpdesk, below experience level
+
+locations:
+  bases: ["remote"]
+  remote: "preferred"
+  open_to_relocation: true
+  relocation_scope: "anywhere in USA"
+  note: "No hard geographic constraint. Remote preferred but will relocate for the right role."
+
+work_prefs:
+  hours: full-time
+  contract_ok: false
+  contract_note: "OPT cap-gap risk — contract roles without clear conversion path excluded"
+
+authorization:
+  sponsorship_required: true
+  sponsorship_gate: "hard — skip-regardless if company has no H-1B approval history"
+
+  # CURRENT STATUS — corrected from initial draft
+  status: "F-1 student"
+  opt_application_status: "not yet filed"
+  opt_application_note: >
+    OPT EAD has NOT been applied for yet. Graduation is August 2026.
+    USCIS standard processing is 3–5 months; file immediately via DSO to
+    avoid a gap between graduation and authorization to work.
+    opt_end CANNOT be set until EAD is issued — leave null until card arrives.
+
+  opt_end: null
+  opt_end_note: "Unknown — EAD not yet filed. Update this field the day the physical card arrives."
+
+  stem_eligible: true
+  stem_status: "eligible — not yet confirmed with DSO; OPT must be approved first"
+  stem_end_potential: null
+  stem_note: >
+    STEM OPT extension is only available after initial OPT EAD is approved and active.
+    Cannot be filed or planned until initial OPT is in hand.
+    Mark uncertain — do not set a gate date until DSO confirms eligibility post-graduation.
+
+  offer_needed_by: null
+  offer_note: "Cannot set until opt_end is known. Recalculate as: opt_end minus 90 days."
+  unemployment_days_used: 0
+
+situation:
+  employed: false
+  start_needed: "2026-08-01"
+  graduation: "2026-08"
+  discretion_required: false
+
+preferences:
+  company_stage:
+    - "Series A"
+    - "Series B"
+    - "Series C"
+    - "Series D+"
+    - "public"
+  preferred_sponsors:
+    - "HCLTech"
+    - "IBM"
+    - "State Street"
+    - "JPMorgan"
+    - "Cognizant"
+    - "Infosys"
+    - "Wipro"
+    - "LTIMindtree"
+    - "Capgemini"
+  deprioritize:
+    - "Accenture new US hires"
+    - "Pure staffing / body-shop firms with no direct client"
+  salary_floor_usd: 80000
+  salary_target_usd: 100000
+
+exclusions:
+  roles:
+    - "Linux Admin / SRE / DevOps / Network Engineering"
+    - "Consumer banking operations / retail"
+    - "Financial modeling heavy"
+    - "Senior / AVP / VP (7+ years required)"
+    - "L1 remote helpdesk"
+    - "Insurance licensing required"
+  platforms:
+    - "SAP ABAP"
+    - "Workday"
+    - "NetSuite"
+    - "Aladdin"
+    - "Guidewire"
+  industries: []
+  note: "No industry hard exclusions beyond defense adjacency — open to finance, healthcare, logistics, tech"
+
+active_applications:
+  - company: "State Street"
+    role: "Command Centre Analyst"
+    req_id: "R-790683"
+    status: "Applied"
+  - company: "State Street"
+    role: "Systems Analyst"
+    req_id: "R-790190"
+    status: "Pending"
+  - company: "HCLTech"
+    role: "Administrator (Miami-Dade project)"
+    status: "Pending"
+  - company: "IBM"
+    role: "Oracle Package Specialist (Associates Program)"
+    status: "Pending"

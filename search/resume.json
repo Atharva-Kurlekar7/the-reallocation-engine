@@ -1,0 +1,216 @@
+{
+  "attested": true,
+  "attested_date": "2026-06-25",
+  "attestation_note": "Three errors corrected: [1] ServiceNow CSA removed — cert not yet obtained, was incorrectly listed as a credential; [2] Diploma qualification (3-year) added to education — BE was lateral entry, 3-year duration is correct but the prior diploma was missing from the record entirely; [3] Metric percentages at FLO (30% error reduction, 20% onboarding time reduction) are estimated, not measured from data — noted inline.",
+
+  "basics": {
+    "name": "Atharva Rajesh Kurlekar",
+    "email": "atharvarkurlekar@gmail.com",
+    "location": "Boston, MA",
+    "linkedin": "https://www.linkedin.com/in/atharva-kurlekar-723046213/",
+    "authorization": {
+      "status": "F-1 OPT",
+      "sponsorship_required": true,
+      "sponsorship_type": "H-1B",
+      "note": "Already in US on F-1/OPT — $100K H-1B petition fee does not apply"
+    }
+  },
+
+  "education": [
+    {
+      "id": "edu_1",
+      "school": "Northeastern University",
+      "location": "Boston, MA",
+      "degree": "Master of Science",
+      "field": "Information Systems",
+      "start": "2024-09",
+      "end": "2026-08",
+      "status": "Expected",
+      "coursework": [
+        "Database Management and Domain Design",
+        "Prompt Engineering",
+        "Application Engineering and Development",
+        "Web Development",
+        "Data Engineering with LLMs",
+        "Agentic AI"
+      ]
+    },
+    {
+      "id": "edu_2",
+      "school": "Pune University (University of Pune)",
+      "location": "Pune, India",
+      "degree": "Bachelor of Engineering",
+      "field": "Electronics and Telecommunication",
+      "start": "2018-05",
+      "end": "2021-05",
+      "status": "Completed",
+      "note": "3-year duration correct — lateral entry after completing a 3-year diploma. Duration is not an error.",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Object Oriented Programming",
+        "Internet of Things"
+      ]
+    },
+    {
+      "id": "edu_3",
+      "school": "[TODO: verify diploma institution name]",
+      "location": "Pune, India",
+      "degree": "Diploma",
+      "field": "Electronics and Telecommunication",
+      "start": "[TODO: verify — approximately 2015]",
+      "end": "2018-05",
+      "status": "Completed",
+      "note": "3-year diploma completed before lateral entry into BE. Institution name and exact start date to be verified against certificate."
+    }
+  ],
+
+  "work": [
+    {
+      "id": "exp_1",
+      "company": "Clear Lakes Dental",
+      "location": "Minnesota (Remote)",
+      "title": "Software Engineering Intern",
+      "start": "2025-09",
+      "end": "2025-12",
+      "highlights": [
+        "Built frontend modules for an in-house Patient Management System (PMS) using Vue.js and TypeScript, streamlining scheduling and patient record workflows.",
+        "Integrated AI features into the PMS including automated appointment summarization and clinical note suggestions, reducing manual documentation time for dental staff.",
+        "Managed backend services using Supabase (PostgreSQL) for real-time patient data sync, authentication, and role-based access control across clinic staff roles.",
+        "Automated patient appointment reminders using cron jobs integrated with Twilio, reducing no-shows and manual outreach effort."
+      ],
+      "skills_used": ["Vue.js", "TypeScript", "Supabase", "PostgreSQL", "Twilio", "AI/NLP"]
+    },
+    {
+      "id": "exp_2",
+      "company": "FLO Group (Part of Accenture)",
+      "location": "Pune, India",
+      "title": "Supply Chain Consultant",
+      "title_note": "Internal title; role was Application Management Services (AMS) support — L2/L3 operations on Oracle Transportation Management (OTM). NOT implementation consulting.",
+      "start": "2023-01",
+      "end": "2024-07",
+      "highlights": [
+        "Led optimization of transportation monitoring workflows by designing and deploying real-time SQL-based error detection queries, reducing application errors and functional disruptions by ~30% (estimated, not formally measured).",
+        "Acted as the primary liaison between 3 global supply chain clients and technical teams, aligning OTM customizations with business goals and ensuring SLA adherence.",
+        "Mentored and trained 10+ new hires through structured knowledge transfer sessions on incident handling, testing protocols, and client interaction, decreasing onboarding time by ~20% (estimated, not formally measured).",
+        "Leveraged advanced SQL queries on OTM's underlying database to extract actionable insights on shipment delays, carrier performance, and inactive user accounts.",
+        "Categorized incoming service requests by issue types (Order Management, Shipment Management, Rate Management, Business Process Automation) for faster resolution.",
+        "Delivered end-to-end client support, resolving 98% of P3 and P4 tickets within SLA."
+      ],
+      "skills_used": ["SQL", "Oracle OTM", "ServiceNow", "JIRA", "SLA Management", "Incident Management", "ITIL 4"]
+    },
+    {
+      "id": "exp_3",
+      "company": "FLO Group (Part of Accenture)",
+      "location": "Pune, India",
+      "title": "Associate Consultant",
+      "title_note": "Entry-level AMS support — application testing, ticket triage, error log analysis.",
+      "start": "2021-08",
+      "end": "2022-12",
+      "highlights": [
+        "Performed 50+ application validation tests post-upgrades and maintenance, ensuring stable deployments and minimizing production issues across transportation workflows.",
+        "Triaged ServiceNow and JIRA tickets, monitored shared mailboxes, and analyzed OTM error logs to identify bottlenecks and escalate critical issues.",
+        "Supported APAC hypercare coverage for an automotive inbound logistics client, providing on-call escalation support across time zones."
+      ],
+      "skills_used": ["ServiceNow", "JIRA", "Oracle OTM", "Log Analysis", "Ticket Triage", "Escalation Management"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "proj_1",
+      "name": "MedAssist.AI",
+      "context": "Northeastern University — Course Project",
+      "summary": "Rare disease identifier and collaborative research prototype using AI and vector search. Clinical decision-support framing.",
+      "teammates": ["Aksh Talati", "Neha Ganeshe"],
+      "advisor": "Professor Kishore Aradhya, Northeastern University",
+      "highlights": [
+        "Built a clinical decision-support prototype that identifies rare diseases using vector similarity search over medical literature, powered by Vertex AI and ChromaDB.",
+        "Designed a RAG pipeline using FastAPI and Snowflake to retrieve and rank relevant medical knowledge chunks in real time."
+      ],
+      "skills": ["Snowflake", "ChromaDB", "Vector Databases", "FastAPI", "Vertex AI", "Python"]
+    },
+    {
+      "id": "proj_2",
+      "name": "AI-Powered SEO Optimization Platform for YouTube Creators",
+      "context": "Northeastern University — Course Project",
+      "highlights": [
+        "Built a web-based tool that analyzes video metadata (title, description, tags) and provides optimization suggestions using Prompt Engineering and RAG.",
+        "Engineered a custom knowledge retrieval pipeline using vector-based similarity search and chunked document indexing to deliver high-relevance SEO recommendations."
+      ],
+      "skills": ["Python", "Prompt Engineering", "RAG", "LangChain", "OpenAI API", "YouTube Data API"]
+    },
+    {
+      "id": "proj_3",
+      "name": "Electric Vehicle Market Dynamics and Strategic Analysis",
+      "context": "Northeastern University — Course Project",
+      "highlights": [
+        "Built an interactive Tableau dashboard on 150K+ records tracking EV adoption trends (2011-2024); dynamic Top N parameters revealed Tesla's 52% market dominance.",
+        "Developed a CAFV Eligibility tracking system auditing fleet compliance with environmental standards; identified a 12% non-eligibility gap in legacy hybrid models."
+      ],
+      "skills": ["Tableau", "Excel", "Data Visualization", "KPI Tracking"]
+    }
+  ],
+
+  "certifications": [
+    {
+      "id": "cert_1",
+      "name": "ITIL 4 Foundation",
+      "issuer": "Axelos / PeopleCert",
+      "year": null,
+      "year_note": "Year not recalled — obtained, cert number to be verified",
+      "evidence": "Applied directly in exp_2 and exp_3 — SLA management, incident/change management operations"
+    },
+    {
+      "id": "cert_2",
+      "name": "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+      "issuer": "Oracle",
+      "year": 2025,
+      "evidence": "Oracle ecosystem, cloud roles, AI/ML roles"
+    },
+    {
+      "id": "cert_3",
+      "name": "Oracle Data Platform 2025 Certified Foundations Associate",
+      "issuer": "Oracle",
+      "year": 2025,
+      "evidence": "Data engineering, Oracle roles, analytics roles"
+    }
+  ],
+  "not_yet_obtained": [
+    {
+      "name": "ServiceNow Certified System Administrator (CSA)",
+      "issuer": "ServiceNow",
+      "status": "Not yet obtained — identified as highest-leverage near-term credential",
+      "note": "REMOVED from certifications — must not appear as an earned credential until exam is passed"
+    }
+  ],
+
+  "skills": [
+    { "name": "SQL", "evidence": "exp_2: OTM database querying, error detection, shipment/carrier analysis" },
+    { "name": "Oracle Transportation Management (OTM)", "evidence": "exp_2, exp_3: L2/L3 AMS support, configuration, testing" },
+    { "name": "Oracle Integration Cloud (OIC)", "evidence": "exp_2: AMS support context; limited exposure" },
+    { "name": "ServiceNow", "evidence": "exp_2, exp_3: ticket triage, incident management" },
+    { "name": "JIRA", "evidence": "exp_2, exp_3: ticket tracking, escalation" },
+    { "name": "ITIL 4", "evidence": "cert_1; applied in exp_2 incident/change/SLA operations" },
+    { "name": "Incident Management (L1/L2/L3)", "evidence": "exp_2, exp_3" },
+    { "name": "SLA Management", "evidence": "exp_2: 98% SLA compliance on P3/P4 tickets" },
+    { "name": "Python", "evidence": "proj_1 (MedAssist.AI), proj_2 (SEO platform)" },
+    { "name": "Vue.js", "evidence": "exp_1: PMS frontend modules at Clear Lakes Dental" },
+    { "name": "TypeScript", "evidence": "exp_1: PMS frontend at Clear Lakes Dental" },
+    { "name": "PostgreSQL / Supabase", "evidence": "exp_1: patient data sync, auth, RBAC" },
+    { "name": "Prompt Engineering", "evidence": "proj_2; coursework; cert_2" },
+    { "name": "RAG / LangChain", "evidence": "proj_1 (MedAssist.AI), proj_2 (SEO platform)" },
+    { "name": "Tableau", "evidence": "proj_3: EV market analysis dashboard, 150K+ records" },
+    { "name": "Root Cause Analysis (RCA)", "evidence": "exp_2: order bundling critical workflow issue" },
+    { "name": "Escalation Management", "evidence": "exp_2, exp_3: major incident escalation, APAC hypercare" },
+    { "name": "Knowledge Transfer / Training", "evidence": "exp_2: 10+ new hires, 20% onboarding time reduction" }
+  ],
+
+  "extraction_notes": [
+    "ATTESTATION COMPLETE — 2026-06-25",
+    "Error 1 resolved: ServiceNow CSA moved to not_yet_obtained — was never an earned credential",
+    "Error 2 resolved: BE duration (3 years) confirmed correct via lateral entry after 3-year diploma; diploma added as edu_3 with institution/dates to verify",
+    "Error 3 resolved: metric percentages at FLO marked as estimated in exp_2 highlights",
+    "Open items (non-blocking for attestation): diploma institution and start year (edu_3) to verify; ITIL 4 year unknown; exp_2 company official name unverified",
+    "Authorization note: F-1 OPT (~1 year confirmed) + STEM OPT extension eligible but not yet filed = up to 3 years total runway. Only the 1-year OPT is confirmed in this record."
+  ]
+}

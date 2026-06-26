@@ -143,6 +143,25 @@ private emails, or sensitive application notes.
 - **Flags:** skip-rate 40% < 50% (curated fixture, expected); `role_quality` weight 0 [VERIFY] drops the Ch.9 signal (gap #3); 1 documented override.
 - **Open:** machine half of P4 done; **human adequacy (P4 second half) outstanding** — attest to promote `oferta` past DRAFT.
 
+## 2026-06-25 -- Setup Exercise: Personal Layer (INFO 7375)
+
+- **What was built:** Three files constituting the engine's personal data layer — `search/resume.json` (attested), `search/profile.yml`, `search/gaps.md`. Privacy boundary: `search/private-notes.md` gitignored.
+- **Three attestation errors caught in resume.json:**
+  1. ServiceNow CSA listed as an "excluded" credential but still present in the certifications array — removed entirely and moved to a `not_yet_obtained` block. Not an earned credential.
+  2. Diploma qualification (3-year diploma, lateral entry) was missing from the education record. BE duration of 3 years is correct, but the prior diploma was not recorded. Added as `edu_3` with institution/dates flagged for verification.
+  3. Metric percentages at FLO Group (30% error reduction, 20% onboarding reduction) were extracted as facts — confirmed as estimated, not measured from data. Noted inline in the relevant bullet points.
+- **Top gap from gaps.md:** No shipped AI/Gen AI project in a public repo (Gap A1, AI Engineer track) — OCI GenAI Professional cert demonstrates conceptual knowledge of LLMs and RAG, but all 3 sampled AI Engineer postings require a portfolio of working projects. Cert alone is not evidence. Closes when a public repo with a working RAG pipeline or deployed model exists.
+- **Field corrected in profile.yml from agent's first draft:**
+  - Agent initially wrote `status: "F-1 OPT"` and `opt_end: "2027-08"`. Corrected to `status: "F-1 student"` and `opt_end: null` — OPT EAD has not been filed yet; graduation is August 2026 and application must be submitted immediately via DSO. A date on an un-issued card is not a fact.
+  - `stem_end_potential` also nulled — STEM OPT cannot be planned until initial OPT is approved.
+- **Source data:** BLS compact file `data/bls/compact/soc_occupation_compact.csv` (SOC 15-1211, pulled 2026-06-25), 3-posting spot sample (IBM R-646296, HCLTech Administrator Miami-Dade, State Street R-790190).
+- **Verification check (Step 4):**
+  - resume.json: All job entries traceable to lived experience. Metrics noted as estimated where applicable. Diploma institution/dates remain a TODO — do not treat as fully clean until those fields are filled.
+  - profile.yml: OPT end date approximated — needs EAD verification before driving any engine gate. STEM field correctly marked uncertain/not-yet-filed.
+  - gaps.md: All evidence citations point to BLS O*NET 15-1211 skill levels and a 3-posting sample. No gap is sourced solely from model inference without a checkable reference.
+- **Pending (assignment Step 3):** Kill one wrong row and rewrite one row in gaps.md — to be completed by student before submission.
+- **AI Use Disclosure:** Agent (Claude Sonnet) extracted and structured resume.json from master resume JSON, drafted profile.yml from stated constraints, and drafted gaps.md from BLS SOC data + posting sample. Student attested resume.json (found and corrected 3 errors), confirmed profile constraints, and is responsible for killing one gap row and rewriting one before submission.
+
 ## 2026-06-14 -- Rename MYCROFT.md → SNICKERDOODLE.md (constitution rebrand)
 
 - **Why:** disambiguate this repo's constitution from the shared **Mycroft** agent-OS frame it was forked from. Renamed to a cookie-recipe name fitting the book's "recipe" vocabulary.

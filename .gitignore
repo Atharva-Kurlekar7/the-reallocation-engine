@@ -67,3 +67,7 @@ data/BLS/db_30_2_mysql/
 **/*.resume.pdf
 **/resume.pdf
 resume.json
+# search/ personal layer — private-notes stays out; the three assignment files are committed.
+search/private-notes.md
+# Override the global resume.json rule for the search/ folder (assignment requires it committed).
+!search/resume.json
