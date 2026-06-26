@@ -9,10 +9,10 @@
     "location": "Boston, MA",
     "linkedin": "https://www.linkedin.com/in/atharva-kurlekar-723046213/",
     "authorization": {
-      "status": "F-1 OPT",
+      "status": "F-1 student",
       "sponsorship_required": true,
       "sponsorship_type": "H-1B",
-      "note": "Already in US on F-1/OPT — $100K H-1B petition fee does not apply"
+      "note": "OPT EAD not yet filed — currently on F-1 student status. $100K H-1B petition fee does not apply (already in US). Authorization clock starts when EAD is issued."
     }
   },
 
@@ -44,7 +44,7 @@
       "start": "2018-05",
       "end": "2021-05",
       "status": "Completed",
-      "note": "3-year duration correct — lateral entry after completing a 3-year diploma. Duration is not an error.",
+      "note": "3-year duration correct — lateral entry after completing a 3-year diploma. Diploma was missing from the original import; added as edu_3.",
       "coursework": [
         "Data Structures and Algorithms",
         "Object Oriented Programming",
@@ -211,6 +211,6 @@
     "Error 2 resolved: BE duration (3 years) confirmed correct via lateral entry after 3-year diploma; diploma added as edu_3 with institution/dates to verify",
     "Error 3 resolved: metric percentages at FLO marked as estimated in exp_2 highlights",
     "Open items (non-blocking for attestation): diploma institution and start year (edu_3) to verify; ITIL 4 year unknown; exp_2 company official name unverified",
-    "Authorization note: F-1 OPT (~1 year confirmed) + STEM OPT extension eligible but not yet filed = up to 3 years total runway. Only the 1-year OPT is confirmed in this record."
+    "Authorization note: F-1 student — OPT EAD not yet filed. Cannot state a runway figure until EAD is issued. STEM OPT extension is eligible but not yet confirmed with DSO and cannot be planned until initial OPT is approved."
   ]
 }

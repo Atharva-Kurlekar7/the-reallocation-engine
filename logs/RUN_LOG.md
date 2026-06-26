@@ -150,7 +150,7 @@ private emails, or sensitive application notes.
   1. ServiceNow CSA listed as an "excluded" credential but still present in the certifications array — removed entirely and moved to a `not_yet_obtained` block. Not an earned credential.
   2. Diploma qualification (3-year diploma, lateral entry) was missing from the education record. BE duration of 3 years is correct, but the prior diploma was not recorded. Added as `edu_3` with institution/dates flagged for verification.
   3. Metric percentages at FLO Group (30% error reduction, 20% onboarding reduction) were extracted as facts — confirmed as estimated, not measured from data. Noted inline in the relevant bullet points.
-- **Top gap from gaps.md:** No shipped AI/Gen AI project in a public repo (Gap A1, AI Engineer track) — OCI GenAI Professional cert demonstrates conceptual knowledge of LLMs and RAG, but all 3 sampled AI Engineer postings require a portfolio of working projects. Cert alone is not evidence. Closes when a public repo with a working RAG pipeline or deployed model exists.
+- **Top gap from gaps.md:** ServiceNow administration at CSA level (Gap B1, IT Systems Analyst track — primary) — 3 of 3 active target postings (IBM R-646296, HCLTech Admin, State Street R-790190) list ServiceNow as required or preferred. Current evidence is end-user ITSM experience only. Closes when CSA credential is issued.
 - **Field corrected in profile.yml from agent's first draft:**
   - Agent initially wrote `status: "F-1 OPT"` and `opt_end: "2027-08"`. Corrected to `status: "F-1 student"` and `opt_end: null` — OPT EAD has not been filed yet; graduation is August 2026 and application must be submitted immediately via DSO. A date on an un-issued card is not a fact.
   - `stem_end_potential` also nulled — STEM OPT cannot be planned until initial OPT is approved.
@@ -159,8 +159,14 @@ private emails, or sensitive application notes.
   - resume.json: All job entries traceable to lived experience. Metrics noted as estimated where applicable. Diploma institution/dates remain a TODO — do not treat as fully clean until those fields are filled.
   - profile.yml: OPT end date approximated — needs EAD verification before driving any engine gate. STEM field correctly marked uncertain/not-yet-filed.
   - gaps.md: All evidence citations point to BLS O*NET 15-1211 skill levels and a 3-posting sample. No gap is sourced solely from model inference without a checkable reference.
-- **Pending (assignment Step 3):** Kill one wrong row and rewrite one row in gaps.md — to be completed by student before submission.
-- **AI Use Disclosure:** Agent (Claude Sonnet) extracted and structured resume.json from master resume JSON, drafted profile.yml from stated constraints, and drafted gaps.md from BLS SOC data + posting sample. Student attested resume.json (found and corrected 3 errors), confirmed profile constraints, and is responsible for killing one gap row and rewriting one before submission.
+- **Gaps.md edits completed:**
+  - Killed row B2 (BRD/UAT ownership) — agent generated this from the generic O*NET 15-1211 Systems Analyst task list, but none of the actual target postings (IBM R-646296, HCLTech Admin, State Street R-790190) require BRD or UAT coordination; they are technical/implementation roles, not business analyst roles.
+  - Rewrote row A1 (no shipped AI project) in own words — the rewritten row distinguishes between having an OCI GenAI cert and being able to demonstrate working code in an interview; the plan closes only when a public GitHub repo with a running pipeline exists, not when another course is completed.
+- **Verification check (Step 4):**
+  - resume.json: All job entries traceable to lived experience. Metrics noted as estimated. Diploma institution/start date remain TODO — confirmed the agent's import missed the diploma entry entirely; that was a real extraction failure, not formatting.
+  - profile.yml: OPT end date set to null — EAD not yet filed; corrected from agent's initial "F-1 OPT" / "2027-08" which were fabricated from inference, not from a physical document.
+  - gaps.md: IT track evidence cites verifiable posting IDs (IBM R-646296, HCLTech Miami-Dade, State Street R-790190). AI track is aspirational; no active applications, so those gaps are forward-looking and noted as such in the file.
+- **AI Use Disclosure:** Agent (Claude Sonnet via Cursor) drafted all three files. The specific instance where the agent was confidently wrong: the agent wrote `"status": "F-1 OPT"` and `"opt_end": "2027-08"` in resume.json based on the phrase "F-1 OPT" in the source resume JSON — but I have not applied for my EAD yet and am still on F-1 student status. The agent inferred an active OPT from résumé language and fabricated an expiry date from an assumed one-year timeline. That required my knowledge of my own immigration documents to catch and correct.
 
 ## 2026-06-14 -- Rename MYCROFT.md → SNICKERDOODLE.md (constitution rebrand)
 

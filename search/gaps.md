@@ -1,16 +1,11 @@
 # search/gaps.md
-# Agent-drafted gap table — dual track: Applied AI / Gen AI Engineer (primary) + IT Systems Analyst (parallel)
-# Primary SOC: 15-2051 Data Scientists ($112,590 median) / 15-1252 Software Developers ($133,080 median)
-# Parallel SOC: 15-1211 Computer Systems Analysts ($103,790 median)
-# Cross-referenced against BLS/O*NET skill levels and 3-posting pattern analysis.
-# Updated 2026-06-25: AI Engineer track added as primary target.
-#
-# Assignment edits pending (by you):
-#   □ Kill one wrong row — delete it from the table, write one sentence below explaining why
-#   □ Rewrite one row in your own words
-# ---
+# Gap table — dual track: IT Systems Analyst (primary, active applications) + Applied AI / Gen AI Engineer (aspirational)
+# Primary SOC: 15-1211 Computer Systems Analysts ($103,790 median) — matches active_applications in profile.yml
+# Aspirational SOC: 15-2051 Data Scientists ($112,590 median) / 15-1252 Software Developers ($133,080 median)
+# Cross-referenced against BLS/O*NET skill levels and posting pattern analysis.
+# Attested and edited 2026-06-25: one row killed (B2), one row rewritten (A1).
 
-## Gap Table — AI Engineer Track (primary)
+## Gap Table — Applied AI / Gen AI Engineer Track (aspirational — no active applications yet)
 
 | # | Gap | Evidence the target demands it | What I have | Plan to close it |
 |---|-----|-------------------------------|-------------|-----------------|
@@ -22,7 +17,7 @@
 
 ---
 
-## Gap Table — IT Systems Analyst Track (parallel, still active)
+## Gap Table — IT Systems Analyst Track (primary — matches active applications)
 
 | # | Gap | Evidence the target demands it | What I have | Plan to close it |
 |---|-----|-------------------------------|-------------|-----------------|
@@ -51,7 +46,7 @@
 ## Notes
 
 - BLS source: `data/bls/compact/soc_occupation_compact.csv` pulled 2026-06-25.
-- AI Engineer posting sample: Oracle AI Associate program JD, IBM AI Engineer entry-level, one generic Gen AI Developer posting from LinkedIn (3-posting pattern, searched 2026-06-25).
-- IT Analyst posting sample: IBM R-646296, HCLTech Administrator Miami-Dade, State Street R-790190.
+- IT Analyst posting sample (primary track — verifiable): IBM R-646296, HCLTech Administrator Miami-Dade (applied), State Street R-790190 (applied).
+- AI Engineer posting sample (aspirational track): Oracle AI Associate program JD (https://www.oracle.com/careers/), IBM AI Engineer entry-level posting (searched LinkedIn 2026-06-25). Note: aspirational track has no active applications — gaps are forward-looking, not blocking current search.
 - Gaps close only when external evidence exists: a shipped project, a published piece, or a credential with an external issuer. "Took a course" is not a closing condition.
 - When a gap closes: add the credential/project to `resume.json`, delete the row here.
