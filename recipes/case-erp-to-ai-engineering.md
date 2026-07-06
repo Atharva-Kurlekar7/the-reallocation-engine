@@ -16,8 +16,9 @@ they have actually filed H-1B petitions for — separating companies that sponso
 applied-AI work (Machine Learning Engineer, Applied Scientist, Data Engineer)
 from those whose only AI filings are **PhD-gated research** (Research Scientist,
 Research Data Scientist). It then puts every shortlisted company through a
-**liveness gate** (is a posting actually open now?) and a **visa-timeline gate**
-before any application is recommended.
+**hiring-now gate** (`npm run ats:scan --dry-run` — posting must appear in scan
+yield on an enabled Greenhouse board) and a **visa-timeline gate** before any
+application is recommended.
 
 Use it when: you have transferable data/enterprise-systems experience, you need
 H-1B sponsorship, you do **not** have a research doctorate, and you cannot afford
@@ -146,7 +147,9 @@ Markdown is for a human deciding where to spend OPT time. Neither serves both.
 
 - Stop if the sponsor CSV is missing or lacks the title column — the mode refuses to guess (the filter script exits 2).
 - Stop if the roles JSON does not parse — no scoring on malformed evidence.
-- Stop and mark **Skip** if the liveness gate is CLOSED — a historical sponsor with no live posting is not an application target.
+- Stop and mark **Skip** if the hiring-now gate is CLOSED — a historical sponsor
+  with no posting in `ats:scan --dry-run` yield (or not on the enabled scan allowlist)
+  is not an application target.
 - Stop and mark **Skip** if the visa-timeline gate cannot be cleared.
 - Stop before any live ATS write, recruiter-policy claim, or immigration conclusion without the approval gate.
 

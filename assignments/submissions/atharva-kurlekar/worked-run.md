@@ -146,8 +146,8 @@ $ npm run score data/examples/erp-to-ai-roles.json
 | REDDIT — Senior ML Engineer | 0.346 | **Apply** | in scan yield |
 | TWILIO — Staff ML Engineer | 0.346 | **Apply** | in scan yield |
 | REDDIT — ML Eng Manager | 0.271 | **Consider** | in scan yield |
-| AMGEN — Data Engineer | 0.000 | **Skip** | board not scannable (enabled: false) |
-| QUANTIPHI — Sr ML Engineer | 0.000 | **Skip** | not in enabled scan config |
+| AMGEN — Data Engineer | 0.000 | **Skip** | not on scan allowlist (`enabled: false`) |
+| QUANTIPHI — Sr ML Engineer | 0.000 | **Skip** | not on scan allowlist |
 
 ## Verified vs inferred
 
@@ -160,7 +160,7 @@ $ npm run score data/examples/erp-to-ai-roles.json
 | Applied/research class, target SOC | **Inferred** | keyword heuristics |
 | fit.p | **Inferred (rubric-bound)** | Fit rubric in mode file |
 | Apply/Consider/Skip | **Derived** | Ch.11 scorer |
-| Amgen/Quantiphi liveness closed | **Verified absence** | not in enabled scan boards |
+| Amgen/Quantiphi hiring-now closed | **Not on scan allowlist** | Amgen `enabled:false` in portals.yml; Quantiphi not listed — scan never attempted, not verified absence of postings |
 
 ## Attestation
 
@@ -173,6 +173,7 @@ $ npm run score data/examples/erp-to-ai-roles.json
 | `ats:scan --dry-run` | 16 cos · 1,742 jobs · **341 yield** | hiring-now gate from API |
 | `npm run score` | Apply 3 / Consider 1 / Skip 2 | scorer on assembled roles |
 | **Break: missing CSV** | exit 2, no output | refuses to guess |
+| **Break: Amgen wage-in-title** | report flags `Data Engineer 20516.3745` | data-quality section catches CSV artifact |
 | **Break: malformed roles JSON** | scorer exit 1 | no score on bad evidence |
 
 ### Did not test

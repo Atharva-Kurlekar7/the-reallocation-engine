@@ -2,7 +2,7 @@
   "workflow": "case-erp-to-ai-engineering",
   "run_id": "case-erp-to-ai-engineering-20260706",
   "mode": "sample",
-  "generated_at": "2026-07-06T07:33:59",
+  "generated_at": "2026-07-06T19:04:54",
   "source_file": "data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv",
   "records_seen": 30369,
   "records_with_h1b_titles": 1557,
@@ -28,6 +28,7 @@
         "Sr. Software Engineer, Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -49,6 +50,7 @@
         "Data Scientist 2"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -70,6 +72,12 @@
         "Data Engineer 20516.3745"
       ],
       "research_titles": [],
+      "title_quality_flags": [
+        {
+          "raw_title": "Data Engineer 20516.3745",
+          "flag": "wage-like suffix `20516.3745` appended to title in source CSV \u2014 verify before trusting"
+        }
+      ],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -91,6 +99,7 @@
         "Data Engineer 2"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -112,6 +121,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -133,6 +143,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -155,6 +166,7 @@
         "Senior Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -176,6 +188,7 @@
         "Principal Machine Learning Engineer - Personalization"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -197,6 +210,7 @@
         "Machine Learning Engineer (L2)"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -219,6 +233,7 @@
         "Senior Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -240,6 +255,7 @@
         "Associate Manager \u2013 Data Engineering"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -262,6 +278,7 @@
         "DATA SCIENTIST III"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -285,6 +302,7 @@
         "Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -306,6 +324,7 @@
         "Software Engineer, Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -328,6 +347,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -349,6 +369,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -370,6 +391,7 @@
         "Marketing Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -391,6 +413,7 @@
         "Marketing Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -413,6 +436,7 @@
         "Senior Machine Learning Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -435,6 +459,7 @@
         "Engineering Manager, Machine Learning Systems"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -457,6 +482,7 @@
         "Machine Learning Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -478,6 +504,7 @@
         "Data Scientist, Product Analytics"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -499,6 +526,7 @@
         "Machine Learning Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -520,6 +548,7 @@
         "Manager, Data Engineering"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -542,6 +571,7 @@
         "Machine Learning Engineer II"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -563,6 +593,7 @@
         "Senior Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -584,6 +615,7 @@
         "Staff Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -605,6 +637,7 @@
         "Machine Learning Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -626,6 +659,7 @@
         "Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -647,6 +681,7 @@
         "Software Engineer, Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -668,6 +703,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -690,6 +726,7 @@
         "Machine Learning Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -711,6 +748,7 @@
         "Senior Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -732,6 +770,7 @@
         "Data Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -753,6 +792,7 @@
         "Machine Learning Operations Engineer II"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -774,6 +814,7 @@
         "Senior Machine Learning Engineer I"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -795,6 +836,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -817,6 +859,7 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -838,6 +881,7 @@
         "Senior Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -859,6 +903,7 @@
         "Senior Engineering Manager, Data Engineering"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -880,6 +925,7 @@
         "Lead Software Engineer - Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -902,6 +948,7 @@
         "Computer Vision Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -925,6 +972,7 @@
         "Machine Learning Engineer II"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -948,6 +996,7 @@
         "Machine Learning Engineer II"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -970,6 +1019,7 @@
         "Operations Research Analyst (Senior Data Scientist)"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -991,6 +1041,7 @@
         "Staff Software Engineer - Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -1013,6 +1064,7 @@
         "Senior Software Engineer - Machine Learning"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-2051",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": null,
@@ -1034,6 +1086,7 @@
         "Senior Machine Learning Scientist"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -1055,6 +1108,7 @@
         "Senior Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
@@ -1076,11 +1130,19 @@
         "Data Engineer"
       ],
       "research_titles": [],
+      "title_quality_flags": [],
       "target_soc": "15-1252",
       "target_soc_source": "model-judgment (title -> SOC heuristic)",
       "cognitive_pivot_score": 3.834,
       "cognitive_pivot_note": "verified (BLS/O*NET base occupation)",
       "score": 66.057
+    }
+  ],
+  "title_quality_flags": [
+    {
+      "company": "AMGEN INC",
+      "raw_title": "Data Engineer 20516.3745",
+      "flag": "wage-like suffix `20516.3745` appended to title in source CSV \u2014 verify before trusting"
     }
   ],
   "bls_source": "data/bls/compact/soc_occupation_compact.csv",

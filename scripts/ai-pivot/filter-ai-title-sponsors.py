@@ -31,6 +31,7 @@ import csv
 import datetime as dt
 import json
 import os
+import re
 import sys
 from typing import Dict, List, Optional, Tuple
 
@@ -78,6 +79,32 @@ RESEARCH_KEYWORDS = [
 # rule. The SOC assignment itself is a heuristic (inferred), not a verified code.
 SOC_DATA_SCIENTIST = "15-2051"   # Data Scientists (lists "Applied Scientist" as alt title)
 SOC_SOFTWARE_DEV = "15-1252"     # Software Developers (lists "AI Specialist" as alt title)
+
+# Known SEC+DOL join artifact: wage/salary values concatenated onto title strings
+# (e.g. "Data Engineer 20516.3745"). Flag for humans; strip suffix for display.
+WAGE_SUFFIX_RE = re.compile(r"^(.+?)\s+(\d{4,}(?:\.\d+)?)$")
+
+
+def clean_title_string(title: str) -> Tuple[str, Optional[str]]:
+    """Return (display_title, data_quality_flag)."""
+    t = title.strip()
+    m = WAGE_SUFFIX_RE.match(t)
+    if m:
+        return m.group(1).strip(), (
+            f"wage-like suffix `{m.group(2)}` appended to title in source CSV — verify before trusting"
+        )
+    return t, None
+
+
+def format_titles_for_report(titles: List[str]) -> str:
+    parts: List[str] = []
+    for t in titles[:2]:
+        display, flag = clean_title_string(t)
+        if flag:
+            parts.append(f"{display} ⚠")
+        else:
+            parts.append(display)
+    return "; ".join(parts)
 
 
 def title_to_soc(applied_titles: List[str]) -> str:
@@ -207,6 +234,11 @@ def run(csv_path: str, top: int, min_approvals: float,
             classes = [classify_title(t) for t in titles]
             applied_titles = [t for t, c in zip(titles, classes) if c == "applied"]
             research_titles = [t for t, c in zip(titles, classes) if c == "research"]
+            title_quality_flags = []
+            for t in applied_titles + research_titles:
+                _, flag = clean_title_string(t)
+                if flag:
+                    title_quality_flags.append({"raw_title": t, "flag": flag})
             cls = company_class(applied_titles, research_titles)
             if cls is None:
                 continue  # non-AI sponsor
@@ -243,6 +275,7 @@ def run(csv_path: str, top: int, min_approvals: float,
                 "funding_recency_years": recency,
                 "applied_titles": applied_titles,
                 "research_titles": research_titles,
+                "title_quality_flags": title_quality_flags,
                 "target_soc": target_soc,
                 "target_soc_source": "model-judgment (title -> SOC heuristic)",
                 "cognitive_pivot_score": cog_score,
@@ -258,6 +291,11 @@ def run(csv_path: str, top: int, min_approvals: float,
     applied_pool.sort(key=lambda r: r["score"], reverse=True)
     shortlist = applied_pool[:top]
 
+    all_quality_flags = []
+    for r in shortlist:
+        for q in r.get("title_quality_flags") or []:
+            all_quality_flags.append({"company": r["company"], **q})
+
     agent_log = {
         "workflow": WORKFLOW,
         "run_id": f"{WORKFLOW}-{date_str}",
@@ -272,6 +310,7 @@ def run(csv_path: str, top: int, min_approvals: float,
         "min_approvals": min_approvals,
         "shortlist_size": len(shortlist),
         "shortlist": shortlist,
+        "title_quality_flags": all_quality_flags,
         "bls_source": bls_path if bls_available else None,
         "bls_available": bls_available,
         "stop_conditions": [],
@@ -319,7 +358,7 @@ def run(csv_path: str, top: int, min_approvals: float,
     lines.append("| # | Company | Class | Approvals | Rate % | Median $ | Funding | SOC | Cog. pivot | Applied titles (sample) |")
     lines.append("|---|---------|-------|-----------|--------|----------|---------|-----|-----------|--------------------------|")
     for i, r in enumerate(shortlist, 1):
-        titles_sample = "; ".join(r["applied_titles"][:2])
+        titles_sample = format_titles_for_report(r["applied_titles"])
         rate = f"{r['approval_rate']:.0f}" if r["approval_rate"] is not None else "—"
         sal = f"{r['median_salary_offered']:,.0f}" if r["median_salary_offered"] is not None else "—"
         stage = r["latest_funding_stage"] or "—"
@@ -331,12 +370,23 @@ def run(csv_path: str, top: int, min_approvals: float,
             f"{rate} | {sal} | {stage} | {soc} | {cog_cell} | {titles_sample} |"
         )
     lines.append("")
+    if all_quality_flags:
+        lines.append("## Data quality flags (source CSV)")
+        lines.append("")
+        lines.append("These are **verified raw-field artifacts**, not inferred. Do not treat")
+        lines.append("numeric suffixes as part of the job title.")
+        lines.append("")
+        for q in all_quality_flags:
+            display, _ = clean_title_string(q["raw_title"])
+            lines.append(f"- **{q['company']}**: `{q['raw_title']}` → display as **{display}**; {q['flag']}")
+        lines.append("")
     lines.append("## Next gate")
     lines.append("")
     lines.append("This shortlist has cleared the sponsorship-title signal only. Before any")
-    lines.append("application, each company must clear the **liveness gate** (is a real")
-    lines.append("posting open now?) and the **visa-timeline gate**. Neither is a vote; both")
-    lines.append("are hard stops. See `recipes/case-erp-to-ai-engineering.md`.")
+    lines.append("application, each company must clear the **hiring-now gate** (`npm run ats:scan")
+    lines.append("--dry-run` on an enabled Greenhouse board — posting appears in scan yield)")
+    lines.append("and the **visa-timeline gate**. Neither is a vote; both are hard stops.")
+    lines.append("See `recipes/case-erp-to-ai-engineering.md`.")
     lines.append("")
     report_md = "\n".join(lines)
 

@@ -2,7 +2,7 @@
 
 - Run: `case-erp-to-ai-engineering-20260706` (mode: sample)
 - Source: `data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv`
-- Generated: 2026-07-06T07:33:59
+- Generated: 2026-07-06T19:04:54
 
 ## Run summary
 
@@ -29,7 +29,7 @@ not support. Where a SOC is unscored in BLS, it is flagged, not guessed.
 |---|---------|-------|-----------|--------|----------|---------|-----|-----------|--------------------------|
 | 1 | LINKEDIN CORP | applied | 4962 | 99 | 167,149 | Series D+ | 15-2051 | gap | Sr Data Scientist; Sr. Software Engineer, Machine Learning |
 | 2 | ICON TECHNOLOGY INC | applied | 2200 | 99 | 108,140 | Series C | 15-2051 | gap | Data Scientist 2 |
-| 3 | AMGEN INC | applied | 1882 | 99 | 120,000 | — | 15-1252 | 3.834 | Data Engineer 20516.3745 |
+| 3 | AMGEN INC | applied | 1882 | 99 | 120,000 | — | 15-1252 | 3.834 | Data Engineer ⚠ |
 | 4 | HUMAN INC | applied | 1382 | 99 | 132,078 | Series B | 15-1252 | 3.834 | Data Engineer 2 |
 | 5 | ZOOX INC | applied | 1364 | 99 | 158,080 | Series D+ | 15-1252 | 3.834 | Data Engineer |
 | 6 | DOCUSIGN INC | applied | 1082 | 99 | 172,107 | Series B | 15-1252 | 3.834 | Data Engineer |
@@ -78,9 +78,17 @@ not support. Where a SOC is unscored in BLS, it is flagged, not guessed.
 | 49 | YEXT INC | applied | 68 | 100 | 142,727 | Series C | 15-1252 | 3.834 | Senior Data Engineer |
 | 50 | EXABEAM INC | applied | 68 | 97 | 157,500 | Series B | 15-1252 | 3.834 | Data Engineer |
 
+## Data quality flags (source CSV)
+
+These are **verified raw-field artifacts**, not inferred. Do not treat
+numeric suffixes as part of the job title.
+
+- **AMGEN INC**: `Data Engineer 20516.3745` → display as **Data Engineer**; wage-like suffix `20516.3745` appended to title in source CSV — verify before trusting
+
 ## Next gate
 
 This shortlist has cleared the sponsorship-title signal only. Before any
-application, each company must clear the **liveness gate** (is a real
-posting open now?) and the **visa-timeline gate**. Neither is a vote; both
-are hard stops. See `recipes/case-erp-to-ai-engineering.md`.
+application, each company must clear the **hiring-now gate** (`npm run ats:scan
+--dry-run` on an enabled Greenhouse board — posting appears in scan yield)
+and the **visa-timeline gate**. Neither is a vote; both are hard stops.
+See `recipes/case-erp-to-ai-engineering.md`.
