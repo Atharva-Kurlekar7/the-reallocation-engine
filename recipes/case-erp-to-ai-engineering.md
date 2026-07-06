@@ -1,6 +1,6 @@
 ---
 status: RUNNABLE-SAMPLE
-todos_open: 5
+todos_open: 3
 last_gate: liveness
 attestation: null
 recipe_version: 0.1.0
@@ -31,7 +31,7 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 | Title-filing filter (this mode's core tool) | script | `python3 scripts/ai-pivot/filter-ai-title-sponsors.py` | Read the applied/research keyword taxonomy; the class is a heuristic, not a fact. |
 | Liveness gate wrapper | script | `node scripts/ai-pivot/liveness-gate.mjs --file <urls.txt>` | Reuses `scripts/ats/liveness-browser.mjs` (same logic as `npm run ats:liveness`). |
 | Bayesian role scorer | script | `npm run score <roles.json>` (`scripts/score/role-scorer.mjs`) | Combiner only; liveness/timeline are multiplicative gates. |
-| BLS/O*NET role quality | file (CSV) | `data/bls/compact/soc_occupation_compact.csv` | Cognitive-pivot score for applied-AI SOCs (15-2051, 15-1252). |
+| BLS/O*NET role quality | file (CSV) | `data/bls/compact/soc_occupation_compact.csv` | Base-occupation `cognitive_pivot_score` per SOC. The filter attaches it as an **advisory** column: 15-1252 (Software Developers) = 3.834; 15-2051 (Data Scientists) is **blank in the source** — surfaced as `gap`, not guessed. |
 
 ## Inputs
 
@@ -52,9 +52,24 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 - `[TODO: DATA SOURCE]` per-company live posting URLs feed. Justification: the liveness
   gate needs a real posting URL per shortlisted company; today those are supplied by
   hand. A scan-derived feed (`npm run ats:scan`) would close this.
-- `[TODO: DEFINE]` fit-score rubric for an ERP/AMS -> applied-AI transition, so `fit.p`
-  in the roles JSON stops being a bare model judgment.
 - `[TODO: APPROVE]` before any live ATS scan that writes application-tracker data.
+
+(The fit-score rubric that was previously a `[TODO: DEFINE]` is now specified below —
+see **Fit rubric** — so `fit.p` is a rubric lookup, not a bare model guess.)
+
+## Fit rubric (ERP/AMS → applied-AI pivot)
+
+Maps an ERP/application-support background (Oracle OTM, ServiceNow, SQL, L2/L3
+support) to a bounded `fit.p` for the scorer. Each role's `_provenance` in the
+roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model guess.
+
+| Target title pattern | fit.p | Rationale |
+|---|---|---|
+| Data Engineer | 0.60 | High: SQL + data pipelines + enterprise systems map directly |
+| ML Engineer / Software Engineer, ML | 0.45 | Medium: reachable from data/SQL foundation; needs a shipped ML project |
+| Applied Scientist / Data Scientist | 0.40 | Medium-low: closer to analytics than engineering for this background |
+| Engineering Manager (ML org) | 0.30 | Low: people-management of an ML org is not an IC pivot from support |
+| Research Scientist / PhD-gated | 0.10 | Closed door: no research doctorate; do not apply regardless of sponsorship |
 
 ## Phase Gates
 
@@ -71,26 +86,27 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 - That a company has an H-1B **approval history** and at what volume/rate (source CSV).
 - That its historically sponsored titles include **applied-AI** titles, not only research (title-string heuristic).
 - Whether a specific posting **URL is live right now** (liveness gate, real Playwright check).
+- The **BLS cognitive_pivot_score** for the mapped target SOC when the base occupation carries one in `data/bls/compact/soc_occupation_compact.csv` (advisory column only — not a gate vote).
 - The **arithmetic** of the Apply/Consider/Skip recommendation, term by term, with each term's source.
 
 ## What it CANNOT verify
 
 - That an **open** role today is the same applied title the company filed for in the past (history is not intent).
-- Whether a "Data Scientist" filing was applied ML or BI/analytics — needs JD-level review (`[TODO: DEV]`).
+- Whether a "Data Scientist" filing was applied ML or BI/analytics — needs the JD-level SOC classifier (see Proposed additions).
 - Whether a company that filed **both** applied and research titles has its *open* reqs gated on a PhD (the "mixed" class is optimistic).
 - Any immigration-law conclusion (STEM eligibility, cap-gap) — that is a DSO/attorney decision, never this mode's.
 
 ## Steps
 
 1. **Filter by title filings.** Labor: AI, no gate (read-only).
-   Script: `scripts/ai-pivot/filter-ai-title-sponsors.py`.
-   Output: shortlist JSON + Markdown report (applied/mixed sponsors ranked; research-gated excluded).
+   Script: `scripts/ai-pivot/filter-ai-title-sponsors.py` (reads H-1B CSV + BLS compact CSV).
+   Output: shortlist JSON + Markdown report (applied/mixed sponsors ranked; research-gated excluded; advisory SOC + cognitive_pivot_score column).
    Goes to: `logs/`, `reports/generated/`.
 2. **Liveness gate.** Labor: AI with human gate (network).
    Script: `scripts/ai-pivot/liveness-gate.mjs --file <urls.txt>`.
    Output: per-company gate log (PASS/CLOSED). Goes to: `logs/`.
 3. **Assemble role evidence.** Labor: human + AI.
-   Combine verified sponsorship (step 1) + verified liveness (step 2) + model-judged fit + your-input timeline into the Ch.11 role schema.
+   Combine verified sponsorship (step 1) + verified liveness (step 2) + **Fit rubric lookup** (above) + your-input timeline into the Ch.11 role schema.
    Output: `data/examples/erp-to-ai-roles.json`.
 4. **Score.** Labor: AI, deterministic.
    Command: `npm run score data/examples/erp-to-ai-roles.json`.

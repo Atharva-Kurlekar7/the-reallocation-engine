@@ -29,20 +29,25 @@ person most needs to see:
    companies that a naive "does it sponsor AI?" filter would have kept.
 
 2. **Whether a historically strong sponsor is actually hiring right now.** History
-   is not intent. The liveness gate turns a past-tense signal into a present-tense
-   one.
+   is not intent. The liveness gate checks real job-posting URLs (Greenhouse/Lever/
+   Ashby) — not careers landing pages — and only `active` clears the gate.
 
 ## Connection to the engine layers
 
-- **80 Days to Stay** — the mode is built directly on the SEC Form D + DOL/H-1B
-  mapped dataset (`data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv`),
-  reading approvals, approval rate, funding stage, and sponsored titles.
-- **Job-Ops** — the liveness gate reuses the repo's tested liveness checker
-  (`scripts/ats/liveness-browser.mjs`) to confirm a posting is live before it
-  counts.
-- **The Cognitive Pivot** — applied-AI SOCs (15-2051 Data Scientists, 15-1252
-  Software Developers) are the target occupations; role-quality scoring against
-  BLS/O*NET is the natural next weight once the JD-SOC classifier exists.
+- **80 Days to Stay** — the mode reads the SEC Form D + DOL/H-1B mapped dataset
+  (`data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv`): approvals, approval
+  rate, funding stage, and the job titles actually filed.
+- **Job-Ops** — the liveness gate reuses the repo's tested Playwright checker
+  (`scripts/ats/liveness-browser.mjs`, same logic as `npm run ats:liveness`).
+  In the 2026-07-06 run, three real Reddit Greenhouse postings passed; one
+  deliberately dead URL returned HTTP 404 and closed the gate.
+- **The Cognitive Pivot** — the filter reads `data/bls/compact/soc_occupation_compact.csv`
+  and attaches the base-occupation `cognitive_pivot_score` as an **advisory column**
+  in the shortlist report (not a gate vote — the book leaves the role_quality weight
+  unpinned). Verified: SOC 15-1252 (Software Developers) = **3.834**; SOC 15-2051
+  (Data Scientists) is **blank in the BLS source** and is surfaced as `gap`, not
+  guessed. That blank is itself a finding: the primary "Data Scientist" occupation
+  the mode targets has no cognitive score in the repo's verified data.
 
 ## Failure modes specific to this domain
 
@@ -55,12 +60,11 @@ stack signals in a JD, and who is therefore most likely to trust the title at fa
 value and burn an application. A domain expert or a working ML engineer would catch
 it in seconds; the person the mode is *for* is the one who can't.
 
-**2. "Mixed" sponsor whose open reqs are all research.** A company that has filed
-for both "ML Engineer" and "Research Scientist" is classed **mixed** and kept — but
-its *currently open* reqs may all be the PhD-gated ones. The mode's optimism here is
-invisible to someone without a PhD, who assumes any AI filing signals a door they
-can walk through. The person with the credential to catch this (a PhD, or an insider
-who knows the team's headcount) is precisely the person who doesn't need the mode;
-the person who needs it is the one it can mislead. This is why the mode marks
-liveness a hard gate and labels the applied/research class **inferred, not verified**
-in every artifact.
+**2. Historical H-1B volume mistaken for current hiring intent.**
+The filter ranks on *cumulative* approvals — LINKEDIN CORP shows 4,962 approvals
+and lands #1 — but that history says nothing about whether the company is hiring
+applied-AI roles *this month*. A career-changer reads "4,962 approvals" as "they
+hire a lot of people like me" and applies; only someone tracking recent req flow
+(or running the liveness gate on a real posting URL) catches that the signal is
+past-tense. The liveness gate mitigates this **only when a live posting exists**;
+without one, a top-ranked historical sponsor is still a Skip in the scorer.

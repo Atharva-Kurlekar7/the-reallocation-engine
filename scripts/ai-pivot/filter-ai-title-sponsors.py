@@ -35,6 +35,7 @@ import sys
 from typing import Dict, List, Optional, Tuple
 
 DEFAULT_CSV = "data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv"
+DEFAULT_BLS = "data/bls/compact/soc_occupation_compact.csv"
 WORKFLOW = "case-erp-to-ai-engineering"
 
 # Applied-AI engineering titles: the work an ERP/support engineer can pivot into
@@ -68,6 +69,41 @@ RESEARCH_KEYWORDS = [
     "staff research",
     "distinguished scientist",
 ]
+
+
+# Cognitive Pivot layer: map a company's dominant applied title to a BLS SOC so
+# we can attach the O*NET/BLS cognitive_pivot_score (Ch.9 role quality). This is
+# an ADVISORY annotation for the human, not a vote in the scorer — the book leaves
+# the role_quality weight unpinned, and inventing one would violate the honesty
+# rule. The SOC assignment itself is a heuristic (inferred), not a verified code.
+SOC_DATA_SCIENTIST = "15-2051"   # Data Scientists (lists "Applied Scientist" as alt title)
+SOC_SOFTWARE_DEV = "15-1252"     # Software Developers (lists "AI Specialist" as alt title)
+
+
+def title_to_soc(applied_titles: List[str]) -> str:
+    """Pick the dominant applied-AI SOC from a company's applied titles.
+    Data/Applied Scientist work -> 15-2051; ML/AI/SWE/data-engineering -> 15-1252."""
+    joined = " ".join(applied_titles).lower()
+    if "data scientist" in joined or "applied scientist" in joined:
+        return SOC_DATA_SCIENTIST
+    return SOC_SOFTWARE_DEV
+
+
+def load_cognitive_scores(bls_path: str) -> Dict[str, Optional[float]]:
+    """Read the base-occupation (.00) cognitive_pivot_score per BLS SOC.
+    A blank score in the source is preserved as None (a real data gap we surface
+    rather than guess) — e.g. 15-2051.00 Data Scientists is unscored in the source."""
+    scores: Dict[str, Optional[float]] = {}
+    if not os.path.exists(bls_path):
+        return scores
+    with open(bls_path, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            onet = (row.get("onet_soc_code") or "").strip()
+            soc = (row.get("bls_soc_code") or "").strip()
+            if not onet.endswith(".00") or not soc:
+                continue
+            scores[soc] = to_float(row.get("cognitive_pivot_score"))
+    return scores
 
 
 def classify_title(title: str) -> str:
@@ -146,13 +182,17 @@ def score_company(approvals: Optional[float], rate: Optional[float],
 
 
 def run(csv_path: str, top: int, min_approvals: float,
-        out_dir: str, date_str: str) -> Tuple[dict, str]:
+        out_dir: str, date_str: str, bls_path: str) -> Tuple[dict, str]:
     today = dt.date.today()
     rows_seen = 0
     rows_with_titles = 0
     applied_pool: List[dict] = []
     research_gated: List[dict] = []
     rejects = 0
+
+    # Cognitive Pivot layer (advisory): base-occupation cognitive scores by SOC.
+    cog_scores = load_cognitive_scores(bls_path)
+    bls_available = bool(cog_scores)
 
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -180,6 +220,16 @@ def run(csv_path: str, top: int, min_approvals: float,
                 rejects += 1
                 continue
 
+            target_soc = title_to_soc(applied_titles) if applied_titles else None
+            cog_score = cog_scores.get(target_soc) if target_soc else None
+            # Distinguish "not looked up" from "looked up but blank in source".
+            if target_soc and bls_available and cog_score is None:
+                cog_note = "unscored in BLS source (data gap — not guessed)"
+            elif not bls_available:
+                cog_note = "BLS source unavailable"
+            else:
+                cog_note = "verified (BLS/O*NET base occupation)"
+
             rec = {
                 "company": row.get("company_name", "").strip(),
                 "industry": row.get("industry", "").strip(),
@@ -193,6 +243,10 @@ def run(csv_path: str, top: int, min_approvals: float,
                 "funding_recency_years": recency,
                 "applied_titles": applied_titles,
                 "research_titles": research_titles,
+                "target_soc": target_soc,
+                "target_soc_source": "model-judgment (title -> SOC heuristic)",
+                "cognitive_pivot_score": cog_score,
+                "cognitive_pivot_note": cog_note,
                 "score": score_company(approvals, rate, len(applied_titles),
                                        len(research_titles), recency),
             }
@@ -218,6 +272,8 @@ def run(csv_path: str, top: int, min_approvals: float,
         "min_approvals": min_approvals,
         "shortlist_size": len(shortlist),
         "shortlist": shortlist,
+        "bls_source": bls_path if bls_available else None,
+        "bls_available": bls_available,
         "stop_conditions": [],
         "todo_items": [
             "[TODO: DEV] JD-level SOC classifier — title strings are not SOC codes",
@@ -226,8 +282,9 @@ def run(csv_path: str, top: int, min_approvals: float,
         "verified_fields": [
             "total_approvals", "approval_rate", "median_salary_offered",
             "latest_funding_stage", "latest_funding_date",
+            "cognitive_pivot_score (when present in BLS source)",
         ],
-        "inferred_fields": ["class", "score"],
+        "inferred_fields": ["class", "score", "target_soc"],
     }
 
     # Human report (Markdown)
@@ -249,20 +306,29 @@ def run(csv_path: str, top: int, min_approvals: float,
     lines.append("## Verified vs inferred")
     lines.append("")
     lines.append("- **Verified** (source CSV columns): approvals, approval rate, median salary, funding stage/date.")
-    lines.append("- **Inferred** (keyword judgment, not verified): the applied / research-gated / mixed **class** and the ranking **score**.")
+    lines.append("- **Verified** (BLS/O*NET source): `cognitive_pivot_score` when the base occupation carries one.")
+    lines.append("- **Inferred** (keyword judgment, not verified): the applied / research-gated / mixed **class**, the ranking **score**, and the **target SOC** mapping.")
+    lines.append("")
+    lines.append("Cognitive Pivot column is **advisory** (Ch.9 role quality): shown for the")
+    lines.append("human, not folded into any gate. The book leaves the role-quality weight")
+    lines.append("unpinned, so pretending it is a vote would invent a number the source does")
+    lines.append("not support. Where a SOC is unscored in BLS, it is flagged, not guessed.")
     lines.append("")
     lines.append(f"## Shortlist (top {len(shortlist)} applied-AI sponsors)")
     lines.append("")
-    lines.append("| # | Company | Class | Approvals | Rate % | Median $ | Funding | Applied titles (sample) |")
-    lines.append("|---|---------|-------|-----------|--------|----------|---------|--------------------------|")
+    lines.append("| # | Company | Class | Approvals | Rate % | Median $ | Funding | SOC | Cog. pivot | Applied titles (sample) |")
+    lines.append("|---|---------|-------|-----------|--------|----------|---------|-----|-----------|--------------------------|")
     for i, r in enumerate(shortlist, 1):
         titles_sample = "; ".join(r["applied_titles"][:2])
         rate = f"{r['approval_rate']:.0f}" if r["approval_rate"] is not None else "—"
         sal = f"{r['median_salary_offered']:,.0f}" if r["median_salary_offered"] is not None else "—"
         stage = r["latest_funding_stage"] or "—"
+        soc = r.get("target_soc") or "—"
+        cog = r.get("cognitive_pivot_score")
+        cog_cell = f"{cog:.3f}" if cog is not None else "gap"
         lines.append(
             f"| {i} | {r['company']} | {r['class']} | {r['total_approvals']:.0f} | "
-            f"{rate} | {sal} | {stage} | {titles_sample} |"
+            f"{rate} | {sal} | {stage} | {soc} | {cog_cell} | {titles_sample} |"
         )
     lines.append("")
     lines.append("## Next gate")
@@ -280,6 +346,7 @@ def run(csv_path: str, top: int, min_approvals: float,
 def main() -> int:
     ap = argparse.ArgumentParser(description="Rank H-1B employers by applied-AI title filings.")
     ap.add_argument("--csv", default=DEFAULT_CSV, help="Path to SEC+DOL H-1B mapped CSV")
+    ap.add_argument("--bls", default=DEFAULT_BLS, help="Path to BLS SOC compact CSV (cognitive scores)")
     ap.add_argument("--top", type=int, default=20, help="Shortlist size")
     ap.add_argument("--min-approvals", type=float, default=5.0, help="Minimum H-1B approvals")
     ap.add_argument("--out-dir", default="logs", help="Directory for the JSON agent log")
@@ -294,7 +361,7 @@ def main() -> int:
         return 2
 
     agent_log, report_md = run(args.csv, args.top, args.min_approvals,
-                               args.out_dir, args.date)
+                               args.out_dir, args.date, args.bls)
 
     os.makedirs(args.out_dir, exist_ok=True)
     os.makedirs(args.report_dir, exist_ok=True)
@@ -312,10 +379,16 @@ def main() -> int:
     print(f"Rejected (<{args.min_approvals:g} approvals): {agent_log['rejects_below_min_approvals']}")
     print(f"Shortlist size:          {agent_log['shortlist_size']}")
     print()
+    bls_state = agent_log['bls_source'] if agent_log['bls_available'] else "UNAVAILABLE"
+    print(f"BLS cognitive source:    {bls_state}")
+    print()
     print("Top 10 applied-AI sponsors by score:")
     for i, r in enumerate(agent_log["shortlist"][:10], 1):
-        print(f"  {i:2d}. {r['company'][:34]:34s} "
+        cog = r.get("cognitive_pivot_score")
+        cog_cell = f"{cog:.3f}" if cog is not None else "gap "
+        print(f"  {i:2d}. {r['company'][:30]:30s} "
               f"score={r['score']:8.2f}  approvals={r['total_approvals']:.0f}  "
+              f"SOC={r.get('target_soc') or '—'}  cog={cog_cell}  "
               f"class={r['class']}")
     print()
     print(f"Agent log:    {json_path}")

@@ -45,11 +45,10 @@ npm run score data/examples/erp-to-ai-roles.json
 
 ## 3:15–4:15 — One thing I learned from running it
 
-> "History is not a job opening. Reddit, Etsy, DocuSign are all proven applied-AI
-> sponsors with 99% approval rates — and all three scored **0.000 → Skip**, because
-> the liveness gate found nothing live to apply to. Without the gate I'd have spent
-> three applications on companies that weren't hiring. The gate multiplying to zero
-> is what makes that visible."
+> "History is not a job opening. Amgen has 1,882 approvals and DocuSign 1,082 — both
+> score **0.000 → Skip** because no live posting was confirmed. Without the gate I'd
+> waste applications on companies that aren't hiring. Three real Reddit Greenhouse
+> postings passed — that's 'hiring now' actually demonstrated."
 
 ## 4:15–5:00 — One honest limitation (what it cannot verify)
 
@@ -71,5 +70,7 @@ npm run score data/examples/erp-to-ai-roles.json
 
 ## Backup numbers (memorize)
 - 30,369 rows · 1,557 with H-1B title data · 160 applied/mixed · 22 research-gated excluded
-- Liveness: 1 PASS / 4 CLOSED · Score: Apply 1 / Consider 1 / Skip 3 (60% skip)
-- Airbnb composite 0.372 (Apply); gated companies 0.000 (Skip)
+- BLS cognitive: 15-1252 = 3.834 · 15-2051 = gap (blank in source, not guessed)
+- Liveness: 3 PASS (real Reddit Greenhouse postings) / 1 CLOSED (404 break)
+- Score: Apply 2 / Consider 1 / Skip 3 (50% skip)
+- Top Apply: Reddit Staff Data Engineer 0.382; Reddit ML Engineer 0.346

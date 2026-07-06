@@ -1,7 +1,7 @@
 {
   "_scorer": "bayesian-role-scorer",
   "_chapter": 11,
-  "generated": "2026-06-14",
+  "generated": "2026-07-06",
   "config": {
     "weights": {
       "sponsorship": 0.35,
@@ -20,32 +20,32 @@
   "profile_needs_sponsorship": true,
   "roles": [
     {
-      "role_id": "biotech-data",
-      "company": "Cambridge biotech (Ch.7)",
-      "title": "Data role (Proven tier)",
-      "composite": 0.4462,
+      "role_id": "reddit-staff-data-engineer",
+      "company": "REDDIT INC",
+      "title": "Staff Data Engineer",
+      "composite": 0.382,
       "recommendation": "Apply",
       "machine_recommendation": "Apply",
-      "reason": "composite 0.446 ≥ 0.3, gates healthy",
+      "reason": "composite 0.382 ≥ 0.3, gates healthy",
       "override": null,
       "trace": {
         "votes": [
           {
             "factor": "sponsorship",
-            "value": 0.9,
+            "value": 0.85,
             "weight": 0.35,
-            "contribution": 0.315,
+            "contribution": 0.2975,
             "source": "record"
           },
           {
             "factor": "fit",
-            "value": 0.7,
+            "value": 0.6,
             "weight": 0.3,
-            "contribution": 0.21,
+            "contribution": 0.18,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.525,
+        "vote_sum": 0.4775,
         "gates": [
           {
             "factor": "liveness",
@@ -54,41 +54,41 @@
           },
           {
             "factor": "timeline",
-            "multiplier": 0.85,
+            "multiplier": 0.8,
             "source": "your-input"
           }
         ],
-        "gate_product": 0.85,
-        "arithmetic": "(0.9·0.35 + 0.7·0.3) × 1 × 0.85 = 0.446"
+        "gate_product": 0.8,
+        "arithmetic": "(0.85·0.35 + 0.6·0.3) × 1 × 0.8 = 0.382"
       }
     },
     {
-      "role_id": "household-nonsponsor",
-      "company": "Household-name non-sponsor",
-      "title": "Same data role",
-      "composite": 0.1785,
-      "recommendation": "Skip",
-      "machine_recommendation": "Skip",
-      "reason": "composite 0.178 < 0.2 — time is better spent elsewhere",
+      "role_id": "reddit-ml-engineer",
+      "company": "REDDIT INC",
+      "title": "Machine Learning Engineer",
+      "composite": 0.346,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.346 ≥ 0.3, gates healthy",
       "override": null,
       "trace": {
         "votes": [
           {
             "factor": "sponsorship",
-            "value": 0,
+            "value": 0.85,
             "weight": 0.35,
-            "contribution": 0,
+            "contribution": 0.2975,
             "source": "record"
           },
           {
             "factor": "fit",
-            "value": 0.7,
+            "value": 0.45,
             "weight": 0.3,
-            "contribution": 0.21,
+            "contribution": 0.135,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.21,
+        "vote_sum": 0.4325,
         "gates": [
           {
             "factor": "liveness",
@@ -97,18 +97,61 @@
           },
           {
             "factor": "timeline",
-            "multiplier": 0.85,
+            "multiplier": 0.8,
             "source": "your-input"
           }
         ],
-        "gate_product": 0.85,
-        "arithmetic": "(0·0.35 + 0.7·0.3) × 1 × 0.85 = 0.178"
+        "gate_product": 0.8,
+        "arithmetic": "(0.85·0.35 + 0.45·0.3) × 1 × 0.8 = 0.346"
       }
     },
     {
-      "role_id": "ghost-posting",
-      "company": "Proven sponsor (ghost posting)",
-      "title": "Looks perfect, isn't real",
+      "role_id": "reddit-em-ads-ml",
+      "company": "REDDIT INC",
+      "title": "Engineering Manager, Ads ML Efficiency",
+      "composite": 0.2712,
+      "recommendation": "Consider",
+      "machine_recommendation": "Consider",
+      "reason": "composite 0.271 in the Consider band [0.2, 0.3)",
+      "override": null,
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.85,
+            "weight": 0.35,
+            "contribution": 0.2975,
+            "source": "record"
+          },
+          {
+            "factor": "fit",
+            "value": 0.3,
+            "weight": 0.3,
+            "contribution": 0.09,
+            "source": "model-judgment"
+          }
+        ],
+        "vote_sum": 0.3875,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1,
+            "source": "record"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.7,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.7,
+        "arithmetic": "(0.85·0.35 + 0.3·0.3) × 1 × 0.7 = 0.271"
+      }
+    },
+    {
+      "role_id": "docusign-data-engineer",
+      "company": "DOCUSIGN INC",
+      "title": "Data Engineer",
       "composite": 0,
       "recommendation": "Skip",
       "machine_recommendation": "Skip",
@@ -125,13 +168,13 @@
           },
           {
             "factor": "fit",
-            "value": 0.8,
+            "value": 0.55,
             "weight": 0.3,
-            "contribution": 0.24,
+            "contribution": 0.165,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.555,
+        "vote_sum": 0.48,
         "gates": [
           {
             "factor": "liveness",
@@ -140,22 +183,65 @@
           },
           {
             "factor": "timeline",
-            "multiplier": 0.85,
+            "multiplier": 0.8,
             "source": "your-input"
           }
         ],
         "gate_product": 0,
-        "arithmetic": "(0.9·0.35 + 0.8·0.3) × 0 × 0.85 = 0.000"
+        "arithmetic": "(0.9·0.35 + 0.55·0.3) × 0 × 0.8 = 0.000"
       }
     },
     {
-      "role_id": "likely-soft",
-      "company": "Likely-tier sponsor",
-      "title": "Strong but Likely not Proven",
-      "composite": 0.4185,
-      "recommendation": "Consider",
-      "machine_recommendation": "Consider",
-      "reason": "above threshold (0.418) but one soft spot: sponsorship tier \"Likely\"",
+      "role_id": "amgen-data-engineer",
+      "company": "AMGEN INC",
+      "title": "Data Engineer",
+      "composite": 0,
+      "recommendation": "Skip",
+      "machine_recommendation": "Skip",
+      "reason": "gated: liveness ≈ 0.000 (a closed gate zeroes the composite regardless of votes)",
+      "override": null,
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.9,
+            "weight": 0.35,
+            "contribution": 0.315,
+            "source": "record"
+          },
+          {
+            "factor": "fit",
+            "value": 0.55,
+            "weight": 0.3,
+            "contribution": 0.165,
+            "source": "model-judgment"
+          }
+        ],
+        "vote_sum": 0.48,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 0,
+            "source": "record"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.8,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0,
+        "arithmetic": "(0.9·0.35 + 0.55·0.3) × 0 × 0.8 = 0.000"
+      }
+    },
+    {
+      "role_id": "quantiphi-ml-engineer",
+      "company": "QUANTIPHI INC",
+      "title": "Senior Machine Learning Engineer",
+      "composite": 0,
+      "recommendation": "Skip",
+      "machine_recommendation": "Skip",
+      "reason": "gated: liveness ≈ 0.000 (a closed gate zeroes the composite regardless of votes)",
       "override": null,
       "trace": {
         "votes": [
@@ -168,73 +254,27 @@
           },
           {
             "factor": "fit",
-            "value": 0.85,
+            "value": 0.5,
             "weight": 0.3,
-            "contribution": 0.255,
+            "contribution": 0.15,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.465,
+        "vote_sum": 0.36,
         "gates": [
           {
             "factor": "liveness",
-            "multiplier": 1,
+            "multiplier": 0,
             "source": "record"
           },
           {
             "factor": "timeline",
-            "multiplier": 0.9,
+            "multiplier": 0.7,
             "source": "your-input"
           }
         ],
-        "gate_product": 0.9,
-        "arithmetic": "(0.6·0.35 + 0.85·0.3) × 1 × 0.9 = 0.418"
-      }
-    },
-    {
-      "role_id": "override-demo",
-      "company": "Non-sponsor, but HM is a contact",
-      "title": "Scorer says Skip, you know better",
-      "composite": 0.1934,
-      "recommendation": "Apply",
-      "machine_recommendation": "Skip",
-      "reason": "composite 0.193 < 0.2 — time is better spent elsewhere",
-      "override": {
-        "decision": "Apply",
-        "reason": "Hiring manager told me directly they are interviewing and the company started sponsoring last month; LCA record lags."
-      },
-      "trace": {
-        "votes": [
-          {
-            "factor": "sponsorship",
-            "value": 0.05,
-            "weight": 0.35,
-            "contribution": 0.0175,
-            "source": "record"
-          },
-          {
-            "factor": "fit",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21,
-            "source": "model-judgment"
-          }
-        ],
-        "vote_sum": 0.2275,
-        "gates": [
-          {
-            "factor": "liveness",
-            "multiplier": 1,
-            "source": "record"
-          },
-          {
-            "factor": "timeline",
-            "multiplier": 0.85,
-            "source": "your-input"
-          }
-        ],
-        "gate_product": 0.85,
-        "arithmetic": "(0.05·0.35 + 0.7·0.3) × 1 × 0.85 = 0.193"
+        "gate_product": 0,
+        "arithmetic": "(0.6·0.35 + 0.5·0.3) × 0 × 0.7 = 0.000"
       }
     }
   ]

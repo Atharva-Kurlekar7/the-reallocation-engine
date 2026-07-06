@@ -1,9 +1,11 @@
 # Liveness-gate input for the ERP-to-AI Engineering mode.
-# Format: Company Name | job-posting-or-careers URL
-# Companies drawn from the applied-AI sponsor shortlist (filter-ai-title-sponsors.py).
-# The last entry is a deliberately dead URL to exercise the gate (break attempt).
-Airbnb | https://careers.airbnb.com/positions/
-Reddit | https://www.redditinc.com/careers
-Etsy | https://careers.etsy.com/
-DocuSign | https://careers.docusign.com/
-DEAD-POSTING (break attempt) | https://boards.greenhouse.io/embed/job_app?for=doesnotexist12345&token=00000000
+# Format: Company Name (role) | job-posting URL
+# Company drawn from the applied-AI sponsor shortlist (filter-ai-title-sponsors.py):
+# REDDIT INC — 408 H-1B approvals, 97% rate, applied-AI titles.
+# URLs are real, currently-open Greenhouse postings (sourced 2026-07-06 via the
+# Greenhouse public boards API). The last entry is a deliberately dead URL
+# (nonexistent board) to exercise the gate — break attempt.
+Reddit (Machine Learning Engineer) | https://job-boards.greenhouse.io/reddit/jobs/8026401
+Reddit (Eng Manager, Ads ML Efficiency) | https://job-boards.greenhouse.io/reddit/jobs/8022366
+Reddit (Staff Data Engineer) | https://job-boards.greenhouse.io/reddit/jobs/8039702
+DEAD-POSTING (break attempt) | https://job-boards.greenhouse.io/thiscompanydoesnotexist99999/jobs/1
