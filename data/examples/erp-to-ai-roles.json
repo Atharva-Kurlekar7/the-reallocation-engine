@@ -1,0 +1,51 @@
+[
+  {
+    "role_id": "airbnb-ds",
+    "company": "AIRBNB INC",
+    "title": "Data Scientist / Senior Data Scientist",
+    "_provenance": "sponsorship from SEC_DOL_H1b_data_mapped.csv (1000 approvals, 99% rate, applied titles); liveness from liveness-gate.mjs run 2026-07-06 (careers.airbnb.com/positions/ = active); fit is model-judgment for an ERP/AMS -> applied-AI pivot; timeline your-input (F-1, OPT not yet filed).",
+    "sponsorship": { "p": 0.9, "tier": "Proven", "source": "record" },
+    "fit": { "p": 0.5, "source": "model-judgment" },
+    "liveness": { "factor": 1.0, "source": "record" },
+    "timeline": { "factor": 0.8, "source": "your-input" }
+  },
+  {
+    "role_id": "reddit-swe-ml",
+    "company": "REDDIT INC",
+    "title": "Software Engineer, Machine Learning",
+    "_provenance": "sponsorship from CSV (408 approvals, 97% rate); liveness from gate run (redditinc.com/careers = uncertain, no visible apply control) -> gate closed.",
+    "sponsorship": { "p": 0.85, "tier": "Proven", "source": "record" },
+    "fit": { "p": 0.45, "source": "model-judgment" },
+    "liveness": { "factor": 0.0, "source": "record" },
+    "timeline": { "factor": 0.8, "source": "your-input" }
+  },
+  {
+    "role_id": "etsy-swe-ml",
+    "company": "ETSY INC",
+    "title": "Senior Software Engineer I, Machine Learning",
+    "_provenance": "sponsorship from CSV (222 approvals, 99% rate); liveness from gate run (careers.etsy.com = uncertain) -> gate closed.",
+    "sponsorship": { "p": 0.85, "tier": "Proven", "source": "record" },
+    "fit": { "p": 0.4, "source": "model-judgment" },
+    "liveness": { "factor": 0.0, "source": "record" },
+    "timeline": { "factor": 0.8, "source": "your-input" }
+  },
+  {
+    "role_id": "docusign-de",
+    "company": "DOCUSIGN INC",
+    "title": "Data Engineer",
+    "_provenance": "sponsorship from CSV (1082 approvals, 99% rate); liveness from gate run (careers.docusign.com = expired, nav/footer only) -> gate closed. Data Engineer is the closest fit to an ERP/SQL background.",
+    "sponsorship": { "p": 0.9, "tier": "Proven", "source": "record" },
+    "fit": { "p": 0.55, "source": "model-judgment" },
+    "liveness": { "factor": 0.0, "source": "record" },
+    "timeline": { "factor": 0.8, "source": "your-input" }
+  },
+  {
+    "role_id": "quantiphi-mle",
+    "company": "QUANTIPHI INC",
+    "title": "Senior Machine Learning Engineer",
+    "_provenance": "sponsorship from CSV (270 approvals, 96% rate, Series A). NOT liveness-checked in this run: liveness left unset (defaults to 1.0) and timeline lowered to reflect the unverified posting. This role is deliberately included to show a Consider-band result and to be honest that its liveness is UNVERIFIED.",
+    "sponsorship": { "p": 0.6, "tier": "Likely", "source": "record" },
+    "fit": { "p": 0.5, "source": "model-judgment" },
+    "timeline": { "factor": 0.7, "source": "your-input" }
+  }
+]
