@@ -1,0 +1,176 @@
+# Example portals config for the ERP-to-AI Engineering mode (tracked sample).
+#
+#   REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
+#     npm run ats:scan -- --dry-run
+#
+# Enabled companies are drawn from the applied-AI H-1B shortlist (filter script)
+# and verified to expose a Greenhouse JSON API. Scanner support: greenhouse ·
+# lever · ashby only. Amazon/Apple/Google/Infosys/TCS use Workday/proprietary
+# portals — listed with enabled: false until a provider exists.
+
+title_filter:
+  positive:
+    - "Machine Learning"
+    - "ML Engineer"
+    - "Data Engineer"
+    - "Data Scientist"
+    - "Software Engineer"
+    - "Applied"
+    - "AI"
+  negative:
+    - "Intern"
+    - "Volunteer"
+    - "Research Scientist"
+    - "PhD"
+
+location_filter:
+  always_allow:
+    - "United States"
+    - "USA"
+  allow:
+    - "United States"
+    - "USA"
+    - "Remote"
+
+tracked_companies:
+  # ── Applied-AI H-1B shortlist + Greenhouse (scannable) ────────────
+
+  - name: LinkedIn
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/linkedin
+    # H-1B: LINKEDIN CORP — 4,962 approvals; Sr Data Scientist, Sr SWE ML
+
+  - name: Airbnb
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/airbnb
+    # H-1B: AIRBNB INC — 1,000 approvals; Data Scientist
+
+  - name: Roblox
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/roblox
+    # H-1B: ROBLOX CORP — 856 approvals; Principal ML Engineer
+
+  - name: Twilio
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/twilio
+    # H-1B: TWILIO INC — 802 approvals; ML Engineer (L2)
+
+  - name: Roku
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/roku
+    # H-1B: ROKU INC — 654 approvals; Senior Data Scientist
+
+  - name: Reddit
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/reddit
+    # H-1B: REDDIT INC — 408 approvals; SWE Machine Learning
+
+  - name: Instacart
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/instacart
+    # H-1B: MAPLEBEAR INC — 498 approvals; Senior ML Engineer
+
+  - name: Upstart
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/upstart
+    # H-1B: UPSTART NETWORK INC — 316 approvals; Data Engineer
+
+  - name: Peloton
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/peloton
+    # H-1B: PELOTON INTERACTIVE INC — 310 approvals; Marketing Data Scientist
+
+  - name: Figma
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/figma
+    # H-1B: FIGMA INC — 188 approvals; Data Scientist, Product Analytics
+
+  - name: Moloco
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/moloco
+    # H-1B: MOLOCO INC — 200 approvals; Staff Data Scientist, ML Engineer II
+
+  - name: Discord
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/discord
+    # H-1B: DISCORD INC — 122 approvals; SWE Machine Learning
+
+  - name: Nextdoor
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/nextdoor
+    # H-1B: NEXTDOOR INC — 222 approvals; Data Scientist, ML Engineer
+
+  - name: Applovin
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/applovin
+    # H-1B: APPLOVIN CORP — 130 approvals; ML Engineer
+
+  - name: PathAI
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/pathai
+    # H-1B: PATHAI INC — 78 approvals; Senior ML Engineer, MLOps
+
+  - name: Yext
+    enabled: true
+    provider: greenhouse
+    careers_url: https://job-boards.greenhouse.io/yext
+    # H-1B: YEXT INC — 68 approvals; Senior Data Engineer
+
+  # ── US career portals — not scannable yet (Workday / proprietary) ─
+
+  - name: Amazon US
+    enabled: false
+    careers_url: https://www.amazon.jobs/en/search?base_query=machine%20learning&loc_query=United%20States
+
+  - name: Apple US
+    enabled: false
+    careers_url: https://jobs.apple.com/en-us/search?search=machine%20learning&location=united-states-USA
+
+  - name: Google US
+    enabled: false
+    careers_url: https://careers.google.com/jobs/results/?location=United%20States&q=machine%20learning
+
+  - name: Infosys US
+    enabled: false
+    careers_url: https://digitalcareers.infosys.com/infosys/global-careers
+
+  - name: TCS US
+    enabled: false
+    careers_url: https://ibegin.tcsapps.com/candidate
+
+  # ── Shortlist but no Greenhouse board found (disabled) ────────────
+
+  - name: Amgen
+    enabled: false
+    careers_url: https://careers.amgen.com/
+    # H-1B: AMGEN INC — 1,882 approvals; no greenhouse/lever/ashby API
+
+  - name: DocuSign
+    enabled: false
+    careers_url: https://careers.docusign.com/
+    # H-1B: DOCUSIGN INC — 1,082 approvals; no greenhouse API
+
+  - name: Zoox
+    enabled: false
+    careers_url: https://zoox.com/careers
+    # H-1B: ZOOX INC — 1,364 approvals; Amazon subsidiary, custom ATS
+
+  - name: Etsy
+    enabled: false
+    careers_url: https://careers.etsy.com/
+    # H-1B: ETSY INC — 222 approvals; ML titles filed but no greenhouse slug

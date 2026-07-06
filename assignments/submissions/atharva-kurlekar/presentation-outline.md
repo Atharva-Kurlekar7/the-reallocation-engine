@@ -28,49 +28,45 @@ Run these three, talking over them:
 ```bash
 python3 scripts/ai-pivot/filter-ai-title-sponsors.py --top 20 --min-approvals 5
 ```
-> "30,369 companies → 160 that sponsor applied-AI titles. It **excluded 22** that
-> only file for research scientists — those a naive 'does it sponsor AI?' filter
-> would have kept."
+> "30K companies → 160 applied-AI sponsors. 22 research-only excluded."
 
 ```bash
-node scripts/ai-pivot/liveness-gate.mjs --file data/examples/erp-to-ai-liveness-urls.txt
+REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
+  npm run ats:scan -- --dry-run
 ```
-> "This is the gate. 1 passes, 4 close — including a dead posting that 404s."
+> "16 Greenhouse boards from the H-1B shortlist → 1,742 jobs → 341 applied-AI
+> matches. This is hiring now — from the ATS API, not hand URLs."
 
 ```bash
 npm run score data/examples/erp-to-ai-roles.json
 ```
-> "Apply 1, Consider 1, Skip 3. The three skips are strong sponsors — but the
-> liveness gate zeroed them because there's no live posting. Skip is the point."
+> "Apply 2 · Consider 1 · Skip 3."
 
 ## 3:15–4:15 — One thing I learned from running it
 
 > "History is not a job opening. Amgen has 1,882 approvals and DocuSign 1,082 — both
-> score **0.000 → Skip** because no live posting was confirmed. Without the gate I'd
-> waste applications on companies that aren't hiring. Three real Reddit Greenhouse
-> postings passed — that's 'hiring now' actually demonstrated."
+> score **0.000 → Skip** because they aren't on a scannable Greenhouse board. Without
+> the scan gate I'd waste applications on companies I can't confirm are hiring now.
+> Airbnb alone returned dozens of live ML/Data Scientist reqs in the dry-run."
 
 ## 4:15–5:00 — One honest limitation (what it cannot verify)
 
-> "It classifies by the **title string**. 'Data Scientist' gets treated as applied ML
-> even if it's really BI/analytics — and the person most likely to be fooled by that
-> is exactly who the mode is for: a career-changer who can't yet read a JD. That's why
-> I marked it **RUNNABLE-SAMPLE, not VERIFIED**, labeled the class 'inferred' in every
-> artifact, and my top next step is a JD-to-SOC classifier so the split is grounded in
-> the posting, not the title."
+> "The scan only reads Greenhouse/Lever/Ashby APIs. Amazon, Apple, Google, Infosys,
+> and TCS are in my config but disabled — Workday/proprietary portals need a provider
+> we don't have yet. And it classifies by the **title string** — 'Data Scientist' can
+> mean applied ML or BI analytics. That's why this is **RUNNABLE-SAMPLE, not VERIFIED**."
 
 ---
 
 ## If asked "why RUNNABLE-SAMPLE not VERIFIED?"
-> "The filter and scorer really run on real data, and liveness is a real live check —
-> but I only liveness-checked 4 of 20 companies, the applied/research split is a
-> keyword heuristic, and I fed careers landing pages instead of per-posting URLs.
-> Calling it VERIFIED would be the exact fluency-over-evidence failure this course
-> is about."
+> "The filter and scorer really run on real data, and the ATS scan really hit 16
+> Greenhouse boards — but the applied/research split is a keyword heuristic, big-tech
+> portals aren't scannable yet, and title strings aren't SOC codes. Calling it VERIFIED
+> would be the exact fluency-over-evidence failure this course is about."
 
 ## Backup numbers (memorize)
 - 30,369 rows · 1,557 with H-1B title data · 160 applied/mixed · 22 research-gated excluded
 - BLS cognitive: 15-1252 = 3.834 · 15-2051 = gap (blank in source, not guessed)
-- Liveness: 3 PASS (real Reddit Greenhouse postings) / 1 CLOSED (404 break)
+- ATS scan: 16 companies · 1,742 jobs found · 341 applied-AI yield (dry-run)
 - Score: Apply 2 / Consider 1 / Skip 3 (50% skip)
-- Top Apply: Reddit Staff Data Engineer 0.382; Reddit ML Engineer 0.346
+- Top Apply: Reddit Staff Data Engineer 0.382; Reddit Senior ML Engineer 0.346

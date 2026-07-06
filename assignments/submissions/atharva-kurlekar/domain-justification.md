@@ -29,18 +29,19 @@ person most needs to see:
    companies that a naive "does it sponsor AI?" filter would have kept.
 
 2. **Whether a historically strong sponsor is actually hiring right now.** History
-   is not intent. The liveness gate checks real job-posting URLs (Greenhouse/Lever/
-   Ashby) — not careers landing pages — and only `active` clears the gate.
+   is not intent. `npm run ats:scan` queries each company's ATS API (Greenhouse/Lever/
+   Ashby), filters to applied-AI title keywords, and with `--verify` runs Playwright
+   liveness on each surviving posting — only verified-active clears the gate.
 
 ## Connection to the engine layers
 
 - **80 Days to Stay** — the mode reads the SEC Form D + DOL/H-1B mapped dataset
   (`data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv`): approvals, approval
   rate, funding stage, and the job titles actually filed.
-- **Job-Ops** — the liveness gate reuses the repo's tested Playwright checker
-  (`scripts/ats/liveness-browser.mjs`, same logic as `npm run ats:liveness`).
-  In the 2026-07-06 run, three real Reddit Greenhouse postings passed; one
-  deliberately dead URL returned HTTP 404 and closed the gate.
+- **Job-Ops** — `npm run ats:scan` reads `data/examples/erp-to-ai-portals.yml`,
+  queries Greenhouse APIs for **16 applied-AI H-1B shortlist companies**, filters to
+  applied-AI titles, and with `--verify` runs Playwright liveness on each posting.
+  The 2026-07-06 dry-run: **1,742 jobs → 341 yield**; Reddit-only verify: **51/51 active**.
 - **The Cognitive Pivot** — the filter reads `data/bls/compact/soc_occupation_compact.csv`
   and attaches the base-occupation `cognitive_pivot_score` as an **advisory column**
   in the shortlist report (not a gate vote — the book leaves the role_quality weight
@@ -65,6 +66,6 @@ The filter ranks on *cumulative* approvals — LINKEDIN CORP shows 4,962 approva
 and lands #1 — but that history says nothing about whether the company is hiring
 applied-AI roles *this month*. A career-changer reads "4,962 approvals" as "they
 hire a lot of people like me" and applies; only someone tracking recent req flow
-(or running the liveness gate on a real posting URL) catches that the signal is
-past-tense. The liveness gate mitigates this **only when a live posting exists**;
+(or running `npm run ats:scan -- --verify` on a configured portal) catches that the signal is
+past-tense. The scan mitigates this **only when a verified live posting exists**;
 without one, a top-ranked historical sponsor is still a Skip in the scorer.

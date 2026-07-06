@@ -180,6 +180,15 @@ private emails, or sensitive application notes.
   - What I did: I ran the attestation pass and found three real errors — the CSA cert that was present but not earned, the missing diploma qualification, and the estimated metrics stated as measured facts. I corrected the visa status section in both `resume.json` and `profile.yml`. I killed gap row B2 because I know the actual postings I applied to don't require BRD work. I rewrote gap row A1 in my own words.
   - What the agent could not do: The agent read "F-1 OPT" in my source résumé JSON and confidently wrote `"status": "F-1 OPT"` and `"opt_end": "2027-08"` in `resume.json` — inferring an active OPT and fabricating an expiry date from an assumed one-year timeline. I have not filed for my EAD yet and am still on F-1 student status. That error required knowledge of my own immigration documents, which the agent does not have access to. An undetected fabricated gate date in `profile.yml` would have caused the Bayesian scorer to treat roles as Apply-eligible on a timeline I cannot legally support.
 
+## 2026-07-06 -- ERP-to-AI Engineering triage (sample mode, ats:scan + verify, BLS cognitive advisory)
+
+- **Recipe:** `case-erp-to-ai-engineering` v0.1.0 (RUNNABLE-SAMPLE)
+- **Inputs:** H-1B mapped CSV (30,369 rows); BLS compact CSV; `data/examples/erp-to-ai-portals.yml` (16 Greenhouse boards); 6 roles in roles.json.
+- **Commands:** `npm run verify`; `npm run doctor`; filter-ai-title-sponsors.py; `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run`; same + `--verify --company Reddit`; `npm run score`.
+- **Result:** 160 applied/mixed sponsors; scan 1,742 jobs → 341 yield (16 Greenhouse boards). Score Apply 2 / Consider 1 / Skip 3 (50% skip).
+- **Gates:** source PASS; hiring-now via ats:scan --dry-run; Fit rubric in mode file.
+- **No private data.**
+
 ## 2026-06-14 -- Rename MYCROFT.md → SNICKERDOODLE.md (constitution rebrand)
 
 - **Why:** disambiguate this repo's constitution from the shared **Mycroft** agent-OS frame it was forked from. Renamed to a cookie-recipe name fitting the book's "recipe" vocabulary.

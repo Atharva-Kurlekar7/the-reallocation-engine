@@ -277,7 +277,7 @@ def run(csv_path: str, top: int, min_approvals: float,
         "stop_conditions": [],
         "todo_items": [
             "[TODO: DEV] JD-level SOC classifier — title strings are not SOC codes",
-            "[TODO: DATA SOURCE] live job-posting URLs per company for the liveness gate",
+            "[TODO: APPROVE] live ats:scan without --dry-run (writes to data/ats/pipeline.md)",
         ],
         "verified_fields": [
             "total_approvals", "approval_rate", "median_salary_offered",

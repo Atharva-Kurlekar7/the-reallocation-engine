@@ -22,7 +22,7 @@
     {
       "role_id": "reddit-staff-data-engineer",
       "company": "REDDIT INC",
-      "title": "Staff Data Engineer",
+      "title": "Staff Data Engineer, Corporate Engineering",
       "composite": 0.382,
       "recommendation": "Apply",
       "machine_recommendation": "Apply",
@@ -63,9 +63,9 @@
       }
     },
     {
-      "role_id": "reddit-ml-engineer",
+      "role_id": "reddit-senior-ml-engineer",
       "company": "REDDIT INC",
-      "title": "Machine Learning Engineer",
+      "title": "Senior Machine Learning Engineer",
       "composite": 0.346,
       "recommendation": "Apply",
       "machine_recommendation": "Apply",
@@ -106,9 +106,9 @@
       }
     },
     {
-      "role_id": "reddit-em-ads-ml",
+      "role_id": "reddit-ml-eng-manager",
       "company": "REDDIT INC",
-      "title": "Engineering Manager, Ads ML Efficiency",
+      "title": "Machine Learning Engineering Manager - Ads Engagement Modeling",
       "composite": 0.2712,
       "recommendation": "Consider",
       "machine_recommendation": "Consider",
@@ -149,9 +149,9 @@
       }
     },
     {
-      "role_id": "docusign-data-engineer",
-      "company": "DOCUSIGN INC",
-      "title": "Data Engineer",
+      "role_id": "twilio-staff-ml-engineer",
+      "company": "TWILIO INC",
+      "title": "Staff Machine Learning Engineer",
       "composite": 0,
       "recommendation": "Skip",
       "machine_recommendation": "Skip",
@@ -161,20 +161,20 @@
         "votes": [
           {
             "factor": "sponsorship",
-            "value": 0.9,
+            "value": 0.85,
             "weight": 0.35,
-            "contribution": 0.315,
+            "contribution": 0.2975,
             "source": "record"
           },
           {
             "factor": "fit",
-            "value": 0.55,
+            "value": 0.45,
             "weight": 0.3,
-            "contribution": 0.165,
+            "contribution": 0.135,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.48,
+        "vote_sum": 0.4325,
         "gates": [
           {
             "factor": "liveness",
@@ -188,7 +188,7 @@
           }
         ],
         "gate_product": 0,
-        "arithmetic": "(0.9·0.35 + 0.55·0.3) × 0 × 0.8 = 0.000"
+        "arithmetic": "(0.85·0.35 + 0.45·0.3) × 0 × 0.8 = 0.000"
       }
     },
     {

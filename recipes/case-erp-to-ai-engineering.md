@@ -29,7 +29,7 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 |---|---|---|---|
 | SEC+DOL H-1B mapped dataset | file (CSV) | `data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv` | Confirm the `top_job_titles_sponsored`, `Total Approvals`, `Approval_Rate`, `latest_funding_*` columns are present. |
 | Title-filing filter (this mode's core tool) | script | `python3 scripts/ai-pivot/filter-ai-title-sponsors.py` | Read the applied/research keyword taxonomy; the class is a heuristic, not a fact. |
-| Liveness gate wrapper | script | `node scripts/ai-pivot/liveness-gate.mjs --file <urls.txt>` | Reuses `scripts/ats/liveness-browser.mjs` (same logic as `npm run ats:liveness`). |
+| ATS portal scan (Job-Ops — hiring now) | script | `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run` | Fetches live postings from Greenhouse/Lever/Ashby APIs; use `--verify` for Playwright liveness inside the scan. Sample config: `data/examples/erp-to-ai-portals.yml`. |
 | Bayesian role scorer | script | `npm run score <roles.json>` (`scripts/score/role-scorer.mjs`) | Combiner only; liveness/timeline are multiplicative gates. |
 | BLS/O*NET role quality | file (CSV) | `data/bls/compact/soc_occupation_compact.csv` | Base-occupation `cognitive_pivot_score` per SOC. The filter attaches it as an **advisory** column: 15-1252 (Software Developers) = 3.834; 15-2051 (Data Scientists) is **blank in the source** — surfaced as `gap`, not guessed. |
 
@@ -39,7 +39,8 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 |---|---|---|---|
 | sponsor_dataset | CSV path | `data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv` | Yes |
 | min_approvals | int | run flag `--min-approvals` (default 5) | No |
-| liveness_urls | text file | `Company | posting-URL` per line (e.g. `data/examples/erp-to-ai-liveness-urls.txt`) | Yes for the liveness gate |
+| liveness_urls | text file | Not required when using `npm run ats:scan` — the scan discovers posting URLs from ATS APIs. Optional legacy: `Company \| posting-URL` per line. | No (scan replaces hand URLs) |
+| portals_config | YAML | `data/examples/erp-to-ai-portals.yml` (copy to `data/ats/portals.yml` for personal runs) | Yes for the scan step |
 | roles_evidence | JSON | derived shortlist in the Ch.11 role-evidence schema (e.g. `data/examples/erp-to-ai-roles.json`) | Yes for scoring |
 
 ## Proposed additions
@@ -49,13 +50,13 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
   Justification: a title like "Data Scientist" spans SOC 15-2051 (applied) and pure BI
   analytics; only the JD disambiguates. Belongs here because the whole mode turns on
   that distinction.
-- `[TODO: DATA SOURCE]` per-company live posting URLs feed. Justification: the liveness
-  gate needs a real posting URL per shortlisted company; today those are supplied by
-  hand. A scan-derived feed (`npm run ats:scan`) would close this.
-- `[TODO: APPROVE]` before any live ATS scan that writes application-tracker data.
+- `[TODO: DEV]` Workday / proprietary ATS provider for Amazon, Apple, Google, Infosys,
+  and TCS US — listed in `data/examples/erp-to-ai-portals.yml` with `enabled: false`
+  until a provider exists (today only greenhouse · lever · ashby scan).
+- `[TODO: APPROVE]` before any live ATS scan that **writes** to `data/ats/pipeline.md`
+  (sample runs use `--dry-run`; no tracker writes without approval).
 
-(The fit-score rubric that was previously a `[TODO: DEFINE]` is now specified below —
-see **Fit rubric** — so `fit.p` is a rubric lookup, not a bare model guess.)
+(The fit-score rubric is now specified in **Fit rubric** below — formerly an open DEFINE item.)
 
 ## Fit rubric (ERP/AMS → applied-AI pivot)
 
@@ -77,7 +78,11 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
    Test: `test -f data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv && head -1 data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv | rg -q top_job_titles_sponsored`.
 2. **Scope gate** — the run declares `sample` mode (no writes to trackers). Test: filter script prints `mode: sample` in its log.
 3. **Data-shape gate** — the roles JSON parses. Test: `python3 -m json.tool data/examples/erp-to-ai-roles.json`.
-4. **Liveness gate (hard stop, not a vote)** — a company advances only if a real posting is `active`. Test: `node scripts/ai-pivot/liveness-gate.mjs --file <urls.txt>`; `expired`/`uncertain` closes the gate.
+4. **Liveness gate (hard stop, not a vote)** — a company advances only if the ATS scan
+   finds at least one live applied-AI posting that passes `--verify` (Playwright liveness
+   inside `npm run ats:scan`). Test:
+   `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run --verify --company Reddit`;
+   expired/no-apply postings are dropped from yield.
 5. **Visa-timeline gate (hard stop, not a vote)** — the role's start date must fit the authorization window. For F-1 with OPT **not yet filed**, treat any role requiring a start before EAD issuance as gated to zero. Encoded as `timeline.factor` in the roles JSON.
 6. **Report gate** — agent log (JSON) and human report (Markdown) both written. Test: `test -f logs/case-erp-to-ai-engineering-<date>.json && test -f reports/generated/case-erp-to-ai-engineering-<date>.md`.
 
@@ -85,7 +90,7 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
 
 - That a company has an H-1B **approval history** and at what volume/rate (source CSV).
 - That its historically sponsored titles include **applied-AI** titles, not only research (title-string heuristic).
-- Whether a specific posting **URL is live right now** (liveness gate, real Playwright check).
+- Whether a specific posting **URL is live right now** (ATS scan with `--verify`: Playwright liveness inside `npm run ats:scan`, not hand-picked URLs).
 - The **BLS cognitive_pivot_score** for the mapped target SOC when the base occupation carries one in `data/bls/compact/soc_occupation_compact.csv` (advisory column only — not a gate vote).
 - The **arithmetic** of the Apply/Consider/Skip recommendation, term by term, with each term's source.
 
@@ -102,9 +107,10 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
    Script: `scripts/ai-pivot/filter-ai-title-sponsors.py` (reads H-1B CSV + BLS compact CSV).
    Output: shortlist JSON + Markdown report (applied/mixed sponsors ranked; research-gated excluded; advisory SOC + cognitive_pivot_score column).
    Goes to: `logs/`, `reports/generated/`.
-2. **Liveness gate.** Labor: AI with human gate (network).
-   Script: `scripts/ai-pivot/liveness-gate.mjs --file <urls.txt>`.
-   Output: per-company gate log (PASS/CLOSED). Goes to: `logs/`.
+2. **ATS scan (hiring now).** Labor: AI with human gate (network).
+   Command: `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run --verify --company <name>`.
+   Output: portal scan report (jobs found, filtered, verified active/expired) + optional pipeline writes (only without `--dry-run` after approval).
+   Goes to: stdout (report); `data/ats/pipeline.md` only on approved live writes.
 3. **Assemble role evidence.** Labor: human + AI.
    Combine verified sponsorship (step 1) + verified liveness (step 2) + **Fit rubric lookup** (above) + your-input timeline into the Ch.11 role schema.
    Output: `data/examples/erp-to-ai-roles.json`.
@@ -147,8 +153,9 @@ Markdown is for a human deciding where to spend OPT time. Neither serves both.
 # Step 1 — filter by title filings (offline, read-only)
 python3 scripts/ai-pivot/filter-ai-title-sponsors.py --top 20 --min-approvals 5
 
-# Step 2 — liveness gate (network; Playwright)
-node scripts/ai-pivot/liveness-gate.mjs --file data/examples/erp-to-ai-liveness-urls.txt
+# Step 2 — ATS scan: discover live postings + optional liveness verify (network)
+REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
+  npm run ats:scan -- --dry-run --verify --company Reddit
 
 # Step 4 — score the assembled evidence (deterministic)
 npm run score data/examples/erp-to-ai-roles.json
@@ -159,7 +166,7 @@ npm run score data/examples/erp-to-ai-roles.json
 | Step | Script | Layer |
 |---|---|---|
 | Filter by title filings | `scripts/ai-pivot/filter-ai-title-sponsors.py` | tools |
-| Liveness gate | `scripts/ai-pivot/liveness-gate.mjs` | gate |
+| ATS scan (Job-Ops) | `scripts/ats/scan.mjs` (`npm run ats:scan`) | gate |
 | Score | `scripts/score/role-scorer.mjs` (`npm run score`) | tools |
 
 ### Output Locations
@@ -168,7 +175,7 @@ npm run score data/examples/erp-to-ai-roles.json
 |---|---|---|
 | Shortlist agent log | `logs/case-erp-to-ai-engineering-<date>.json` | JSON |
 | Shortlist human report | `reports/generated/case-erp-to-ai-engineering-<date>.md` | Markdown |
-| Liveness gate log | `logs/case-erp-to-ai-engineering-liveness-<date>.json` | JSON |
+| ATS scan report | stdout from `npm run ats:scan` | terminal |
 | Scored roles | `data/examples/role-scores.{json,md}` | JSON + Markdown |
 
 ## RUN_LOG template
