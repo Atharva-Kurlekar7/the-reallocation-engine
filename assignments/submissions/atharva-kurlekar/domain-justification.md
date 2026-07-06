@@ -29,19 +29,20 @@ person most needs to see:
    companies that a naive "does it sponsor AI?" filter would have kept.
 
 2. **Whether a historically strong sponsor is actually hiring right now.** History
-   is not intent. `npm run ats:scan` queries each company's ATS API (Greenhouse/Lever/
-   Ashby), filters to applied-AI title keywords, and with `--verify` runs Playwright
-   liveness on each surviving posting — only verified-active clears the gate.
+   is not intent. `npm run ats:scan --dry-run` queries each enabled company's Greenhouse
+   API, filters to applied-AI title keywords, and reports yield — only companies with
+   postings in that yield pass the hiring-now gate. Optional `--verify` adds Playwright
+   page checks before applying; not required for RUNNABLE-SAMPLE.
 
 ## Connection to the engine layers
 
 - **80 Days to Stay** — the mode reads the SEC Form D + DOL/H-1B mapped dataset
   (`data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv`): approvals, approval
   rate, funding stage, and the job titles actually filed.
-- **Job-Ops** — `npm run ats:scan` reads `data/examples/erp-to-ai-portals.yml`,
-  queries Greenhouse APIs for **16 applied-AI H-1B shortlist companies**, filters to
-  applied-AI titles, and with `--verify` runs Playwright liveness on each posting.
-  The 2026-07-06 dry-run: **1,742 jobs → 341 yield**; Reddit-only verify: **51/51 active**.
+- **Job-Ops** — `npm run ats:scan --dry-run` reads `data/examples/erp-to-ai-portals.yml`,
+  scans **16 applied-AI H-1B shortlist companies** on Greenhouse. The 2026-07-06 run:
+  **1,742 jobs → 341 applied-AI yield**. Six sample roles for scoring were hand-picked
+  from that yield (P6 logged gap: no auto-wiring script yet).
 - **The Cognitive Pivot** — the filter reads `data/bls/compact/soc_occupation_compact.csv`
   and attaches the base-occupation `cognitive_pivot_score` as an **advisory column**
   in the shortlist report (not a gate vote — the book leaves the role_quality weight
@@ -66,6 +67,6 @@ The filter ranks on *cumulative* approvals — LINKEDIN CORP shows 4,962 approva
 and lands #1 — but that history says nothing about whether the company is hiring
 applied-AI roles *this month*. A career-changer reads "4,962 approvals" as "they
 hire a lot of people like me" and applies; only someone tracking recent req flow
-(or running `npm run ats:scan -- --verify` on a configured portal) catches that the signal is
-past-tense. The scan mitigates this **only when a verified live posting exists**;
+(or running `npm run ats:scan --dry-run` on an enabled Greenhouse board) catches that the signal is
+past-tense. The scan mitigates this **only when the company is on a scannable board and appears in yield**;
 without one, a top-ranked historical sponsor is still a Skip in the scorer.

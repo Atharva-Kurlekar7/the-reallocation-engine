@@ -40,7 +40,7 @@ REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
 ```bash
 npm run score data/examples/erp-to-ai-roles.json
 ```
-> "Apply 2 · Consider 1 · Skip 3."
+> "Apply 3 · Consider 1 · Skip 2."
 
 ## 3:15–4:15 — One thing I learned from running it
 
@@ -68,5 +68,5 @@ npm run score data/examples/erp-to-ai-roles.json
 - 30,369 rows · 1,557 with H-1B title data · 160 applied/mixed · 22 research-gated excluded
 - BLS cognitive: 15-1252 = 3.834 · 15-2051 = gap (blank in source, not guessed)
 - ATS scan: 16 companies · 1,742 jobs found · 341 applied-AI yield (dry-run)
-- Score: Apply 2 / Consider 1 / Skip 3 (50% skip)
-- Top Apply: Reddit Staff Data Engineer 0.382; Reddit Senior ML Engineer 0.346
+- Score: Apply 3 · Consider 1 · Skip 2 (33% skip)
+- Top Apply: Reddit Staff Data Engineer 0.382; Twilio Staff ML Engineer 0.346

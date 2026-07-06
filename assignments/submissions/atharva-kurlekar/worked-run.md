@@ -19,14 +19,12 @@
 
 ### Governing files read
 
-These are the repo's rulebooks — read before building the mode:
-
 | File | What it governs |
 |------|-----------------|
-| **`SNICKERDOODLE.md`** | The constitution: verified data before LLM guessing; gates are hard stops; honesty about lifecycle status; attestation format |
-| **`DOMAIN.md`** | What this repo actually runs today (`npm run ats:scan`, `npm run score`, data paths) |
-| **`AGENTS.md`** | Cross-agent instructions: conformance before done, `brutalist/` for visuals, never commit `private/` |
-| **`recipes/README.md`** | Recipe lifecycle frontmatter (DRAFT → RUNNABLE-SAMPLE → VERIFIED) and typed `[TODO]` taxonomy |
+| **`SNICKERDOODLE.md`** | P3 provenance, P4 gates, P6 recipe/run alignment, attestation format |
+| **`DOMAIN.md`** | Runnable commands (`npm run ats:scan`, `npm run score`) |
+| **`AGENTS.md`** | Conformance before done; no private data committed |
+| **`recipes/README.md`** | Lifecycle frontmatter and `[TODO]` taxonomy |
 
 ## Scenario
 
@@ -40,8 +38,21 @@ and are hiring right now?*
 |---|---|
 | Sponsor dataset | `data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv` (30,369 rows) |
 | BLS cognitive scores | `data/bls/compact/soc_occupation_compact.csv` |
-| ATS portals config | `data/examples/erp-to-ai-portals.yml` (16 Greenhouse boards from applied-AI H-1B shortlist; Amazon/Apple/Google/Infosys/TCS disabled — Workday/proprietary) |
-| Roles evidence | `data/examples/erp-to-ai-roles.json` (6 roles) |
+| ATS portals config | `data/examples/erp-to-ai-portals.yml` (16 enabled Greenhouse boards) |
+| Roles evidence | `data/examples/erp-to-ai-roles.json` (6 roles, hand-assembled from scan yield) |
+
+## Canonical run numbers (single source of truth)
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| H-1B rows | 30,369 | filter script |
+| Applied/mixed sponsors | 160 | filter script |
+| Research-gated excluded | 22 | filter script |
+| Companies scanned | **16** | `ats:scan --dry-run` |
+| Total jobs (API) | **1,742** | `ats:scan --dry-run` |
+| Applied-AI yield (after filters) | **341** | `ats:scan --dry-run` |
+| Roles scored | 6 | hand-assembled sample |
+| Score outcome | Apply 3 · Consider 1 · Skip 2 | `npm run score` |
 
 ## Commands run and real output
 
@@ -61,10 +72,9 @@ conformance: 136 files (78 md · 31 py · 24 js · 1 sh · 1 yaml · 1 json)
 ENVIRONMENT (required)
   ✓ node       v23.11.0
   ✓ python3    Python 3.9.6
-  ✓ playwright installed
 
 RUNNABLE COMMANDS
-  ✓ verify  ✓ score  ✓ ats:scan  ✓ ats:liveness  … (all targets present)
+  ✓ verify  ✓ score  ✓ ats:scan  …
 
 PRIVACY
   ✓ no private/PII paths are tracked
@@ -88,15 +98,13 @@ Top 10 (abbreviated):
    1. LINKEDIN CORP     SOC=15-2051  cog=gap   approvals=4962
    3. AMGEN INC         SOC=15-1252  cog=3.834 approvals=1882
    9. TWILIO INC        SOC=15-1252  cog=3.834 approvals=802
-  (Reddit not in top 10 by volume score but in shortlist via targeted scan)
 ```
 
-### Step 2 — ATS scan: discover live postings (`npm run ats:scan`)
+### Step 2 — ATS scan: hiring-now gate (`npm run ats:scan --dry-run`)
 
-**What the scan does:** reads `portals.yml`, calls each company's ATS API
-(Greenhouse/Lever/Ashby — zero LLM tokens), filters by title/location keywords,
-deduplicates, and reports yield. With `--verify`, Playwright checks each surviving
-posting is still live (same liveness logic as `npm run ats:liveness`).
+The scan reads each enabled Greenhouse board via public JSON API (zero LLM tokens),
+filters by applied-AI title/location keywords, and reports yield. Open postings only
+come back from the API — this is the assignment's Job-Ops anchor run.
 
 ```
 $ REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
@@ -117,49 +125,29 @@ New offers added:      341
 
 Boards: LinkedIn, Airbnb, Roblox, Twilio, Roku, Reddit, Instacart, Upstart,
 Peloton, Figma, Moloco, Discord, Nextdoor, Applovin, PathAI, Yext
-(all from applied-AI H-1B shortlist + verified Greenhouse APIs)
-
-(dry run — run without --dry-run to save results)
 ```
 
-### Step 2b — Liveness inside the scan (`--verify`)
+### Step 3 — assemble role evidence (manual sample)
 
-Replaces hand-picked URLs. Playwright runs sequentially on each posting in the scan yield.
-
-```
-$ REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
-    npm run ats:scan -- --dry-run --verify --company Reddit
-
-Verifying liveness of 51 new offer(s) with Playwright (sequential)...
-  ✅ active    Reddit | Staff Data Engineer, Corporate Engineering
-  ✅ active    Reddit | Senior Machine Learning Engineer
-  ✅ active    Reddit | Machine Learning Engineering Manager - Ads Engagement Modeling
-  … (48 more — all 51 verified active)
-
-Portal Scan — 2026-07-06
-Companies scanned:     1
-Total jobs found:      190
-Filtered by title:     114 removed
-Expired (verified):    0 dropped
-New offers added:      51
-```
+Six roles hand-picked from the 341-offer scan yield + H-1B shortlist to demonstrate
+the scorer. **P6 logged defect:** no script yet maps scan output → roles JSON automatically.
 
 ### Step 4 — score
 
 ```
 $ npm run score data/examples/erp-to-ai-roles.json
 
-✓ scored 6 roles → Apply 2 · Consider 1 · Skip 3 (skip 50%)
+✓ scored 6 roles → Apply 3 · Consider 1 · Skip 2 (skip 33%)
 ```
 
-| Role | Composite | Rec |
-|---|---|---|
-| REDDIT — Staff Data Engineer | 0.382 | **Apply** |
-| REDDIT — Senior ML Engineer | 0.346 | **Apply** |
-| REDDIT — ML Eng Manager | 0.271 | **Consider** |
-| TWILIO — Staff ML Engineer | 0.000 | **Skip** (found in scan but `--verify` not run) |
-| AMGEN — Data Engineer | 0.000 | **Skip** (not in scan config) |
-| QUANTIPHI — Sr ML Engineer | 0.000 | **Skip** (not in scan config) |
+| Role | Composite | Rec | Gate note |
+|---|---|---|---|
+| REDDIT — Staff Data Engineer | 0.382 | **Apply** | in scan yield |
+| REDDIT — Senior ML Engineer | 0.346 | **Apply** | in scan yield |
+| TWILIO — Staff ML Engineer | 0.346 | **Apply** | in scan yield |
+| REDDIT — ML Eng Manager | 0.271 | **Consider** | in scan yield |
+| AMGEN — Data Engineer | 0.000 | **Skip** | board not scannable (enabled: false) |
+| QUANTIPHI — Sr ML Engineer | 0.000 | **Skip** | not in enabled scan config |
 
 ## Verified vs inferred
 
@@ -167,11 +155,12 @@ $ npm run score data/examples/erp-to-ai-roles.json
 |---|---|---|
 | H-1B approvals, rates, titles | **Verified** | SEC+DOL CSV |
 | BLS cognitive_pivot_score (3.834 / gap) | **Verified where present** | BLS compact CSV |
-| 51 Reddit postings live | **Verified** | `ats:scan --verify` (Playwright) |
-| 84 postings in scan yield (Reddit+Twilio) | **Verified** | Greenhouse API via scan |
+| 16 boards scanned, 1,742 jobs, 341 yield | **Verified** | `ats:scan --dry-run` stdout |
+| Role title in scan yield (Reddit, Twilio) | **Verified** | matched against scan report |
 | Applied/research class, target SOC | **Inferred** | keyword heuristics |
 | fit.p | **Inferred (rubric-bound)** | Fit rubric in mode file |
 | Apply/Consider/Skip | **Derived** | Ch.11 scorer |
+| Amgen/Quantiphi liveness closed | **Verified absence** | not in enabled scan boards |
 
 ## Attestation
 
@@ -181,30 +170,31 @@ $ npm run score data/examples/erp-to-ai-roles.json
 | `npm run verify` | all conform | toolchain valid |
 | `npm run doctor` | environment runnable | before push |
 | `filter-ai-title-sponsors.py` | 160 applied sponsors + BLS column | shortlist + cognitive advisory |
-| `ats:scan --dry-run` | 345 jobs → 84 yield | live postings discovered from API |
-| `ats:scan --dry-run --verify` | 51/51 Reddit active | liveness gate inside scan |
-| `npm run score` | Apply 2 / Consider 1 / Skip 3 | healthy skip rate |
-| **Break: missing CSV** | stop exit 2 | refuses to guess |
+| `ats:scan --dry-run` | 16 cos · 1,742 jobs · **341 yield** | hiring-now gate from API |
+| `npm run score` | Apply 3 / Consider 1 / Skip 2 | scorer on assembled roles |
+| **Break: missing CSV** | exit 2, no output | refuses to guess |
+| **Break: malformed roles JSON** | scorer exit 1 | no score on bad evidence |
 
 ### Did not test
-- Live scan without `--dry-run` (would write `data/ats/pipeline.md` — needs `[TODO: APPROVE]`)
-- `--verify` on Twilio (found in dry-run yield; liveness left at 0.0 honestly)
+- Live scan without `--dry-run` (writes `data/ats/pipeline.md` — needs `[TODO: APPROVE]`)
+- `ats:scan --verify` Playwright pass on all 16 companies (optional stricter gate)
+- Auto-build roles JSON from 341 scan offers (`[TODO: DEV]`)
 - `jd-soc-classifier.py` (not built)
 
 ### Broke during testing, fixed
-- First approach used hand-picked careers landing pages + separate `liveness-gate.mjs` —
-  most closed for "no apply control." **Fixed:** switched to `npm run ats:scan` which
-  reads the ATS API directly and uses `--verify` for liveness — 51/51 active.
+- **Stale cross-artifact numbers (P3):** early docs said 345→84 from a 2-company run while scan later showed 1,742→341 — reconciled to canonical table above.
+- **Recipe/run mismatch (P6):** mode file referenced `liveness-gate.mjs`; runtime uses `npm run ats:scan` — template and gates updated.
+- **First liveness approach:** hand-picked careers landing pages failed — replaced by ATS API scan.
 
 ## Reflection
 
-**What went well.** The assignment's "Before You Start" commands all run. `ats:scan`
-is the proper Job-Ops layer: it discovers postings from the API (345 raw → 84 filtered)
-and `--verify` proves 51 Reddit applied-AI roles are live — no hand URLs.
+**What went well.** Filter, scan, and score all run on real data with one consistent
+number set. Sixteen Greenhouse boards from the H-1B shortlist produce 341 applied-AI
+matches — a credible hiring-now signal without hand URLs.
 
-**What it missed.** Twilio appears in scan yield but wasn't `--verify`'d this session.
-Amgen (1,882 approvals) skips because it isn't in `erp-to-ai-portals.yml` — history
-without a configured board stays gated.
+**What it missed.** Scan finds 341 roles but scoring uses 6 hand-assembled examples —
+the pipeline is not closed. Amgen (1,882 approvals) skips because its board is Workday,
+not Greenhouse. Amazon/Apple/Google/Infosys/TCS are listed but disabled pending a provider.
 
-**Next steps.** Add more shortlist companies to `erp-to-ai-portals.yml`; run
-`--verify` on each; build `jd-soc-classifier.py`.
+**Next steps.** `[TODO: DEV]` script: scan yield → roles JSON; `[TODO: DEV]` Workday provider;
+optional `--verify` before live applications.

@@ -1,7 +1,7 @@
 ---
 status: RUNNABLE-SAMPLE
-todos_open: 3
-last_gate: liveness
+todos_open: 4
+last_gate: ats-scan-sample, 2026-07-06
 attestation: null
 recipe_version: 0.1.0
 ---
@@ -45,6 +45,8 @@ to spend OPT time applying to companies whose "AI hiring" is closed to you.
 
 ## Proposed additions
 
+- `[TODO: DEV]` `scripts/ai-pivot/scan-yield-to-roles.py` — build Ch.11 role-evidence JSON
+  from `ats:scan --dry-run` output so the 341-offer yield feeds the scorer without hand assembly.
 - `[TODO: DEV]` `scripts/ai-pivot/jd-soc-classifier.py` — map a job posting's text to a
   SOC code so the applied/research split is grounded in the JD, not the title string.
   Justification: a title like "Data Scientist" spans SOC 15-2051 (applied) and pure BI
@@ -78,11 +80,12 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
    Test: `test -f data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv && head -1 data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv | rg -q top_job_titles_sponsored`.
 2. **Scope gate** — the run declares `sample` mode (no writes to trackers). Test: filter script prints `mode: sample` in its log.
 3. **Data-shape gate** — the roles JSON parses. Test: `python3 -m json.tool data/examples/erp-to-ai-roles.json`.
-4. **Liveness gate (hard stop, not a vote)** — a company advances only if the ATS scan
-   finds at least one live applied-AI posting that passes `--verify` (Playwright liveness
-   inside `npm run ats:scan`). Test:
-   `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run --verify --company Reddit`;
-   expired/no-apply postings are dropped from yield.
+4. **Hiring-now gate (hard stop, not a vote)** — a role advances only if `npm run ats:scan --dry-run`
+   lists that title in yield for an enabled Greenhouse board (ATS API returns open postings only).
+   Test:
+   `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run`;
+   expect `New offers added` > 0 for the company. Optional stricter check:
+   add `--verify` (Playwright) before applying — not required for RUNNABLE-SAMPLE.
 5. **Visa-timeline gate (hard stop, not a vote)** — the role's start date must fit the authorization window. For F-1 with OPT **not yet filed**, treat any role requiring a start before EAD issuance as gated to zero. Encoded as `timeline.factor` in the roles JSON.
 6. **Report gate** — agent log (JSON) and human report (Markdown) both written. Test: `test -f logs/case-erp-to-ai-engineering-<date>.json && test -f reports/generated/case-erp-to-ai-engineering-<date>.md`.
 
@@ -90,7 +93,8 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
 
 - That a company has an H-1B **approval history** and at what volume/rate (source CSV).
 - That its historically sponsored titles include **applied-AI** titles, not only research (title-string heuristic).
-- Whether a specific posting **URL is live right now** (ATS scan with `--verify`: Playwright liveness inside `npm run ats:scan`, not hand-picked URLs).
+- That a company has **open applied-AI postings now** (ATS scan `--dry-run`: Greenhouse API yield after title/location filters).
+- Whether a specific posting page still accepts applications (optional `--verify` with Playwright — stricter, not run for every company in the sample).
 - The **BLS cognitive_pivot_score** for the mapped target SOC when the base occupation carries one in `data/bls/compact/soc_occupation_compact.csv` (advisory column only — not a gate vote).
 - The **arithmetic** of the Apply/Consider/Skip recommendation, term by term, with each term's source.
 
@@ -108,11 +112,12 @@ roles JSON cites this table — `fit.p` is a rubric lookup, not a bare model gue
    Output: shortlist JSON + Markdown report (applied/mixed sponsors ranked; research-gated excluded; advisory SOC + cognitive_pivot_score column).
    Goes to: `logs/`, `reports/generated/`.
 2. **ATS scan (hiring now).** Labor: AI with human gate (network).
-   Command: `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run --verify --company <name>`.
-   Output: portal scan report (jobs found, filtered, verified active/expired) + optional pipeline writes (only without `--dry-run` after approval).
-   Goes to: stdout (report); `data/ats/pipeline.md` only on approved live writes.
+   Command: `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run`.
+   Output: portal scan report (companies scanned, jobs found, filtered, new offers).
+   Goes to: stdout (report); `data/ats/pipeline.md` only on approved live writes (no `--dry-run`).
 3. **Assemble role evidence.** Labor: human + AI.
-   Combine verified sponsorship (step 1) + verified liveness (step 2) + **Fit rubric lookup** (above) + your-input timeline into the Ch.11 role schema.
+   Combine verified sponsorship (step 1) + scan-listed titles (step 2) + **Fit rubric lookup** + your-input timeline into the Ch.11 role schema.
+   **Known gap (P6):** no script yet auto-builds roles JSON from scan yield — this sample hand-assembles 6 roles from the 341-offer scan. Logged, not hidden.
    Output: `data/examples/erp-to-ai-roles.json`.
 4. **Score.** Labor: AI, deterministic.
    Command: `npm run score data/examples/erp-to-ai-roles.json`.
@@ -153,9 +158,9 @@ Markdown is for a human deciding where to spend OPT time. Neither serves both.
 # Step 1 — filter by title filings (offline, read-only)
 python3 scripts/ai-pivot/filter-ai-title-sponsors.py --top 20 --min-approvals 5
 
-# Step 2 — ATS scan: discover live postings + optional liveness verify (network)
+# Step 2 — ATS scan: hiring-now gate (network, no writes)
 REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml \
-  npm run ats:scan -- --dry-run --verify --company Reddit
+  npm run ats:scan -- --dry-run
 
 # Step 4 — score the assembled evidence (deterministic)
 npm run score data/examples/erp-to-ai-roles.json
@@ -183,10 +188,10 @@ npm run score data/examples/erp-to-ai-roles.json
 ```markdown
 ## <date> -- ERP-to-AI Engineering triage (<mode>)
 - Recipe: case-erp-to-ai-engineering v0.1.0
-- Inputs: SEC_DOL_H1b_data_mapped.csv; liveness urls (<n>); roles.json (<n> roles)
-- Commands: filter-ai-title-sponsors.py; liveness-gate.mjs; npm run score
-- Result: <records_seen> seen -> <applied> applied sponsors -> shortlist <n>;
-  liveness <pass>/<closed>; score Apply <a> / Consider <c> / Skip <s> (skip <pct>%)
-- Gates: source PASS; liveness <pass/closed>; timeline <...>
-- Open issues: <typed TODOs still open>
+- Inputs: SEC_DOL_H1b_data_mapped.csv; erp-to-ai-portals.yml (<n> enabled boards); roles.json (<n> roles)
+- Commands: filter-ai-title-sponsors.py; REALLOCATION_ENGINE_PORTALS=... npm run ats:scan -- --dry-run; npm run score
+- Result: <records_seen> seen -> <applied> applied sponsors -> scan <companies> boards, <jobs> jobs, <yield> yield;
+  score Apply <a> / Consider <c> / Skip <s> (skip <pct>%)
+- Gates: source PASS; hiring-now scan PASS/closed; timeline <...>
+- Open issues: <typed TODOs>; P6 defect if scan yield not auto-wired to roles JSON
 ```

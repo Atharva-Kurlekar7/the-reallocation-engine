@@ -8,6 +8,8 @@ private emails, or sensitive application notes.
 
 ## 2026-07-06 -- ERP-to-AI Engineering triage (sample mode, live liveness gate, BLS cognitive advisory)
 
+**Superseded** by the entry below (2026-07-06 ats:scan migration). Kept for provenance only.
+
 - **Recipe:** `case-erp-to-ai-engineering` v0.1.0 (RUNNABLE-SAMPLE)
 - **Inputs:** `data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv` (30,369 rows); `data/bls/compact/soc_occupation_compact.csv`; `data/examples/erp-to-ai-liveness-urls.txt` (3 Reddit Greenhouse postings + 1 dead URL); `data/examples/erp-to-ai-roles.json` (6 roles).
 - **Commands:** `python3 scripts/ai-pivot/filter-ai-title-sponsors.py --top 20 --min-approvals 5`; `node scripts/ai-pivot/liveness-gate.mjs --file data/examples/erp-to-ai-liveness-urls.txt`; `npm run score data/examples/erp-to-ai-roles.json`.
@@ -180,7 +182,19 @@ private emails, or sensitive application notes.
   - What I did: I ran the attestation pass and found three real errors — the CSA cert that was present but not earned, the missing diploma qualification, and the estimated metrics stated as measured facts. I corrected the visa status section in both `resume.json` and `profile.yml`. I killed gap row B2 because I know the actual postings I applied to don't require BRD work. I rewrote gap row A1 in my own words.
   - What the agent could not do: The agent read "F-1 OPT" in my source résumé JSON and confidently wrote `"status": "F-1 OPT"` and `"opt_end": "2027-08"` in `resume.json` — inferring an active OPT and fabricating an expiry date from an assumed one-year timeline. I have not filed for my EAD yet and am still on F-1 student status. That error required knowledge of my own immigration documents, which the agent does not have access to. An undetected fabricated gate date in `profile.yml` would have caused the Bayesian scorer to treat roles as Apply-eligible on a timeline I cannot legally support.
 
+## 2026-07-06 -- ERP-to-AI Engineering triage (sample mode, ats:scan 16 boards, BLS cognitive advisory)
+
+- **Recipe:** `case-erp-to-ai-engineering` v0.1.0 (RUNNABLE-SAMPLE)
+- **Inputs:** H-1B mapped CSV (30,369 rows); BLS compact CSV; `data/examples/erp-to-ai-portals.yml` (16 enabled Greenhouse boards); 6 hand-assembled roles in roles.json.
+- **Commands:** `npm run verify`; `npm run doctor`; filter-ai-title-sponsors.py; `REALLOCATION_ENGINE_PORTALS=data/examples/erp-to-ai-portals.yml npm run ats:scan -- --dry-run`; `npm run score`.
+- **Result:** 160 applied/mixed sponsors; scan **16 companies · 1,742 jobs · 341 yield**; score Apply 3 / Consider 1 / Skip 2 (33% skip).
+- **Gates:** source PASS; hiring-now via ats:scan --dry-run; Fit rubric in mode file.
+- **P6 open defect:** scan yield not auto-wired to roles JSON (6 sample roles hand-assembled).
+- **No private data.**
+
 ## 2026-07-06 -- ERP-to-AI Engineering triage (sample mode, ats:scan + verify, BLS cognitive advisory)
+
+**Superseded** — intermediate 2-company run; see canonical entry above.
 
 - **Recipe:** `case-erp-to-ai-engineering` v0.1.0 (RUNNABLE-SAMPLE)
 - **Inputs:** H-1B mapped CSV (30,369 rows); BLS compact CSV; `data/examples/erp-to-ai-portals.yml` (16 Greenhouse boards); 6 roles in roles.json.
