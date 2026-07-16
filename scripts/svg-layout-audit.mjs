@@ -67,7 +67,7 @@ const relLum = rgb => { const f = v => { v /= 255; return v <= 0.03928 ? v / 12.
 const contrast = (a, b) => { const la = relLum(a), lb = relLum(b), hi = Math.max(la, lb), lo = Math.min(la, lb); return (hi + 0.05) / (lo + 0.05); };
 
 // glyphs known to render in the fallback fonts; anything else non-ASCII is flagged
-const SAFE_EXTRA = new Set([...'—–·•…→←↑↓×÷✓✗“”‘’°≤≥±≈→']);
+const SAFE_EXTRA = new Set([...'—–·•…→←↑↓×÷✓✗“”‘’°≤≥±≈≠→éèêëàâäçñüûùöôïî§'.normalize('NFC')]);
 const glyphRisk = s => {
   const bad = new Set();
   for (const ch of s) { const cp = ch.codePointAt(0); if (cp < 0x7f || SAFE_EXTRA.has(ch)) continue; bad.add(ch); }
@@ -122,24 +122,75 @@ function flattenPath(d) {
 // circle/ellipse → polygon (so node shapes plug into the container + strike machinery)
 const ellipsePoly = (cx, cy, rx, ry, N = 24) => { const pts = []; for (let i = 0; i < N; i++) { const a = 2 * Math.PI * i / N; pts.push([cx + rx * Math.cos(a), cy + ry * Math.sin(a)]); } return pts; };
 
+// ── transform list → 2x3 matrix [a,b,c,d,e,f] (translate/rotate/scale/matrix, SVG order) ──
+const IDENT = [1, 0, 0, 1, 0, 0];
+const matMul = (m, n) => [ m[0]*n[0]+m[2]*n[1], m[1]*n[0]+m[3]*n[1], m[0]*n[2]+m[2]*n[3], m[1]*n[2]+m[3]*n[3], m[0]*n[4]+m[2]*n[5]+m[4], m[1]*n[4]+m[3]*n[5]+m[5] ];
+const applyM = (M, x, y) => [M[0]*x + M[2]*y + M[4], M[1]*x + M[3]*y + M[5]];
+function transformMatrix(tr) {
+  if (!tr) return IDENT;
+  let M = IDENT;
+  const re = /(translate|rotate|scale|matrix)\s*\(([^)]*)\)/g;
+  let mm, found = false;
+  while ((mm = re.exec(tr))) {
+    found = true;
+    const v = mm[2].trim().split(/[\s,]+/).map(Number);
+    let p;
+    if (mm[1] === 'translate') p = [1, 0, 0, 1, v[0] || 0, v[1] || 0];
+    else if (mm[1] === 'scale') p = [v[0] || 1, 0, 0, (v[1] != null ? v[1] : v[0]) || 1, 0, 0];
+    else if (mm[1] === 'rotate') { const a = (v[0] || 0) * Math.PI / 180, c = Math.cos(a), s = Math.sin(a);
+      p = v.length >= 3 ? [c, s, -s, c, v[1] - v[1]*c + v[2]*s, v[2] - v[1]*s - v[2]*c] : [c, s, -s, c, 0, 0]; }
+    else if (mm[1] === 'matrix') p = [v[0], v[1], v[2], v[3], v[4], v[5]];
+    else p = IDENT;
+    M = matMul(M, p);
+  }
+  return found ? M : IDENT;
+}
+const bboxOf = pts => { const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]); return { l: Math.min(...xs), t: Math.min(...ys), r: Math.max(...xs), b: Math.max(...ys) }; };
+
+// ── tspan-aware text measurement: max LINE width + vertical span (not summed) ──
+// A tspan with a `dy` starts a new visual line; tspans/text without `dy` stay on the line.
+function measureLines(inner, fs, ls, tl, textW, decode, attr, num) {
+  const re = /<tspan\b([^>]*)>([\s\S]*?)<\/tspan>/g;
+  const clean = s => decode(s.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+  let pieces = [], last = 0, mm;
+  while ((mm = re.exec(inner))) {
+    const pre = clean(inner.slice(last, mm.index)); if (pre) pieces.push({ dy: null, text: pre });
+    const dyA = attr(mm[1], 'dy');
+    pieces.push({ dy: dyA != null ? num(dyA) : null, text: clean(mm[2]) });
+    last = re.lastIndex;
+  }
+  const tail = clean(inner.slice(last)); if (tail) pieces.push({ dy: null, text: tail });
+  if (!pieces.length) { const t = clean(inner); pieces = [{ dy: null, text: t }]; }
+  let lines = [], curW = 0, curY = 0, lineY = 0, started = false;
+  for (const p of pieces) {
+    if (p.dy != null) { curY += p.dy; if (started) { lines.push({ w: curW, y: lineY }); curW = 0; } lineY = curY; }
+    curW += textW(p.text, fs, ls); started = true;
+  }
+  lines.push({ w: curW, y: lineY });
+  if (tl > 0 && lines.length === 1) lines[0].w = tl;
+  const wmax = Math.max(0, ...lines.map(l => l.w));
+  return { wmax, top: (lines[0].y) - 0.80 * fs, bot: (lines[lines.length - 1].y) + 0.22 * fs };
+}
+
 function parse(svg) {
   const vb = svg.match(/viewBox\s*=\s*"([\d.\s-]+)"/);
   let W = 700, H = 420;
   if (vb) { const p = vb[1].trim().split(/\s+/).map(Number); W = p[2] || W; H = p[3] || H; }
   const texts = [], rects = [], lines = [], polys = [], pathSegs = [], nodes = [];
   const re = /<(\/?)(svg|g)\b([^>]*?)(\/?)>|<text\b([^>]*?)>([\s\S]*?)<\/text>|<rect\b([^>]*?)\/?>|<line\b([^>]*?)\/?>|<polygon\b([^>]*?)\/?>|<path\b([^>]*?)\/?>|<circle\b([^>]*?)\/?>|<ellipse\b([^>]*?)\/?>/g;
-  const stack = [{ fs: 16, anchor: 'start', fill: '#000000' }];
+  const stack = [{ fs: 16, anchor: 'start', fill: '#000000', mat: IDENT }];
   let m;
   while ((m = re.exec(svg))) {
     if (m[2] === 'svg' || m[2] === 'g') {
       if (m[1] === '/') { if (stack.length > 1) stack.pop(); }
       else { const a = m[3] || '', top = stack[stack.length - 1], fs = attr(a, 'font-size'), an = attr(a, 'text-anchor'), fl = attr(a, 'fill');
-        if (m[4] !== '/') stack.push({ fs: fs != null ? num(fs, top.fs) : top.fs, anchor: an || top.anchor, fill: fl || top.fill }); }
+        if (m[4] !== '/') stack.push({ fs: fs != null ? num(fs, top.fs) : top.fs, anchor: an || top.anchor, fill: fl || top.fill, mat: matMul(top.mat, transformMatrix(attr(a, 'transform'))) }); }
       continue;
     }
     const top = stack[stack.length - 1];
     if (m[5] != null) {
-      const a = m[5], content = decode((m[6] || '').replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+      const a = m[5], inner = m[6] || '';
+      const content = decode(inner.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
       if (!content) continue;
       const fs = attr(a, 'font-size') != null ? num(attr(a, 'font-size'), top.fs) : top.fs;
       const anchor = attr(a, 'text-anchor') || top.anchor;
@@ -147,35 +198,34 @@ function parse(svg) {
       const ls = num(attr(a, 'letter-spacing'), 0);
       const tl = num(attr(a, 'textLength'), 0);
       const x = num(attr(a, 'x')), y = num(attr(a, 'y'));
-      const w = tl > 0 ? tl : textW(content, fs, ls);
+      const { wmax: w, top: ltop, bot: lbot } = measureLines(inner, fs, ls, tl, textW, decode, attr, num);
       const l = anchor === 'middle' ? x - w / 2 : anchor === 'end' ? x - w : x;
-      let corners = [[l, y - 0.80 * fs], [l + w, y - 0.80 * fs], [l + w, y + 0.22 * fs], [l, y + 0.22 * fs]];
-      const tr = attr(a, 'transform');
-      const rm = tr && tr.match(/rotate\(\s*(-?[\d.]+)(?:[ ,]+(-?[\d.]+)[ ,]+(-?[\d.]+))?\s*\)/);
-      if (rm) { const ang = +rm[1], cx = rm[2] != null ? +rm[2] : 0, cy = rm[3] != null ? +rm[3] : 0; corners = corners.map(([px, py]) => rot(px, py, ang, cx, cy)); }
-      const xs = corners.map(c => c[0]), ys = corners.map(c => c[1]);
-      texts.push({ content, fill, bbox: { l: Math.min(...xs), r: Math.max(...xs), t: Math.min(...ys), b: Math.max(...ys) } });
+      const M = matMul(top.mat, transformMatrix(attr(a, 'transform')));
+      const corners = [[l, y + ltop], [l + w, y + ltop], [l + w, y + lbot], [l, y + lbot]].map(([px, py]) => applyM(M, px, py));
+      texts.push({ content, fill, bbox: bboxOf(corners) });
     } else if (m[7] != null) {
       const a = m[7], x = num(attr(a, 'x')), y = num(attr(a, 'y')), w = num(attr(a, 'width')), h = num(attr(a, 'height'));
-      rects.push({ l: x, t: y, r: x + w, b: y + h, area: w * h, fill: attr(a, 'fill'), pts: [[x, y], [x + w, y], [x + w, y + h], [x, y + h]] });
+      const pts = [[x, y], [x + w, y], [x + w, y + h], [x, y + h]].map(([px, py]) => applyM(top.mat, px, py));
+      rects.push({ ...bboxOf(pts), area: w * h, fill: attr(a, 'fill'), pts });
     } else if (m[8] != null) {
-      const a = m[8]; lines.push({ x1: num(attr(a, 'x1')), y1: num(attr(a, 'y1')), x2: num(attr(a, 'x2')), y2: num(attr(a, 'y2')) });
+      const a = m[8]; const [x1, y1] = applyM(top.mat, num(attr(a, 'x1')), num(attr(a, 'y1'))), [x2, y2] = applyM(top.mat, num(attr(a, 'x2')), num(attr(a, 'y2')));
+      lines.push({ x1, y1, x2, y2 });
     } else if (m[9] != null) {
-      const a = m[9], pts = (attr(a, 'points') || '').trim().split(/\s+/).map(p => p.split(',').map(Number)).filter(p => p.length === 2);
-      if (pts.length >= 3) { const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]); polys.push({ l: Math.min(...xs), t: Math.min(...ys), r: Math.max(...xs), b: Math.max(...ys), area: (Math.max(...xs) - Math.min(...xs)) * (Math.max(...ys) - Math.min(...ys)), fill: attr(a, 'fill'), pts }); }
+      const a = m[9], pts = (attr(a, 'points') || '').trim().split(/\s+/).map(p => p.split(',').map(Number)).filter(p => p.length === 2).map(([px, py]) => applyM(top.mat, px, py));
+      if (pts.length >= 3) { const bb = bboxOf(pts); polys.push({ ...bb, area: (bb.r - bb.l) * (bb.b - bb.t), fill: attr(a, 'fill'), pts }); }
     } else if (m[10] != null) {
       const a = m[10], d = attr(a, 'd'); if (!d) continue;
       const fill = (attr(a, 'fill') || 'none').toLowerCase(), stroke = attr(a, 'stroke');
       // connector/arrow paths only: stroked and not a filled shape (markers, curves)
       if (stroke && stroke.toLowerCase() !== 'none' && (fill === 'none' || fill === 'transparent')) {
-        for (const s of flattenPath(d)) pathSegs.push(s);
+        for (const s of flattenPath(d)) { const [x1, y1] = applyM(top.mat, s.x1, s.y1), [x2, y2] = applyM(top.mat, s.x2, s.y2); pathSegs.push({ x1, y1, x2, y2 }); }
       }
     } else if (m[11] != null) {
       const a = m[11], cx = num(attr(a, 'cx')), cy = num(attr(a, 'cy')), r = num(attr(a, 'r'));
-      if (r > 0) nodes.push({ l: cx - r, t: cy - r, r: cx + r, b: cy + r, area: Math.PI * r * r, fill: attr(a, 'fill'), pts: ellipsePoly(cx, cy, r, r) });
+      if (r > 0) { const pts = ellipsePoly(cx, cy, r, r).map(([px, py]) => applyM(top.mat, px, py)); nodes.push({ ...bboxOf(pts), area: Math.PI * r * r, fill: attr(a, 'fill'), pts }); }
     } else if (m[12] != null) {
       const a = m[12], cx = num(attr(a, 'cx')), cy = num(attr(a, 'cy')), rx = num(attr(a, 'rx')), ry = num(attr(a, 'ry'));
-      if (rx > 0 && ry > 0) nodes.push({ l: cx - rx, t: cy - ry, r: cx + rx, b: cy + ry, area: Math.PI * rx * ry, fill: attr(a, 'fill'), pts: ellipsePoly(cx, cy, rx, ry) });
+      if (rx > 0 && ry > 0) { const pts = ellipsePoly(cx, cy, rx, ry).map(([px, py]) => applyM(top.mat, px, py)); nodes.push({ ...bboxOf(pts), area: Math.PI * rx * ry, fill: attr(a, 'fill'), pts }); }
     }
   }
   return { W, H, texts, rects, lines, polys, pathSegs, nodes };
@@ -212,8 +262,12 @@ function audit(file) {
     const crosses = segs => segs.some(ln =>
       segSeg(ln.x1, ln.y1, ln.x2, ln.y2, b.l + px, cy, b.r - px, cy) ||
       segSeg(ln.x1, ln.y1, ln.x2, ln.y2, cx, b.t + py, cx, b.b - py));
-    if (crosses(lines)) issues.push({ code: 'TEXT/LINE', msg: `"${lab}" sits on an arrow/line` });
-    if (crosses(pathSegs)) issues.push({ code: 'TEXT/PATH', msg: `"${lab}" sits on a curve/path` });
+    // a label inside a small opaque node/box occludes any connector routed behind it,
+    // so a geometric line/path "strike" there is hidden in the render — don't flag it.
+    const opaque = f => f && !['none', 'transparent'].includes(String(f).toLowerCase());
+    const inFilledNode = owners.some(o => o.area < 0.25 * canvas && opaque(o.fill));
+    if (!inFilledNode && crosses(lines)) issues.push({ code: 'TEXT/LINE', msg: `"${lab}" sits on an arrow/line` });
+    if (!inFilledNode && crosses(pathSegs)) issues.push({ code: 'TEXT/PATH', msg: `"${lab}" sits on a curve/path` });
     // TEXT/SHAPE: a node circle/ellipse that is NOT this text's own container crossing
     // its centerline — a label or annotation printed over a node it doesn't belong to.
     const ownerSet = new Set(owners);
