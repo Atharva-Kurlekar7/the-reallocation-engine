@@ -72,9 +72,10 @@ components. Verify all six on every pass.
       committed `examples/` inputs are sufficient (no private data required).
       → *Evidence:* `python3 tools/effort-reallocator/reallocate.py all` — stdlib only
       (no `pip install`, no network); inputs are the committed public CSV, the tracked
-      `data/BLS/compact/soc_occupation_compact.csv` (CLI refuses if missing), plus
-      synthetic `examples/`; Monte Carlo seed fixed at 20260727. Proven by a clean-clone
-      run after push. `runs/2026-07-27/README.md` gives the commands.
+      `data/BLS/compact/soc_occupation_compact.csv` (CLI refuses if missing; exit 2), plus
+      synthetic `examples/`; Monte Carlo seed fixed at 20260727. **Proven:** clean clone of
+      `origin/mode/atharva-kurlekar-erp-to-ai` → `all` exit 5, 38 tests OK. See
+      `logs/RUN_LOG.md` recovery entry. `runs/2026-07-27/README.md` gives the commands.
 - [x] **No resource moves without the hard stop** (−15). `execute` refuses without
       `--approve --approver --reason`. Slots are my own irreplaceable application
       time against an OPT clock — the gate is non-negotiable and justified in writing.

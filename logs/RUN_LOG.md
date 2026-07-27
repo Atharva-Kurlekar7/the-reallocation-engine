@@ -29,6 +29,10 @@ private emails, or sensitive application notes.
 - **Tests:** 38 OK (added sub-floor stability regression).
 - **Still open (author only):** Frictional Journal Entry 1 + reflection §§1–3,5; video
   recording from `VIDEO-OUTLINE.md`.
+- **Clean-clone proof:** cloned `origin/mode/atharva-kurlekar-erp-to-ai` to a temp dir;
+  `reallocate.py all` → exit 5 with full gate report; 38 tests OK; missing BLS path
+  prints `refused: BLS occupation table not found` (non-zero exit). `search/resume.json`
+  not tracked in the clone.
 
 ## 2026-07-27 -- Effort Reallocator built and run (INFO 7375 "Reallocation Engine, Audited")
 
