@@ -1,0 +1,148 @@
+{
+  "_what_this_is": "A gate decision. The accountable record of a human either committing a scarce resource or declining to.",
+  "when": "2026-07-27T18:08:07-04:00",
+  "tool": "tools/effort-reallocator",
+  "resource": "application slots (my own time against an F-1/OPT clock)",
+  "action": "refused / blocked \u2014 nothing committed",
+  "executed": false,
+  "approver": null,
+  "reason": null,
+  "proposal_generated": "2026-07-27T18:07:36-04:00",
+  "gate_status": "BLOCKED",
+  "moves": [
+    {
+      "quantity": 1,
+      "from": "ACME ANALYTICS LLC",
+      "to": "MAPLEBEAR INC",
+      "stability": 1.0
+    },
+    {
+      "quantity": 1,
+      "from": "ACME ANALYTICS LLC",
+      "to": "ROKU INC",
+      "stability": 0.9995
+    },
+    {
+      "quantity": 1,
+      "from": "LINKEDIN CORP",
+      "to": "HUMAN INC",
+      "stability": 0.207
+    },
+    {
+      "quantity": 1,
+      "from": "LINKEDIN CORP",
+      "to": "PINTEREST INC",
+      "stability": 0.707
+    },
+    {
+      "quantity": 1,
+      "from": "ETSY INC",
+      "to": "ROBLOX CORP",
+      "stability": 0.7025
+    },
+    {
+      "quantity": 1,
+      "from": "AIRBNB INC",
+      "to": "TELADOC HEALTH INC",
+      "stability": 0.1845
+    },
+    {
+      "quantity": 1,
+      "from": "DOCUSIGN INC",
+      "to": "TWILIO INC",
+      "stability": 0.7255
+    },
+    {
+      "quantity": 1,
+      "from": "ZOOX INC",
+      "to": "VISICON TECHNOLOGIES INC",
+      "stability": 0.052
+    }
+  ],
+  "blocks": [
+    {
+      "code": "GATE_BLOCKING_UNWAIVED",
+      "detail": "DATASET_NO_RECORD_PROVENANCE",
+      "response": "block",
+      "resolver": "a named human waives each code with a written reason (--waive CODE --waiver-reason \"...\"), or the dataset is fixed",
+      "why": "the data does not meet the stated quality standard, so no allocation computed from it is gradeable"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "DOCUSIGN INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "HUMAN INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "PINTEREST INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "TELADOC HEALTH INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "ZOOX INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "POSTING_NOT_VERIFIED",
+      "detail": "VISICON TECHNOLOGIES INC",
+      "response": "block",
+      "resolver": "a human opens the careers page and confirms a live, current posting for a matching title",
+      "why": "liveness is a gate in the arithmetic and an assumption in this run; this firm's board cannot be read by the scanner at all"
+    },
+    {
+      "code": "MOVE_NOT_STABLE",
+      "detail": "LINKEDIN CORP -> HUMAN INC (stability 20.70% < 70.00%)",
+      "response": "block",
+      "resolver": "the human decides whether to move anyway, on grounds the engine does not have \u2014 a referral, a conversation, a deadline",
+      "why": "the move is not distinguishable from leaving the allocation alone; spending a week on a coin flip is worse than spending it on habit"
+    },
+    {
+      "code": "MOVE_NOT_STABLE",
+      "detail": "AIRBNB INC -> TELADOC HEALTH INC (stability 18.45% < 70.00%)",
+      "response": "block",
+      "resolver": "the human decides whether to move anyway, on grounds the engine does not have \u2014 a referral, a conversation, a deadline",
+      "why": "the move is not distinguishable from leaving the allocation alone; spending a week on a coin flip is worse than spending it on habit"
+    },
+    {
+      "code": "MOVE_NOT_STABLE",
+      "detail": "ZOOX INC -> VISICON TECHNOLOGIES INC (stability 5.20% < 70.00%)",
+      "response": "block",
+      "resolver": "the human decides whether to move anyway, on grounds the engine does not have \u2014 a referral, a conversation, a deadline",
+      "why": "the move is not distinguishable from leaving the allocation alone; spending a week on a coin flip is worse than spending it on habit"
+    }
+  ],
+  "flags": [
+    {
+      "code": "SKIP_RATE_BELOW_TARGET",
+      "detail": "31.5% < 50.0%",
+      "response": "flag",
+      "resolver": "the human tightens the filter before spending the week",
+      "why": "Ch.15: a low skip rate is the filter failing, not productivity"
+    }
+  ],
+  "expected_gain": 0.12075,
+  "expected_gain_ci80": [
+    0.11685,
+    0.12311
+  ]
+}

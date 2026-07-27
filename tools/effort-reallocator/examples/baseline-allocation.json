@@ -1,0 +1,14 @@
+{
+  "_what_this_is": "SYNTHETIC baseline: where last week's 12 application slots went. Committed so the tool runs from a clean clone. A real baseline would come from the private tracker (data/ats/pipeline.md) via --baseline; artifacts derived from that must be written back to private/, never committed.",
+  "_what_it_represents": "The default behaviour the engine is arguing against — slots spent on the household names whose boards are easiest to find. Company names are spelled to match the SEC/DOL dataset so the join is real; one deliberately unmatched row exercises the 'baseline company not in the evidence set' path.",
+  "week_of": "2026-07-20",
+  "total_slots": 12,
+  "allocations": [
+    { "company_name": "LINKEDIN CORP", "slots": 3, "note": "applied via the careers page; no liveness check" },
+    { "company_name": "AIRBNB INC", "slots": 2, "note": "household name" },
+    { "company_name": "ZOOX INC", "slots": 2, "note": "found through a job aggregator" },
+    { "company_name": "DOCUSIGN INC", "slots": 2, "note": "recruiter email, posting age unknown" },
+    { "company_name": "ETSY INC", "slots": 1, "note": "one-off" },
+    { "company_name": "ACME ANALYTICS LLC", "slots": 2, "note": "not present in the SEC/DOL dataset — no sponsorship record exists either way" }
+  ]
+}

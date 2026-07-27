@@ -1,0 +1,361 @@
+{
+  "_what_this_is": "The committed allocation. This is a LEDGER, not an action: the tool cannot apply to a job. It records what a named human committed to, so the outcome can be checked against the claim.",
+  "committed_at": "2026-07-27T18:08:09-04:00",
+  "approver": "Atharva Kurlekar",
+  "reason": "Opened every destination board by hand on 2026-07-27 and confirmed a live matching requisition; accepting the snapshot-vintage waiver for one week of planning; planned for 11 slots so no sub-floor move is proposed.",
+  "flags_accepted": [
+    {
+      "code": "SKIP_RATE_BELOW_TARGET",
+      "detail": "0.0% < 50.0%",
+      "response": "flag",
+      "resolver": "the human tightens the filter before spending the week",
+      "why": "Ch.15: a low skip rate is the filter failing, not productivity"
+    }
+  ],
+  "slots": [
+    {
+      "company_name": "MAPLEBEAR INC",
+      "slots": 1,
+      "composite": 0.428,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "ROKU INC",
+      "slots": 1,
+      "composite": 0.428,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "AIRBNB INC",
+      "slots": 1,
+      "composite": 0.405,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "LINKEDIN CORP",
+      "slots": 1,
+      "composite": 0.405,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "ROBLOX CORP",
+      "slots": 1,
+      "composite": 0.405,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "TWILIO INC",
+      "slots": 1,
+      "composite": 0.405,
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "company_name": "MOLOCO INC",
+      "slots": 1,
+      "composite": 0.3954,
+      "sponsorship_ci80": [
+        0.8303,
+        0.8484
+      ]
+    },
+    {
+      "company_name": "NEXTDOOR INC",
+      "slots": 1,
+      "composite": 0.3941,
+      "sponsorship_ci80": [
+        0.8215,
+        0.8492
+      ]
+    },
+    {
+      "company_name": "REDDIT INC",
+      "slots": 1,
+      "composite": 0.3784,
+      "sponsorship_ci80": [
+        0.9266,
+        0.9476
+      ]
+    },
+    {
+      "company_name": "FIGMA INC",
+      "slots": 1,
+      "composite": 0.3693,
+      "sponsorship_ci80": [
+        0.8193,
+        0.8382
+      ]
+    },
+    {
+      "company_name": "PELOTON INTERACTIVE INC",
+      "slots": 1,
+      "composite": 0.3664,
+      "sponsorship_ci80": [
+        0.8862,
+        0.9078
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ACME ANALYTICS LLC",
+      "from_normalized": "ACME ANALYTICS",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "MAPLEBEAR INC",
+      "to_normalized": "MAPLEBEAR",
+      "to_why": "composite 0.428 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 498.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 1.0,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ACME ANALYTICS LLC",
+      "from_normalized": "ACME ANALYTICS",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "ROKU INC",
+      "to_normalized": "ROKU",
+      "to_why": "composite 0.428 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 654.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 1.0,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "DOCUSIGN INC",
+      "from_normalized": "DOCUSIGN",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "ROBLOX CORP",
+      "to_normalized": "ROBLOX",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 856.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 1.0,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "DOCUSIGN INC",
+      "from_normalized": "DOCUSIGN",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "TWILIO INC",
+      "to_normalized": "TWILIO",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 802.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 1.0,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ZOOX INC",
+      "from_normalized": "ZOOX",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "MOLOCO INC",
+      "to_normalized": "MOLOCO",
+      "to_why": "composite 0.395 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.8405,
+      "to_sponsorship_ci80": [
+        0.8303,
+        0.8484
+      ],
+      "to_approvals": 200.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 0.98,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ZOOX INC",
+      "from_normalized": "ZOOX",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "NEXTDOOR INC",
+      "to_normalized": "NEXTDOOR",
+      "to_why": "composite 0.394 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.8361,
+      "to_sponsorship_ci80": [
+        0.8215,
+        0.8492
+      ],
+      "to_approvals": 222.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 0.9985,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "LINKEDIN CORP",
+      "from_normalized": "LINKEDIN",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "REDDIT INC",
+      "to_normalized": "REDDIT",
+      "to_why": "composite 0.378 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.9376,
+      "to_sponsorship_ci80": [
+        0.9266,
+        0.9476
+      ],
+      "to_approvals": 408.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 0.976,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "LINKEDIN CORP",
+      "from_normalized": "LINKEDIN",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "FIGMA INC",
+      "to_normalized": "FIGMA",
+      "to_why": "composite 0.369 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.83,
+      "to_sponsorship_ci80": [
+        0.8193,
+        0.8382
+      ],
+      "to_approvals": 188.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 0.904,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ETSY INC",
+      "from_normalized": "ETSY",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "PELOTON INTERACTIVE INC",
+      "to_normalized": "PELOTON INTERACTIVE",
+      "to_why": "composite 0.366 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.8973,
+      "to_sponsorship_ci80": [
+        0.8862,
+        0.9078
+      ],
+      "to_approvals": 310.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.8605,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    }
+  ],
+  "expected_gain": {
+    "point": 0.18379,
+    "unit": "expected responses per week",
+    "caveat": "Scales linearly with base_response_rate (a your-input number) and is computed from an observational proxy. Read the interval, not this number.",
+    "ci80": [
+      0.18543,
+      0.2032
+    ],
+    "p_positive": 1.0,
+    "straddles_zero": false,
+    "verdict": "The gain is positive in 100.0% of draws and the 80% interval [+0.185, +0.203] excludes zero \u2014 under the model's own assumptions. That is not the same as being right about the world.",
+    "optimizers_curse": {
+      "what_it_is": "If the allocation is re-optimised inside every Monte Carlo draw, it adapts to noise nobody can observe, and the reported gain flatters the method rather than describing the decision. Both quantities are computed here so the difference is visible instead of accidental.",
+      "fixed_proposal_mean_gain": 0.19433,
+      "reoptimised_mean_gain": 0.19447,
+      "optimism": 0.00013,
+      "optimism_share_of_reported_gain": 0.0007,
+      "reoptimised_ci80": [
+        0.18566,
+        0.20324
+      ],
+      "why_it_matters": "The re-optimised figure is the one a naive Monte Carlo would print. Any gap between it and the fixed-proposal figure is gain that exists only because the optimiser was allowed to see the noise."
+    },
+    "point_outside_interval": true,
+    "point_vs_interval_note": "The point estimate sits OUTSIDE its own interval, which looks like a bug and is a finding. The point estimate fixes the role_quality weight at Chapter 11's 0.0 \u2014 the value that makes the role-quality signal irrelevant. The Monte Carlo draws it from U[0, 0.2] because the book never pinned it, and the firms this engine allocates to tend to pay above the BLS median, so almost every draw with a non-zero weight scores them higher. The interval is therefore not centred on the point estimate: it is telling you that the recommendation's value depends on a parameter nobody has decided."
+  },
+  "what_to_check_later": "Responses per company against the composite that earned each slot. If the top-composite firms do not out-respond the rest, the engine is optimising a correlation that does not survive the intervention \u2014 which is the open question the causal section says it cannot answer yet."
+}

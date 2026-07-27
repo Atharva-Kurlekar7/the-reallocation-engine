@@ -1,0 +1,1228 @@
+{
+  "_what_this_is": "Every row the gate refused, with a reason code. A gate with an empty rejects file has not been run against real data.",
+  "generated": "2026-07-27T18:08:07-04:00",
+  "reject_count": 81,
+  "by_code": {
+    "IDENTITY_AMBIGUOUS": 81
+  },
+  "rejects": [
+    {
+      "company_name": "98POINT6 INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "98POINT6",
+      "conflicting_rows": [
+        "98POINT6 INC",
+        "98POINT6 TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "98POINT6 TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "98POINT6",
+      "conflicting_rows": [
+        "98POINT6 INC",
+        "98POINT6 TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "ADVOCATE INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 16.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "ADVOCATE",
+      "conflicting_rows": [
+        "ADVOCATE INC",
+        "ADVOCATE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "ADVOCATE TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "ADVOCATE",
+      "conflicting_rows": [
+        "ADVOCATE INC",
+        "ADVOCATE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AEYE INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 20.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "AEYE",
+      "conflicting_rows": [
+        "AEYE INC",
+        "AEYE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AEYE TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "AEYE",
+      "conflicting_rows": [
+        "AEYE INC",
+        "AEYE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "ASCENT HOLDING CO",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "ASCENT",
+      "conflicting_rows": [
+        "ASCENT HOLDING CO",
+        "ASCENT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "ASCENT TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "ASCENT",
+      "conflicting_rows": [
+        "ASCENT HOLDING CO",
+        "ASCENT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AVAVA INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "AVAVA",
+      "conflicting_rows": [
+        "AVAVA INC",
+        "AVAVA LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AVAVA LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "AVAVA",
+      "conflicting_rows": [
+        "AVAVA INC",
+        "AVAVA LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AXIA TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "AXIA",
+      "conflicting_rows": [
+        "AXIA TECHNOLOGIES INC",
+        "AXIA TECHNOLOGIES LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "AXIA TECHNOLOGIES LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "AXIA",
+      "conflicting_rows": [
+        "AXIA TECHNOLOGIES INC",
+        "AXIA TECHNOLOGIES LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BEACHBODY CO GROUP LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "BEACHBODY",
+      "conflicting_rows": [
+        "BEACHBODY CO GROUP LLC",
+        "BEACHBODY LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BEACHBODY LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 34.0,
+      "denials": 2.0,
+      "approval_rate": 94.44444444444444,
+      "normalized": "BEACHBODY",
+      "conflicting_rows": [
+        "BEACHBODY CO GROUP LLC",
+        "BEACHBODY LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BILT INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "BILT",
+      "conflicting_rows": [
+        "BILT INC",
+        "BILT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BILT TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 12.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "BILT",
+      "conflicting_rows": [
+        "BILT INC",
+        "BILT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BRIGHTINSIGHT HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "BRIGHTINSIGHT",
+      "conflicting_rows": [
+        "BRIGHTINSIGHT HOLDINGS INC",
+        "BRIGHTINSIGHT INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "BRIGHTINSIGHT INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 16.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "BRIGHTINSIGHT",
+      "conflicting_rows": [
+        "BRIGHTINSIGHT HOLDINGS INC",
+        "BRIGHTINSIGHT INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "CHECKR GROUP INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "CHECKR",
+      "conflicting_rows": [
+        "CHECKR GROUP INC",
+        "CHECKR INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "CHECKR INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 76.0,
+      "denials": 8.0,
+      "approval_rate": 90.47619047619048,
+      "normalized": "CHECKR",
+      "conflicting_rows": [
+        "CHECKR GROUP INC",
+        "CHECKR INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "CLASSY HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "CLASSY",
+      "conflicting_rows": [
+        "CLASSY HOLDINGS INC",
+        "CLASSY INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "CLASSY INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 18.0,
+      "denials": 2.0,
+      "approval_rate": 90.0,
+      "normalized": "CLASSY",
+      "conflicting_rows": [
+        "CLASSY HOLDINGS INC",
+        "CLASSY INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "COMPASS THERAPEUTICS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 6.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "COMPASS THERAPEUTICS",
+      "conflicting_rows": [
+        "COMPASS THERAPEUTICS INC",
+        "COMPASS THERAPEUTICS LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "COMPASS THERAPEUTICS LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "COMPASS THERAPEUTICS",
+      "conflicting_rows": [
+        "COMPASS THERAPEUTICS INC",
+        "COMPASS THERAPEUTICS LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "HEARTFLOW HOLDING INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "HEARTFLOW",
+      "conflicting_rows": [
+        "HEARTFLOW HOLDING INC",
+        "HEARTFLOW INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "HEARTFLOW INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 20.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "HEARTFLOW",
+      "conflicting_rows": [
+        "HEARTFLOW HOLDING INC",
+        "HEARTFLOW INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "INDIE CO",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "INDIE",
+      "conflicting_rows": [
+        "INDIE CO",
+        "INDIE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "INDIE TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 12.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "INDIE",
+      "conflicting_rows": [
+        "INDIE CO",
+        "INDIE TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "KINETIC INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "KINETIC",
+      "conflicting_rows": [
+        "KINETIC INC",
+        "KINETIC TECHNOLOGIES"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "KINETIC TECHNOLOGIES",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 4.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "KINETIC",
+      "conflicting_rows": [
+        "KINETIC INC",
+        "KINETIC TECHNOLOGIES"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "KONG INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 16.0,
+      "denials": 2.0,
+      "approval_rate": 88.88888888888889,
+      "normalized": "KONG",
+      "conflicting_rows": [
+        "KONG INC",
+        "KONG LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "KONG LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "KONG",
+      "conflicting_rows": [
+        "KONG INC",
+        "KONG LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MAVEN GROUP LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "MAVEN",
+      "conflicting_rows": [
+        "MAVEN GROUP LLC",
+        "MAVEN TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MAVEN TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 68.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "MAVEN",
+      "conflicting_rows": [
+        "MAVEN GROUP LLC",
+        "MAVEN TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MEDIAMATH HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "MEDIAMATH",
+      "conflicting_rows": [
+        "MEDIAMATH HOLDINGS INC",
+        "MEDIAMATH INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MEDIAMATH INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 12.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "MEDIAMATH",
+      "conflicting_rows": [
+        "MEDIAMATH HOLDINGS INC",
+        "MEDIAMATH INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MOBIQUITY INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 32.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "MOBIQUITY",
+      "conflicting_rows": [
+        "MOBIQUITY INC",
+        "MOBIQUITY TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MOBIQUITY TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "MOBIQUITY",
+      "conflicting_rows": [
+        "MOBIQUITY INC",
+        "MOBIQUITY TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MODERN LIFE GROUP INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "MODERN LIFE",
+      "conflicting_rows": [
+        "MODERN LIFE GROUP INC",
+        "MODERN LIFE INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "MODERN LIFE INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 6.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "MODERN LIFE",
+      "conflicting_rows": [
+        "MODERN LIFE GROUP INC",
+        "MODERN LIFE INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "OCIENT HOLDINGS LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "OCIENT",
+      "conflicting_rows": [
+        "OCIENT HOLDINGS LLC",
+        "OCIENT INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "OCIENT INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 14.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "OCIENT",
+      "conflicting_rows": [
+        "OCIENT HOLDINGS LLC",
+        "OCIENT INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PAGER INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 10.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "PAGER",
+      "conflicting_rows": [
+        "PAGER INC",
+        "PAGER TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PAGER TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "PAGER",
+      "conflicting_rows": [
+        "PAGER INC",
+        "PAGER TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PATIENTFI INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "PATIENTFI",
+      "conflicting_rows": [
+        "PATIENTFI INC",
+        "PATIENTFI LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PATIENTFI LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 4.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "PATIENTFI",
+      "conflicting_rows": [
+        "PATIENTFI INC",
+        "PATIENTFI LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PENUMBRA INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 154.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "PENUMBRA",
+      "conflicting_rows": [
+        "PENUMBRA INC",
+        "PENUMBRA LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PENUMBRA LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "PENUMBRA",
+      "conflicting_rows": [
+        "PENUMBRA INC",
+        "PENUMBRA LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PERSIVIA HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "PERSIVIA",
+      "conflicting_rows": [
+        "PERSIVIA HOLDINGS INC",
+        "PERSIVIA INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "PERSIVIA INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 14.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "PERSIVIA",
+      "conflicting_rows": [
+        "PERSIVIA HOLDINGS INC",
+        "PERSIVIA INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "QUARTET HEALTH HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "QUARTET HEALTH",
+      "conflicting_rows": [
+        "QUARTET HEALTH HOLDINGS INC",
+        "QUARTET HEALTH INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "QUARTET HEALTH INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "QUARTET HEALTH",
+      "conflicting_rows": [
+        "QUARTET HEALTH HOLDINGS INC",
+        "QUARTET HEALTH INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "RADICAL GROUP INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "RADICAL",
+      "conflicting_rows": [
+        "RADICAL GROUP INC",
+        "RADICAL INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "RADICAL INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 88.0,
+      "denials": 6.0,
+      "approval_rate": 93.61702127659576,
+      "normalized": "RADICAL",
+      "conflicting_rows": [
+        "RADICAL GROUP INC",
+        "RADICAL INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SAIL INTERNET HOLDINGS LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SAIL INTERNET",
+      "conflicting_rows": [
+        "SAIL INTERNET HOLDINGS LLC",
+        "SAIL INTERNET INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SAIL INTERNET INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "SAIL INTERNET",
+      "conflicting_rows": [
+        "SAIL INTERNET HOLDINGS LLC",
+        "SAIL INTERNET INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SHIFT GROUP HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SHIFT",
+      "conflicting_rows": [
+        "SHIFT GROUP HOLDINGS INC",
+        "SHIFT LABS INC",
+        "SHIFT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SHIFT LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SHIFT",
+      "conflicting_rows": [
+        "SHIFT GROUP HOLDINGS INC",
+        "SHIFT LABS INC",
+        "SHIFT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SHIFT TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 4.0,
+      "approval_rate": 33.33333333333333,
+      "normalized": "SHIFT",
+      "conflicting_rows": [
+        "SHIFT GROUP HOLDINGS INC",
+        "SHIFT LABS INC",
+        "SHIFT TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SIRONA MEDICAL INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 26.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "SIRONA MEDICAL",
+      "conflicting_rows": [
+        "SIRONA MEDICAL INC",
+        "SIRONA MEDICAL TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SIRONA MEDICAL TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SIRONA MEDICAL",
+      "conflicting_rows": [
+        "SIRONA MEDICAL INC",
+        "SIRONA MEDICAL TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SOLIDENERGY SYSTEMS CORP",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SOLIDENERGY SYSTEMS",
+      "conflicting_rows": [
+        "SOLIDENERGY SYSTEMS CORP",
+        "SOLIDENERGY SYSTEMS LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SOLIDENERGY SYSTEMS LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 24.0,
+      "denials": 2.0,
+      "approval_rate": 92.3076923076923,
+      "normalized": "SOLIDENERGY SYSTEMS",
+      "conflicting_rows": [
+        "SOLIDENERGY SYSTEMS CORP",
+        "SOLIDENERGY SYSTEMS LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SPIRE INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 42.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "SPIRE",
+      "conflicting_rows": [
+        "SPIRE INC",
+        "SPIRE LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SPIRE LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SPIRE",
+      "conflicting_rows": [
+        "SPIRE INC",
+        "SPIRE LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SPOTTER INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 36.0,
+      "denials": 2.0,
+      "approval_rate": 94.73684210526316,
+      "normalized": "SPOTTER",
+      "conflicting_rows": [
+        "SPOTTER INC",
+        "SPOTTER LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "SPOTTER LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "SPOTTER",
+      "conflicting_rows": [
+        "SPOTTER INC",
+        "SPOTTER LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "TOAST HOLDINGS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "TOAST",
+      "conflicting_rows": [
+        "TOAST HOLDINGS INC",
+        "TOAST INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "TOAST INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 150.0,
+      "denials": 4.0,
+      "approval_rate": 97.4025974025974,
+      "normalized": "TOAST",
+      "conflicting_rows": [
+        "TOAST HOLDINGS INC",
+        "TOAST INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UNCHAINED LABS",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "UNCHAINED",
+      "conflicting_rows": [
+        "UNCHAINED LABS",
+        "UNCHAINED LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UNCHAINED LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "UNCHAINED",
+      "conflicting_rows": [
+        "UNCHAINED LABS",
+        "UNCHAINED LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UPLIFT INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 8.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "UPLIFT",
+      "conflicting_rows": [
+        "UPLIFT INC",
+        "UPLIFT LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UPLIFT LABS INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 0.0,
+      "denials": 4.0,
+      "approval_rate": 0.0,
+      "normalized": "UPLIFT",
+      "conflicting_rows": [
+        "UPLIFT INC",
+        "UPLIFT LABS INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UPSTART NETWORK INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 316.0,
+      "denials": 2.0,
+      "approval_rate": 99.37106918238992,
+      "normalized": "UPSTART NETWORK",
+      "conflicting_rows": [
+        "UPSTART NETWORK INC",
+        "UPSTART NETWORK TRUST"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "UPSTART NETWORK TRUST",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "UPSTART NETWORK",
+      "conflicting_rows": [
+        "UPSTART NETWORK INC",
+        "UPSTART NETWORK TRUST"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "VILLAGE PRACTICE MANAGEMENT CO HOLDINGS LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "VILLAGE PRACTICE MANAGEMENT",
+      "conflicting_rows": [
+        "VILLAGE PRACTICE MANAGEMENT CO HOLDINGS LLC",
+        "VILLAGE PRACTICE MANAGEMENT COMPANY LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "VILLAGE PRACTICE MANAGEMENT COMPANY LLC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 14.0,
+      "denials": 2.0,
+      "approval_rate": 87.5,
+      "normalized": "VILLAGE PRACTICE MANAGEMENT",
+      "conflicting_rows": [
+        "VILLAGE PRACTICE MANAGEMENT CO HOLDINGS LLC",
+        "VILLAGE PRACTICE MANAGEMENT COMPANY LLC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "WASABI HOLDING INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "WASABI",
+      "conflicting_rows": [
+        "WASABI HOLDING INC",
+        "WASABI TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "WASABI TECHNOLOGIES INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 46.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "WASABI",
+      "conflicting_rows": [
+        "WASABI HOLDING INC",
+        "WASABI TECHNOLOGIES INC"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "XENDIT INC",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": 2.0,
+      "denials": 0.0,
+      "approval_rate": 100.0,
+      "normalized": "XENDIT",
+      "conflicting_rows": [
+        "XENDIT INC",
+        "XENDIT LTD"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    },
+    {
+      "company_name": "XENDIT LTD",
+      "codes": [
+        "IDENTITY_AMBIGUOUS"
+      ],
+      "approvals": null,
+      "denials": null,
+      "approval_rate": null,
+      "normalized": "XENDIT",
+      "conflicting_rows": [
+        "XENDIT INC",
+        "XENDIT LTD"
+      ],
+      "what_the_engine_does": "excluded from the candidate pool \u2014 the filing history cannot be attributed to one firm"
+    }
+  ]
+}

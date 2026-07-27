@@ -1,0 +1,1981 @@
+{
+  "_what_this_is": "Per-company evidence with provenance on every term.",
+  "generated": "2026-07-27T18:08:09-04:00",
+  "meta": {
+    "generated": "2026-07-27T18:08:09-04:00",
+    "liveness_policy": "block",
+    "weights": {
+      "sponsorship": 0.35,
+      "fit": 0.3,
+      "role_quality": 0.0
+    },
+    "needs_sponsorship": true,
+    "counts": {
+      "rows": 30369,
+      "title_match": 598,
+      "title_mismatch": 959,
+      "gate_rejected": 15,
+      "duplicate_identity": 2,
+      "no_titles": 28812
+    },
+    "candidate_count": 15,
+    "with_sponsorship_record": 15,
+    "unknown_sponsorship": 0,
+    "manual_verification_required": 0,
+    "supported_ats": 15,
+    "portals": {
+      "path": "data/examples/erp-to-ai-portals.yml",
+      "found": true,
+      "entries": 25,
+      "enabled": 16
+    },
+    "bls": {
+      "path": "data/bls/compact/soc_occupation_compact.csv",
+      "found": true,
+      "median_wage": 112590.0,
+      "cognitive_pivot_score": 3.903,
+      "soc_codes": [
+        "15-2051",
+        "15-1252",
+        "15-1211"
+      ]
+    },
+    "unverified_liveness_note": "This run made no network calls. Liveness is unverified for every company; the gate reflects provider coverage only.",
+    "blind_spot": {
+      "what": "firms with Form D funding in the last 3 years and NO H-1B filing record",
+      "count": 5126,
+      "sample": [
+        {
+          "company_name": "011235813 INC",
+          "total_funding": 8499999.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-05-12"
+        },
+        {
+          "company_name": "1 TRUE HEALTH CARE MANAGEMENT INC",
+          "total_funding": 1500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-02-16"
+        },
+        {
+          "company_name": "10000 INC",
+          "total_funding": 17996101.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-08-15"
+        },
+        {
+          "company_name": "1080 NETWORK INC",
+          "total_funding": 35500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-03-26"
+        },
+        {
+          "company_name": "10BEAUTY INC",
+          "total_funding": 23999942.0,
+          "latest_funding_stage": "Series B",
+          "latest_funding_date": "2023-12-08"
+        },
+        {
+          "company_name": "111 COMMERCIAL COURT INVESTORS LP",
+          "total_funding": 6908063.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-10-24"
+        },
+        {
+          "company_name": "123 SEE INC",
+          "total_funding": 30429921.0,
+          "latest_funding_stage": "Series B",
+          "latest_funding_date": "2025-07-01"
+        },
+        {
+          "company_name": "150W25 LLC",
+          "total_funding": 1200000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-07-14"
+        },
+        {
+          "company_name": "1667 ALLESANDRO LLC",
+          "total_funding": 3000000.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-02-29"
+        },
+        {
+          "company_name": "180 LIFE SCIENCES CORP",
+          "total_funding": 29558200.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-12-30"
+        },
+        {
+          "company_name": "1847 HOLDINGS LLC",
+          "total_funding": 24300324.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-12-16"
+        },
+        {
+          "company_name": "1FORT INC",
+          "total_funding": 9853517.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-01-10"
+        },
+        {
+          "company_name": "1M INC",
+          "total_funding": 9662456.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-08-20"
+        },
+        {
+          "company_name": "1ST AMERICAN NUCLEAR CO",
+          "total_funding": 7500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-08-15"
+        },
+        {
+          "company_name": "1UP CORP",
+          "total_funding": 8622291.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-12-27"
+        },
+        {
+          "company_name": "2025 GREENWOOD & CAVALIER PEPELWERK LP",
+          "total_funding": 1500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-04-01"
+        },
+        {
+          "company_name": "247 FOOTBALL LLC",
+          "total_funding": 1000000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-12-19"
+        },
+        {
+          "company_name": "2GHEALTH INC",
+          "total_funding": 18609246.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-06-16"
+        },
+        {
+          "company_name": "3001 ARROYO LLC",
+          "total_funding": 2532000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-01-23"
+        },
+        {
+          "company_name": "3030 LABS INC",
+          "total_funding": 5432499.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-06-12"
+        }
+      ],
+      "why_it_matters": "A firm has filed job titles only if it has already sponsored someone, so the title filter selects on the very outcome the engine predicts. These firms are not ranked low \u2014 they never enter the pool at all. The gate's refusal to read a blank cell as a zero protects the arithmetic and does nothing for these firms, because the pool never sees them. They are also exactly the recently-funded companies the domain's funding thesis says to surface.",
+      "why_the_engine_cannot_fix_it": "The fit vote is computed from filed titles. With no titles there is no fit vote, so the composite cannot exceed sponsorship x 0.35 x timeline = 0.30 even if sponsorship were imputed at its maximum. These firms are structurally unreachable, not merely disadvantaged, and the Monte Carlo missingness scenarios cannot rescue them."
+    }
+  },
+  "candidates": [
+    {
+      "company_name": "MAPLEBEAR INC",
+      "normalized": "MAPLEBEAR",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Senior Software Engineer",
+        "Senior Machine Learning Engineer",
+        "Software Engineer",
+        "Senior Data Scientist",
+        "Data Scientist"
+      ],
+      "total_funding": 2529727825.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2021-10-15",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 498.0,
+        "denials": 4.0,
+        "stated_rate_pct": 99.20318725099601,
+        "alpha": 499.0,
+        "beta": 5.0,
+        "posterior_mean": 0.9901,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 0.9994,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.57,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist",
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 3 target title(s) in the filed history: data scientist, machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 185000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.643,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Instacart",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.428,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.428 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.57,
+            "weight": 0.3,
+            "contribution": 0.171,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.5035,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.57\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.428"
+      }
+    },
+    {
+      "company_name": "ROKU INC",
+      "normalized": "ROKU",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Senior Software Engineer",
+        "Senior Data Scientist",
+        "Software Engineer",
+        "Product Manager",
+        "Senior Data Engineer"
+      ],
+      "total_funding": 70500000.0,
+      "latest_funding_stage": "Series C",
+      "latest_funding_date": "2015-11-09",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 654.0,
+        "denials": 4.0,
+        "stated_rate_pct": 99.3920972644377,
+        "alpha": 655.0,
+        "beta": 5.0,
+        "posterior_mean": 0.9924,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 1.0,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.57,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data engineer",
+          "data scientist",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 3 target title(s) in the filed history: data engineer, data scientist, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 182155.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.618,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Roku",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.428,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.428 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.57,
+            "weight": 0.3,
+            "contribution": 0.171,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.5035,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.57\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.428"
+      }
+    },
+    {
+      "company_name": "AIRBNB INC",
+      "normalized": "AIRBNB",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Software Engineer",
+        "Senior Software Engineer",
+        "Data Scientist",
+        "Senior Data Scientist",
+        "Engineering Manager"
+      ],
+      "total_funding": 3465275401.0,
+      "latest_funding_stage": "Series B",
+      "latest_funding_date": "2019-08-05",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 1000.0,
+        "denials": 10.0,
+        "stated_rate_pct": 99.00990099009901,
+        "alpha": 1001.0,
+        "beta": 11.0,
+        "posterior_mean": 0.9891,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 1.0,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: data scientist, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 158080.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.404,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Airbnb",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.405,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.405 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4765,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.48\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.405"
+      }
+    },
+    {
+      "company_name": "LINKEDIN CORP",
+      "normalized": "LINKEDIN",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Sr Software Engineer",
+        "Staff Software Engineer",
+        "Sr. Software Engineer, Systems Infrastructure",
+        "Sr Data Scientist",
+        "Software Engineer",
+        "Sr Software Engineer",
+        "Staff Software Engineer",
+        "Staff Software Engineer, Systems Infrastructure"
+      ],
+      "total_funding": 119600031.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2014-02-28",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 4962.0,
+        "denials": 28.0,
+        "stated_rate_pct": 99.43887775551102,
+        "alpha": 4963.0,
+        "beta": 29.0,
+        "posterior_mean": 0.9942,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 1.0,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: data scientist, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 167149.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.485,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "LinkedIn",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.405,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.405 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4765,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.48\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.405"
+      }
+    },
+    {
+      "company_name": "ROBLOX CORP",
+      "normalized": "ROBLOX",
+      "industry": "Other",
+      "state": "CA",
+      "titles_sponsored": [
+        "Senior Software Engineer",
+        "Software Engineer",
+        "Principal Software Engineer",
+        "Senior Product Designer",
+        "Principal Machine Learning Engineer - Personalization"
+      ],
+      "total_funding": 657430953.0,
+      "latest_funding_stage": "Series B",
+      "latest_funding_date": "2022-04-01",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 856.0,
+        "denials": 10.0,
+        "stated_rate_pct": 98.84526558891454,
+        "alpha": 857.0,
+        "beta": 11.0,
+        "posterior_mean": 0.9873,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 1.0,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 265000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 2.354,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Roblox",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.405,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.405 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4765,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.48\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.405"
+      }
+    },
+    {
+      "company_name": "TWILIO INC",
+      "normalized": "TWILIO",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Software Engineer (L2)",
+        "Software Engineer (L3)",
+        "Machine Learning Engineer (L2)",
+        "Manager, Software Engineering (L4)",
+        "Software Engineer (L3)"
+      ],
+      "total_funding": 3154119411.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2021-07-14",
+      "sponsorship": {
+        "p": 0.95,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 802.0,
+        "denials": 20.0,
+        "stated_rate_pct": 97.5669099756691,
+        "alpha": 803.0,
+        "beta": 21.0,
+        "posterior_mean": 0.9745,
+        "ci80": [
+          0.95,
+          0.95
+        ],
+        "volume_factor": 1.0,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 160000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.421,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Twilio",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.405,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.405 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.95,
+            "weight": 0.35,
+            "contribution": 0.3325,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4765,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.95\u00b70.35 + 0.48\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.405"
+      }
+    },
+    {
+      "company_name": "MOLOCO INC",
+      "normalized": "MOLOCO",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Staff Data Scientist",
+        "Data Analyst II",
+        "Sr. Growth Manager",
+        "Growth Associate",
+        "Machine Learning Engineer II"
+      ],
+      "total_funding": 188277456.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2021-08-09",
+      "sponsorship": {
+        "p": 0.8405,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 200.0,
+        "denials": 2.0,
+        "stated_rate_pct": 99.00990099009901,
+        "alpha": 201.0,
+        "beta": 3.0,
+        "posterior_mean": 0.9853,
+        "ci80": [
+          0.8303,
+          0.8484
+        ],
+        "volume_factor": 0.8531,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.57,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data analyst",
+          "data scientist",
+          "machine learning engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 3 target title(s) in the filed history: data analyst, data scientist, machine learning engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 0.8736,
+        "source": "derived",
+        "median_salary_offered": 146242.5,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.299,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Moloco",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3954,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.395 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.8405,
+            "weight": 0.35,
+            "contribution": 0.2942,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.57,
+            "weight": 0.3,
+            "contribution": 0.171,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.8736,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4652,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.8405\u00b70.35 + 0.57\u00b70.3 + 0.8736\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.395"
+      }
+    },
+    {
+      "company_name": "NEXTDOOR INC",
+      "normalized": "NEXTDOOR",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "CUSTOMER ANALYTICS & INSIGHTS MANAGER",
+        "Data Scientist",
+        "Software Engineer",
+        "Software Engineer",
+        "Lead, Software Engineering",
+        "Machine Learning Engineer"
+      ],
+      "total_funding": 170000026.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2019-05-08",
+      "sponsorship": {
+        "p": 0.8361,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 222.0,
+        "denials": 8.0,
+        "stated_rate_pct": 96.52173913043478,
+        "alpha": 223.0,
+        "beta": 9.0,
+        "posterior_mean": 0.9612,
+        "ci80": [
+          0.8215,
+          0.8492
+        ],
+        "volume_factor": 0.8698,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.57,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist",
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 3 target title(s) in the filed history: data scientist, machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 0.9958,
+        "source": "derived",
+        "median_salary_offered": 157250.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.397,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Nextdoor",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3941,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.394 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.8361,
+            "weight": 0.35,
+            "contribution": 0.2926,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.57,
+            "weight": 0.3,
+            "contribution": 0.171,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.9958,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4636,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.8361\u00b70.35 + 0.57\u00b70.3 + 0.9958\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.394"
+      }
+    },
+    {
+      "company_name": "REDDIT INC",
+      "normalized": "REDDIT",
+      "industry": "Other",
+      "state": "CA",
+      "titles_sponsored": [
+        "Advertiser Optimization PM",
+        "Software Engineer, Machine Learning",
+        "Staff Salesforce Developer",
+        "Software Engineer",
+        "Senior Creative Strategist"
+      ],
+      "total_funding": 1749999744.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2021-08-11",
+      "sponsorship": {
+        "p": 0.9376,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 408.0,
+        "denials": 12.0,
+        "stated_rate_pct": 97.14285714285714,
+        "alpha": 409.0,
+        "beta": 13.0,
+        "posterior_mean": 0.9692,
+        "ci80": [
+          0.9266,
+          0.9476
+        ],
+        "volume_factor": 0.9674,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.39,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 1 target title(s) in the filed history: software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 220000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.954,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Reddit",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3784,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.378 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.9376,
+            "weight": 0.35,
+            "contribution": 0.3282,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.39,
+            "weight": 0.3,
+            "contribution": 0.117,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4452,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.9376\u00b70.35 + 0.39\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.378"
+      }
+    },
+    {
+      "company_name": "FIGMA INC",
+      "normalized": "FIGMA",
+      "industry": "Other",
+      "state": "CA",
+      "titles_sponsored": [
+        "Software Engineer",
+        "Account Manager, Enterprise",
+        "Software Engineer - Infrastructure",
+        "Motion Designer, Brand Studio",
+        "Data Scientist, Product Analytics"
+      ],
+      "total_funding": 721999732.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2024-05-15",
+      "sponsorship": {
+        "p": 0.83,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 188.0,
+        "denials": 2.0,
+        "stated_rate_pct": 98.94736842105263,
+        "alpha": 189.0,
+        "beta": 3.0,
+        "posterior_mean": 0.9844,
+        "ci80": [
+          0.8193,
+          0.8382
+        ],
+        "volume_factor": 0.8432,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: data scientist, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 190000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.688,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Figma",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3693,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.369 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.83,
+            "weight": 0.35,
+            "contribution": 0.2905,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4345,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.83\u00b70.35 + 0.48\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.369"
+      }
+    },
+    {
+      "company_name": "PELOTON INTERACTIVE INC",
+      "normalized": "PELOTON INTERACTIVE",
+      "industry": "Other Technology",
+      "state": "NY",
+      "titles_sponsored": [
+        "Senior Software Quality Assurance Manager",
+        "Manager, Product Lifecycle Management",
+        "Senior Manager, Quality Assurance",
+        "Manager, Software Development Engineer in Test",
+        "Marketing Data Scientist"
+      ],
+      "total_funding": 87999997.0,
+      "latest_funding_stage": "Series C",
+      "latest_funding_date": "2015-11-30",
+      "sponsorship": {
+        "p": 0.8973,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 310.0,
+        "denials": 8.0,
+        "stated_rate_pct": 97.48427672955975,
+        "alpha": 311.0,
+        "beta": 9.0,
+        "posterior_mean": 0.9719,
+        "ci80": [
+          0.8862,
+          0.9078
+        ],
+        "volume_factor": 0.9233,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.39,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data scientist"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 1 target title(s) in the filed history: data scientist",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 167149.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.485,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Peloton",
+        "in_portals_config": true
+      },
+      "flags": [
+        "ENTITY_COLLISION",
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3664,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.366 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.8973,
+            "weight": 0.35,
+            "contribution": 0.3141,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.39,
+            "weight": 0.3,
+            "contribution": 0.117,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4311,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.8973\u00b70.35 + 0.39\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.366"
+      }
+    },
+    {
+      "company_name": "APPLOVIN CORP",
+      "normalized": "APPLOVIN",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Software Engineer II",
+        "Machine Learning Engineer",
+        "Technical Support Specialist II",
+        "Product Manager, Lion Studios",
+        "Senior Designer, Motion Graphics"
+      ],
+      "total_funding": 594499996.0,
+      "latest_funding_stage": "Series D+",
+      "latest_funding_date": "2022-02-23",
+      "sponsorship": {
+        "p": 0.7667,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 130.0,
+        "denials": 2.0,
+        "stated_rate_pct": 98.48484848484848,
+        "alpha": 131.0,
+        "beta": 3.0,
+        "posterior_mean": 0.9776,
+        "ci80": [
+          0.7535,
+          0.7778
+        ],
+        "volume_factor": 0.7842,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 0.9153,
+        "source": "derived",
+        "median_salary_offered": 150000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.332,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Applovin",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3505,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.350 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.7667,
+            "weight": 0.35,
+            "contribution": 0.2683,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.9153,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.4123,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.7667\u00b70.35 + 0.48\u00b70.3 + 0.9153\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.350"
+      }
+    },
+    {
+      "company_name": "DISCORD INC",
+      "normalized": "DISCORD",
+      "industry": "Other Technology",
+      "state": "CA",
+      "titles_sponsored": [
+        "Senior Software Engineer",
+        "Software Engineer",
+        "Software Engineer, Machine Learning",
+        "Product Manager",
+        "Engineering Manager"
+      ],
+      "total_funding": 1035903807.0,
+      "latest_funding_stage": "Series B",
+      "latest_funding_date": "2023-01-17",
+      "sponsorship": {
+        "p": 0.7678,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 122.0,
+        "denials": 0.0,
+        "stated_rate_pct": 100.0,
+        "alpha": 123.0,
+        "beta": 1.0,
+        "posterior_mean": 0.9919,
+        "ci80": [
+          0.7599,
+          0.7734
+        ],
+        "volume_factor": 0.7741,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.39,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 1 target title(s) in the filed history: software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 1.0,
+        "source": "derived",
+        "median_salary_offered": 218000.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.936,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Discord",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3279,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.328 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.7678,
+            "weight": 0.35,
+            "contribution": 0.2687,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.39,
+            "weight": 0.3,
+            "contribution": 0.117,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.3857,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.7678\u00b70.35 + 0.39\u00b70.3 + 1.0\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.328"
+      }
+    },
+    {
+      "company_name": "PATHAI INC",
+      "normalized": "PATHAI",
+      "industry": "Biotechnology",
+      "state": "MA",
+      "titles_sponsored": [
+        "Software Engineer I",
+        "Director of Engineering",
+        "Machine Learning Engineer III",
+        "Senior Machine Learning Engineer",
+        "Machine Learning Engineer II"
+      ],
+      "total_funding": 75397907.0,
+      "latest_funding_stage": "Series C",
+      "latest_funding_date": "2019-04-09",
+      "sponsorship": {
+        "p": 0.6772,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 78.0,
+        "denials": 2.0,
+        "stated_rate_pct": 97.5,
+        "alpha": 79.0,
+        "beta": 3.0,
+        "posterior_mean": 0.9634,
+        "ci80": [
+          0.6571,
+          0.6933
+        ],
+        "volume_factor": 0.7029,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "machine learning engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: machine learning engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 0.8665,
+        "source": "derived",
+        "median_salary_offered": 145600.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.293,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "PathAI",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3239,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.324 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.6772,
+            "weight": 0.35,
+            "contribution": 0.237,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.8665,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.381,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.6772\u00b70.35 + 0.48\u00b70.3 + 0.8665\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.324"
+      }
+    },
+    {
+      "company_name": "YEXT INC",
+      "normalized": "YEXT",
+      "industry": "Other Technology",
+      "state": "NY",
+      "titles_sponsored": [
+        "Software Engineer",
+        "Senior Systems Engineer",
+        "Director, Strategic Partner Growth",
+        "Product Designer",
+        "Senior Data Engineer"
+      ],
+      "total_funding": 50250006.0,
+      "latest_funding_stage": "Series C",
+      "latest_funding_date": "2014-05-28",
+      "sponsorship": {
+        "p": 0.6714,
+        "tier": "proven",
+        "source": "derived",
+        "approvals": 68.0,
+        "denials": 0.0,
+        "stated_rate_pct": 100.0,
+        "alpha": 69.0,
+        "beta": 1.0,
+        "posterior_mean": 0.9857,
+        "ci80": [
+          0.6581,
+          0.68
+        ],
+        "volume_factor": 0.6811,
+        "note": "p = Beta posterior mean x volume factor, capped at 0.95. The interval is the posterior, scaled. Approval rate answers 'did their filings succeed', not 'will they sponsor me'."
+      },
+      "fit": {
+        "p": 0.48,
+        "source": "model-judgment",
+        "target_title_hits": [
+          "data engineer",
+          "software engineer"
+        ],
+        "basis": "rubric over filed job titles (config.FIT_*). 2 target title(s) in the filed history: data engineer, software engineer",
+        "caveat": "This compares my target titles to the titles a company has *filed H-1Bs for*, which is not the same as reading a live job description against my CV. It is the weakest link in the composite."
+      },
+      "role_quality": {
+        "p": 0.8346,
+        "source": "derived",
+        "median_salary_offered": 142727.0,
+        "bls_median_wage": 112590.0,
+        "ratio": 1.268,
+        "cognitive_pivot_score": 3.903,
+        "basis": "company median sponsored salary / BLS median wage for the target SOC codes, mapped to [0,1] over ratio 0.6-1.4",
+        "caveat": "weight is 0.0 \u2014 Chapter 11 never pinned one, so this signal currently contributes nothing to the composite. The uncertainty pass varies the weight instead of pretending it is settled."
+      },
+      "liveness": {
+        "factor": 1.0,
+        "source": "derived",
+        "status": "checkable-but-unchecked",
+        "provider": "greenhouse",
+        "manual_verification_required": false,
+        "note": "board is on a supported ATS provider, so a posting COULD be verified with `npm run ats:liveness <url>`. This run made no network call: the gate is open on the strength of provider coverage, not of a checked posting."
+      },
+      "timeline": {
+        "factor": 0.85,
+        "source": "your-input",
+        "note": "profile-level: per-posting start dates are not in this dataset, so the same factor applies to every company"
+      },
+      "ats": {
+        "supported_provider": true,
+        "provider": "greenhouse",
+        "portal_name": "Yext",
+        "in_portals_config": true
+      },
+      "flags": [
+        "LIVENESS_UNCHECKED"
+      ],
+      "manual_verification_required": false,
+      "composite": 0.3221,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.322 \u2265 0.3, gates healthy",
+      "trace": {
+        "votes": [
+          {
+            "factor": "sponsorship",
+            "value": 0.6714,
+            "weight": 0.35,
+            "contribution": 0.235,
+            "source": "derived"
+          },
+          {
+            "factor": "fit",
+            "value": 0.48,
+            "weight": 0.3,
+            "contribution": 0.144,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.8346,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "source": "derived"
+          }
+        ],
+        "vote_sum": 0.379,
+        "gates": [
+          {
+            "factor": "liveness",
+            "multiplier": 1.0,
+            "source": "derived"
+          },
+          {
+            "factor": "timeline",
+            "multiplier": 0.85,
+            "source": "your-input"
+          }
+        ],
+        "gate_product": 0.85,
+        "arithmetic": "(0.6714\u00b70.35 + 0.48\u00b70.3 + 0.8346\u00b70.0) \u00d7 1.0 \u00d7 0.85 = 0.322"
+      }
+    }
+  ]
+}

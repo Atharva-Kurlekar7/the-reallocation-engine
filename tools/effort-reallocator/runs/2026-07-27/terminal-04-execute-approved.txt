@@ -1,0 +1,28 @@
+==========================================================================
+HARD STOP — committing application slots
+==========================================================================
+  proposal:    tools/effort-reallocator/out/proposal.json (generated 2026-07-27T18:08:09-04:00)
+  gate status: PASS-WITH-WAIVER
+  moves:       9
+    1 slot(s) ACME ANALYTICS LLC → MAPLEBEAR INC (stability 100.00%)
+    1 slot(s) ACME ANALYTICS LLC → ROKU INC (stability 100.00%)
+    1 slot(s) DOCUSIGN INC → ROBLOX CORP (stability 100.00%)
+    1 slot(s) DOCUSIGN INC → TWILIO INC (stability 100.00%)
+    1 slot(s) ZOOX INC → MOLOCO INC (stability 98.00%)
+    1 slot(s) ZOOX INC → NEXTDOOR INC (stability 99.85%)
+    1 slot(s) LINKEDIN CORP → REDDIT INC (stability 97.60%)
+    1 slot(s) LINKEDIN CORP → FIGMA INC (stability 90.40%)
+    1 slot(s) ETSY INC → PELOTON INTERACTIVE INC (stability 86.05%)
+
+  FLAGS (carried, not blocking):
+    [flag]  SKIP_RATE_BELOW_TARGET: 0.0% < 50.0%
+            resolver: the human tightens the filter before spending the week
+
+  APPROVED by Atharva Kurlekar
+    reason: Opened every destination board by hand on 2026-07-27 and confirmed a live matching requisition; accepting the snapshot-vintage waiver for one week of planning; planned for 11 slots so no sub-floor move is proposed.
+    1 flag(s) accepted on the record
+
+  committed ledger: tools/effort-reallocator/out/committed-allocation.json
+  gate decision:    logs/gate-decisions/2026-07-27-effort-reallocator.md
+  This tool still applied to nothing. You do that part, and the ledger is what
+  you check the outcome against.

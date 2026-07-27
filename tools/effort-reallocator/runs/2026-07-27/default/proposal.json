@@ -1,0 +1,1375 @@
+{
+  "_what_this_is": "A RECOMMENDATION. Nothing has moved. Executing it requires a named human, a written reason, and a passed gate.",
+  "generated": "2026-07-27T18:07:36-04:00",
+  "objective": "maximise expected sponsored-interview yield per slot, subject to a per-company cap \u2014 with Chapter 15's >=50% skip rate reported as a dial, not enforced as a constraint, because it is a process metric a human reads in two directions",
+  "objective_omits": "referrals, my own application quality, interview conversion, salary, team quality, and every firm with no filing record and no supported ATS board",
+  "book_anchor": "Ch.11 'Why liveness and timeline are multipliers, not addends' (composite, threshold 0.3); Ch.2 the reallocation principle; Ch.15 the skip-rate dial",
+  "settings": {
+    "slots": 12,
+    "cap": 3,
+    "decay": 0.5,
+    "base_response_rate": 0.06
+  },
+  "moves": [
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ACME ANALYTICS LLC",
+      "from_normalized": "ACME ANALYTICS",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "MAPLEBEAR INC",
+      "to_normalized": "MAPLEBEAR",
+      "to_why": "composite 0.428 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 498.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 1.0,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ACME ANALYTICS LLC",
+      "from_normalized": "ACME ANALYTICS",
+      "from_why": "no sponsorship evidence in the dataset for this firm",
+      "to": "ROKU INC",
+      "to_normalized": "ROKU",
+      "to_why": "composite 0.428 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 654.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        1.0,
+        1.0
+      ],
+      "stability": 0.9995,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "LINKEDIN CORP",
+      "from_normalized": "LINKEDIN",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "HUMAN INC",
+      "to_normalized": "HUMAN",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 1382.0,
+      "to_manual_verification_required": true,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.207,
+      "stable": false,
+      "verdict": "NOT distinguishable from no change \u2014 the move appears in only 20.70% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'."
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "LINKEDIN CORP",
+      "from_normalized": "LINKEDIN",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "PINTEREST INC",
+      "to_normalized": "PINTEREST",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 1364.0,
+      "to_manual_verification_required": true,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.707,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ETSY INC",
+      "from_normalized": "ETSY",
+      "from_why": "composite 0.355 \u2265 0.3, gates healthy",
+      "to": "ROBLOX CORP",
+      "to_normalized": "ROBLOX",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 856.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.7025,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "AIRBNB INC",
+      "from_normalized": "AIRBNB",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "TELADOC HEALTH INC",
+      "to_normalized": "TELADOC HEALTH",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 510.0,
+      "to_manual_verification_required": true,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.1845,
+      "stable": false,
+      "verdict": "NOT distinguishable from no change \u2014 the move appears in only 18.45% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'."
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "DOCUSIGN INC",
+      "from_normalized": "DOCUSIGN",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "TWILIO INC",
+      "to_normalized": "TWILIO",
+      "to_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.95,
+      "to_sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "to_approvals": 802.0,
+      "to_manual_verification_required": false,
+      "quantity_ci80": [
+        0.0,
+        1.0
+      ],
+      "stability": 0.7255,
+      "stable": true,
+      "verdict": "directional \u2014 the move survives resampling"
+    },
+    {
+      "quantity": 1,
+      "unit": "application slots",
+      "from": "ZOOX INC",
+      "from_normalized": "ZOOX",
+      "from_why": "composite 0.405 \u2265 0.3, gates healthy",
+      "to": "VISICON TECHNOLOGIES INC",
+      "to_normalized": "VISICON",
+      "to_why": "composite 0.398 \u2265 0.3, gates healthy",
+      "to_sponsorship_p": 0.9249,
+      "to_sponsorship_ci80": [
+        0.9187,
+        0.9302
+      ],
+      "to_approvals": 330.0,
+      "to_manual_verification_required": true,
+      "quantity_ci80": [
+        0.0,
+        0.0
+      ],
+      "stability": 0.052,
+      "stable": false,
+      "verdict": "NOT distinguishable from no change \u2014 the move appears in only 5.20% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'."
+    }
+  ],
+  "baseline": {
+    "week_of": "2026-07-20",
+    "total_slots": 12,
+    "expected_yield": 0.17317,
+    "slots_on_unscored_firms": 2,
+    "rows": [
+      {
+        "company_name": "LINKEDIN CORP",
+        "normalized": "LINKEDIN",
+        "slots": 3,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "expected_yield": 0.04253,
+        "status": "scored",
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "note": "applied via the careers page; no liveness check"
+      },
+      {
+        "company_name": "AIRBNB INC",
+        "normalized": "AIRBNB",
+        "slots": 2,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "expected_yield": 0.03645,
+        "status": "scored",
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "note": "household name"
+      },
+      {
+        "company_name": "ZOOX INC",
+        "normalized": "ZOOX",
+        "slots": 2,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "expected_yield": 0.03645,
+        "status": "scored",
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "note": "found through a job aggregator"
+      },
+      {
+        "company_name": "DOCUSIGN INC",
+        "normalized": "DOCUSIGN",
+        "slots": 2,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "expected_yield": 0.03645,
+        "status": "scored",
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "note": "recruiter email, posting age unknown"
+      },
+      {
+        "company_name": "ETSY INC",
+        "normalized": "ETSY",
+        "slots": 1,
+        "composite": 0.3548,
+        "recommendation": "Apply",
+        "expected_yield": 0.02129,
+        "status": "scored",
+        "flags": [
+          "FUNDING_STAGE_IMPLAUSIBLE",
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "note": "one-off"
+      },
+      {
+        "company_name": "ACME ANALYTICS LLC",
+        "normalized": "ACME ANALYTICS",
+        "slots": 2,
+        "composite": null,
+        "expected_yield": null,
+        "status": "not in the evidence set",
+        "why": "no row in the SEC/DOL dataset matched this name, or its filed titles do not match the profile. The engine has NO evidence about it \u2014 which is not the same as evidence against it.",
+        "note": "not present in the SEC/DOL dataset \u2014 no sponsorship record exists either way"
+      }
+    ]
+  },
+  "target": {
+    "total_slots": 12,
+    "requested_slots": 12,
+    "unspent_slots": 0,
+    "expected_yield": 0.29392,
+    "rows": [
+      {
+        "company_name": "MAPLEBEAR INC",
+        "normalized": "MAPLEBEAR",
+        "slots": 1,
+        "composite": 0.428,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 498.0,
+        "expected_yield": 0.02568,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.428 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "ROKU INC",
+        "normalized": "ROKU",
+        "slots": 1,
+        "composite": 0.428,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 654.0,
+        "expected_yield": 0.02568,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.428 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "AIRBNB INC",
+        "normalized": "AIRBNB",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 1000.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "DOCUSIGN INC",
+        "normalized": "DOCUSIGN",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 1082.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": true,
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "HUMAN INC",
+        "normalized": "HUMAN",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 1382.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": true,
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "LINKEDIN CORP",
+        "normalized": "LINKEDIN",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 4962.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "PINTEREST INC",
+        "normalized": "PINTEREST",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 1364.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": true,
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "ROBLOX CORP",
+        "normalized": "ROBLOX",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 856.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "TELADOC HEALTH INC",
+        "normalized": "TELADOC HEALTH",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 510.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": true,
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "TWILIO INC",
+        "normalized": "TWILIO",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 802.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": false,
+        "flags": [
+          "LIVENESS_UNCHECKED"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "ZOOX INC",
+        "normalized": "ZOOX",
+        "slots": 1,
+        "composite": 0.405,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.95,
+        "sponsorship_ci80": [
+          0.95,
+          0.95
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 1364.0,
+        "expected_yield": 0.0243,
+        "manual_verification_required": true,
+        "flags": [
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.405 \u2265 0.3, gates healthy"
+      },
+      {
+        "company_name": "VISICON TECHNOLOGIES INC",
+        "normalized": "VISICON",
+        "slots": 1,
+        "composite": 0.3976,
+        "recommendation": "Apply",
+        "sponsorship_p": 0.9249,
+        "sponsorship_ci80": [
+          0.9187,
+          0.9302
+        ],
+        "sponsorship_tier": "proven",
+        "approvals": 330.0,
+        "expected_yield": 0.02386,
+        "manual_verification_required": true,
+        "flags": [
+          "FUNDING_STAGE_IMPLAUSIBLE",
+          "LIVENESS_UNVERIFIABLE"
+        ],
+        "reason": "composite 0.398 \u2265 0.3, gates healthy"
+      }
+    ],
+    "picks": [
+      {
+        "normalized": "MAPLEBEAR",
+        "slot_index": 1,
+        "marginal_value": 0.02568
+      },
+      {
+        "normalized": "ROKU",
+        "slot_index": 1,
+        "marginal_value": 0.02568
+      },
+      {
+        "normalized": "AIRBNB",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "DOCUSIGN",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "HUMAN",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "LINKEDIN",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "PINTEREST",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "ROBLOX",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "TELADOC HEALTH",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "TWILIO",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "ZOOX",
+        "slot_index": 1,
+        "marginal_value": 0.0243
+      },
+      {
+        "normalized": "VISICON",
+        "slot_index": 1,
+        "marginal_value": 0.02386
+      }
+    ]
+  },
+  "expected_gain": {
+    "point": 0.12075,
+    "unit": "expected responses per week",
+    "caveat": "Scales linearly with base_response_rate (a your-input number) and is computed from an observational proxy. Read the interval, not this number.",
+    "ci80": [
+      0.11685,
+      0.12311
+    ],
+    "p_positive": 1.0,
+    "straddles_zero": false,
+    "verdict": "The gain is positive in 100.0% of draws and the 80% interval [+0.117, +0.123] excludes zero \u2014 under the model's own assumptions. That is not the same as being right about the world.",
+    "optimizers_curse": {
+      "what_it_is": "If the allocation is re-optimised inside every Monte Carlo draw, it adapts to noise nobody can observe, and the reported gain flatters the method rather than describing the decision. Both quantities are computed here so the difference is visible instead of accidental.",
+      "fixed_proposal_mean_gain": 0.11989,
+      "reoptimised_mean_gain": 0.12766,
+      "optimism": 0.00777,
+      "optimism_share_of_reported_gain": 0.0609,
+      "reoptimised_ci80": [
+        0.12321,
+        0.132
+      ],
+      "why_it_matters": "The re-optimised figure is the one a naive Monte Carlo would print. Any gap between it and the fixed-proposal figure is gain that exists only because the optimiser was allowed to see the noise."
+    },
+    "point_outside_interval": false,
+    "point_vs_interval_note": "The point estimate falls inside its interval, as expected."
+  },
+  "skip_rate": {
+    "evaluated": 581,
+    "apply": 149,
+    "consider": 249,
+    "skip": 183,
+    "rate": 0.315,
+    "target": 0.5,
+    "verdict": "BELOW the >=50% target \u2014 the filter is too loose. Reported, NOT enforced: raising the threshold until the skip rate hits 50% would be optimising the dial instead of the decision, which is Goodhart's law with extra steps. A human decides whether to tighten the profile or accept a loose filter.",
+    "two_levels": "There are two skip rates and quoting only the flattering one would be dishonest. This figure is over companies the scorer actually EVALUATED. The pool filter declined the rest of the dataset before scoring, mostly because they have no filed job titles \u2014 which is not a judgment about them, it is the absence of one."
+  },
+  "ties": {
+    "cutoff_composite": 0.3976,
+    "selected_at_cutoff": [
+      "VISICON TECHNOLOGIES INC"
+    ],
+    "excluded_at_identical_score": [],
+    "excluded_at_identical_score_count": 0,
+    "tie_break_rule": "company name, ascending \u2014 an arbitrary rule, stated so it cannot masquerade as a finding",
+    "what_it_means": "No excluded firm ties the cutoff, so the selection boundary is not arbitrary in this run."
+  },
+  "manual_verification_required": [
+    "DOCUSIGN INC",
+    "HUMAN INC",
+    "PINTEREST INC",
+    "TELADOC HEALTH INC",
+    "ZOOX INC",
+    "VISICON TECHNOLOGIES INC"
+  ],
+  "uncertainty": {
+    "_what_this_is": "Monte Carlo over sampling, specification, and missingness uncertainty. The interval is the product, not decoration.",
+    "generated": "2026-07-27T18:07:37-04:00",
+    "draws": 2000,
+    "seed": 20260727,
+    "pool_size": 79,
+    "sources_of_uncertainty": [
+      {
+        "name": "sampling",
+        "what": "Beta(approvals+1, denials+1) x volume factor",
+        "kind": "record-level sampling error",
+        "why": "a 100% rate over 2 filings and a 99% rate over 4,962 filings are different facts"
+      },
+      {
+        "name": "specification",
+        "what": "role_quality weight ~ U[0, 0.2], sponsorship/fit renormalised to keep total vote weight 0.65",
+        "kind": "unpinned parameter [VERIFY]",
+        "why": "Chapter 11 never pinned this weight; if the answer depends on it, that is a finding"
+      },
+      {
+        "name": "missingness",
+        "what": "MCAR (draw from observed) vs MNAR (Beta(1.0,4.0) x 0.25), sampled 50/50",
+        "kind": "untestable assumption",
+        "why": "most rows have no H-1B fields at all (see the gate's measured rate); the two stories about why disagree and only one can be true"
+      },
+      {
+        "name": "judgment",
+        "what": "fit +/- U[-0.1, 0.1]",
+        "kind": "model judgment",
+        "why": "fit is a rubric output, not a measurement"
+      }
+    ],
+    "scenario_counts": {
+      "MCAR": 999,
+      "MNAR": 1001
+    },
+    "missingness_scenario_applied_to_candidates": 0,
+    "missingness_finding": "The MCAR/MNAR scenarios were applied to 0 of 79 pooled candidates. When that number is zero it is not a clean result \u2014 it means every firm in the pool already has a filing record, because the pool filter requires filed job titles. The 94.9% of the dataset with no H-1B fields is not being handled cautiously here; it is absent. See `evidence_meta.blind_spot`.",
+    "role_quality_weight_mean": 0.1005,
+    "moves": [
+      {
+        "from_normalized": "ACME ANALYTICS",
+        "to_normalized": "MAPLEBEAR",
+        "from": "ACME ANALYTICS LLC",
+        "to": "MAPLEBEAR INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          1.0,
+          1.0
+        ],
+        "quantity_median": 1.0,
+        "stability": 1.0,
+        "verdict": "directional \u2014 the move survives resampling",
+        "stable": true
+      },
+      {
+        "from_normalized": "ACME ANALYTICS",
+        "to_normalized": "ROKU",
+        "from": "ACME ANALYTICS LLC",
+        "to": "ROKU INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          1.0,
+          1.0
+        ],
+        "quantity_median": 1.0,
+        "stability": 0.9995,
+        "verdict": "directional \u2014 the move survives resampling",
+        "stable": true
+      },
+      {
+        "from_normalized": "LINKEDIN",
+        "to_normalized": "HUMAN",
+        "from": "LINKEDIN CORP",
+        "to": "HUMAN INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          1.0
+        ],
+        "quantity_median": 0.0,
+        "stability": 0.207,
+        "verdict": "NOT distinguishable from no change \u2014 the move appears in only 20.70% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.",
+        "stable": false
+      },
+      {
+        "from_normalized": "LINKEDIN",
+        "to_normalized": "PINTEREST",
+        "from": "LINKEDIN CORP",
+        "to": "PINTEREST INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          1.0
+        ],
+        "quantity_median": 1.0,
+        "stability": 0.707,
+        "verdict": "directional \u2014 the move survives resampling",
+        "stable": true
+      },
+      {
+        "from_normalized": "ETSY",
+        "to_normalized": "ROBLOX",
+        "from": "ETSY INC",
+        "to": "ROBLOX CORP",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          1.0
+        ],
+        "quantity_median": 1.0,
+        "stability": 0.7025,
+        "verdict": "directional \u2014 the move survives resampling",
+        "stable": true
+      },
+      {
+        "from_normalized": "AIRBNB",
+        "to_normalized": "TELADOC HEALTH",
+        "from": "AIRBNB INC",
+        "to": "TELADOC HEALTH INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          1.0
+        ],
+        "quantity_median": 0.0,
+        "stability": 0.1845,
+        "verdict": "NOT distinguishable from no change \u2014 the move appears in only 18.45% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.",
+        "stable": false
+      },
+      {
+        "from_normalized": "DOCUSIGN",
+        "to_normalized": "TWILIO",
+        "from": "DOCUSIGN INC",
+        "to": "TWILIO INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          1.0
+        ],
+        "quantity_median": 1.0,
+        "stability": 0.7255,
+        "verdict": "directional \u2014 the move survives resampling",
+        "stable": true
+      },
+      {
+        "from_normalized": "ZOOX",
+        "to_normalized": "VISICON",
+        "from": "ZOOX INC",
+        "to": "VISICON TECHNOLOGIES INC",
+        "quantity": 1,
+        "quantity_ci80": [
+          0.0,
+          0.0
+        ],
+        "quantity_median": 0.0,
+        "stability": 0.052,
+        "verdict": "NOT distinguishable from no change \u2014 the move appears in only 5.20% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.",
+        "stable": false
+      }
+    ],
+    "expected_gain": {
+      "point": 0.12075,
+      "ci80": [
+        0.11685,
+        0.12311
+      ],
+      "p_positive": 1.0,
+      "straddles_zero": false,
+      "verdict": "The gain is positive in 100.0% of draws and the 80% interval [+0.117, +0.123] excludes zero \u2014 under the model's own assumptions. That is not the same as being right about the world.",
+      "measured_on": "the allocation actually recommended, held fixed across draws \u2014 the decision-relevant quantity",
+      "point_outside_interval": false,
+      "point_vs_interval_note": "The point estimate falls inside its interval, as expected."
+    },
+    "optimizers_curse": {
+      "what_it_is": "If the allocation is re-optimised inside every Monte Carlo draw, it adapts to noise nobody can observe, and the reported gain flatters the method rather than describing the decision. Both quantities are computed here so the difference is visible instead of accidental.",
+      "fixed_proposal_mean_gain": 0.11989,
+      "reoptimised_mean_gain": 0.12766,
+      "optimism": 0.00777,
+      "optimism_share_of_reported_gain": 0.0609,
+      "reoptimised_ci80": [
+        0.12321,
+        0.132
+      ],
+      "why_it_matters": "The re-optimised figure is the one a naive Monte Carlo would print. Any gap between it and the fixed-proposal figure is gain that exists only because the optimiser was allowed to see the noise."
+    },
+    "slot_stability": [
+      {
+        "normalized": "MAPLEBEAR",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 1.0
+      },
+      {
+        "normalized": "ROKU",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.9995
+      },
+      {
+        "normalized": "AIRBNB",
+        "baseline_slots": 2,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.7225
+      },
+      {
+        "normalized": "DOCUSIGN",
+        "baseline_slots": 2,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.724
+      },
+      {
+        "normalized": "LINKEDIN",
+        "baseline_slots": 3,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.7165
+      },
+      {
+        "normalized": "PINTEREST",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.707
+      },
+      {
+        "normalized": "ROBLOX",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.7025
+      },
+      {
+        "normalized": "TWILIO",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.7255
+      },
+      {
+        "normalized": "ZOOX",
+        "baseline_slots": 2,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.725
+      },
+      {
+        "normalized": "NEXTDOOR",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 1.0,
+        "p_gets_any": 0.501
+      },
+      {
+        "normalized": "HUMAN",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.207
+      },
+      {
+        "normalized": "TELADOC HEALTH",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.1845
+      },
+      {
+        "normalized": "VISICON",
+        "baseline_slots": 0,
+        "proposed_slots": 1,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.052
+      },
+      {
+        "normalized": "ETSY",
+        "baseline_slots": 1,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0
+      },
+      {
+        "normalized": "MOLOCO",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.2425
+      },
+      {
+        "normalized": "AMGEN",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.013
+      },
+      {
+        "normalized": "ARISTA NETWORKS",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0155
+      },
+      {
+        "normalized": "CHIME FINANCIAL",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.26
+      },
+      {
+        "normalized": "CONFLUENT",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.2435
+      },
+      {
+        "normalized": "DATABRICKS",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0835
+      },
+      {
+        "normalized": "DELOITTE TAX",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0045
+      },
+      {
+        "normalized": "DROPBOX",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.266
+      },
+      {
+        "normalized": "ICON",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.008
+      },
+      {
+        "normalized": "INTEL",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0095
+      },
+      {
+        "normalized": "JUNIPER NETWORKS",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0155
+      },
+      {
+        "normalized": "MICROSOFT",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.232
+      },
+      {
+        "normalized": "MONGODB",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.2575
+      },
+      {
+        "normalized": "NUTANIX",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.2565
+      },
+      {
+        "normalized": "PALANTIR",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          0.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.0725
+      },
+      {
+        "normalized": "PURE STORAGE",
+        "baseline_slots": 0,
+        "proposed_slots": 0,
+        "ci80": [
+          0.0,
+          1.0
+        ],
+        "median": 0.0,
+        "p_gets_any": 0.2485
+      }
+    ],
+    "what_this_does_not_cover": [
+      "Whether the composite's structure is right at all (Ch.11's weights are a design choice, not a fitted model).",
+      "base_response_rate \u2014 a your-input scalar that multiplies every yield.",
+      "Liveness: unverified in this run, so its uncertainty is not sampled. It is handled as a gate plus a human verification requirement instead.",
+      "Anything causal. A tighter interval does not make the underlying claim interventional."
+    ]
+  },
+  "gate": {
+    "status": "BLOCKED",
+    "blocking_unwaived": [
+      "DATASET_NO_RECORD_PROVENANCE"
+    ],
+    "row_count": 30369,
+    "rows_with_h1b_fields": 1557,
+    "h1b_missing_rate": 0.9487,
+    "report": "tools/effort-reallocator/out/gate-report.json"
+  },
+  "inputs": {
+    "csv": "data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv",
+    "bls": "data/bls/compact/soc_occupation_compact.csv",
+    "portals": "data/examples/erp-to-ai-portals.yml",
+    "profile": "tools/effort-reallocator/examples/profile.json",
+    "baseline": "tools/effort-reallocator/examples/baseline-allocation.json",
+    "settings": {
+      "slots": 12,
+      "cap": 3,
+      "decay": 0.5,
+      "liveness_policy": "neutral-flagged",
+      "draws": 2000,
+      "seed": 20260727
+    }
+  },
+  "evidence_meta": {
+    "generated": "2026-07-27T18:07:36-04:00",
+    "liveness_policy": "neutral-flagged",
+    "weights": {
+      "sponsorship": 0.35,
+      "fit": 0.3,
+      "role_quality": 0.0
+    },
+    "needs_sponsorship": true,
+    "counts": {
+      "rows": 30369,
+      "title_match": 598,
+      "title_mismatch": 959,
+      "gate_rejected": 15,
+      "duplicate_identity": 2,
+      "no_titles": 28812
+    },
+    "candidate_count": 581,
+    "with_sponsorship_record": 581,
+    "unknown_sponsorship": 0,
+    "manual_verification_required": 566,
+    "supported_ats": 15,
+    "portals": {
+      "path": "data/examples/erp-to-ai-portals.yml",
+      "found": true,
+      "entries": 25,
+      "enabled": 16
+    },
+    "bls": {
+      "path": "data/bls/compact/soc_occupation_compact.csv",
+      "found": true,
+      "median_wage": 112590.0,
+      "cognitive_pivot_score": 3.903,
+      "soc_codes": [
+        "15-2051",
+        "15-1252",
+        "15-1211"
+      ]
+    },
+    "unverified_liveness_note": "This run made no network calls. Liveness is unverified for every company; the gate reflects provider coverage only.",
+    "blind_spot": {
+      "what": "firms with Form D funding in the last 3 years and NO H-1B filing record",
+      "count": 5126,
+      "sample": [
+        {
+          "company_name": "011235813 INC",
+          "total_funding": 8499999.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-05-12"
+        },
+        {
+          "company_name": "1 TRUE HEALTH CARE MANAGEMENT INC",
+          "total_funding": 1500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-02-16"
+        },
+        {
+          "company_name": "10000 INC",
+          "total_funding": 17996101.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-08-15"
+        },
+        {
+          "company_name": "1080 NETWORK INC",
+          "total_funding": 35500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-03-26"
+        },
+        {
+          "company_name": "10BEAUTY INC",
+          "total_funding": 23999942.0,
+          "latest_funding_stage": "Series B",
+          "latest_funding_date": "2023-12-08"
+        },
+        {
+          "company_name": "111 COMMERCIAL COURT INVESTORS LP",
+          "total_funding": 6908063.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-10-24"
+        },
+        {
+          "company_name": "123 SEE INC",
+          "total_funding": 30429921.0,
+          "latest_funding_stage": "Series B",
+          "latest_funding_date": "2025-07-01"
+        },
+        {
+          "company_name": "150W25 LLC",
+          "total_funding": 1200000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-07-14"
+        },
+        {
+          "company_name": "1667 ALLESANDRO LLC",
+          "total_funding": 3000000.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-02-29"
+        },
+        {
+          "company_name": "180 LIFE SCIENCES CORP",
+          "total_funding": 29558200.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-12-30"
+        },
+        {
+          "company_name": "1847 HOLDINGS LLC",
+          "total_funding": 24300324.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-12-16"
+        },
+        {
+          "company_name": "1FORT INC",
+          "total_funding": 9853517.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-01-10"
+        },
+        {
+          "company_name": "1M INC",
+          "total_funding": 9662456.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-08-20"
+        },
+        {
+          "company_name": "1ST AMERICAN NUCLEAR CO",
+          "total_funding": 7500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-08-15"
+        },
+        {
+          "company_name": "1UP CORP",
+          "total_funding": 8622291.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2024-12-27"
+        },
+        {
+          "company_name": "2025 GREENWOOD & CAVALIER PEPELWERK LP",
+          "total_funding": 1500000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2025-04-01"
+        },
+        {
+          "company_name": "247 FOOTBALL LLC",
+          "total_funding": 1000000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-12-19"
+        },
+        {
+          "company_name": "2GHEALTH INC",
+          "total_funding": 18609246.0,
+          "latest_funding_stage": "Series A",
+          "latest_funding_date": "2025-06-16"
+        },
+        {
+          "company_name": "3001 ARROYO LLC",
+          "total_funding": 2532000.0,
+          "latest_funding_stage": "Pre-Seed",
+          "latest_funding_date": "2024-01-23"
+        },
+        {
+          "company_name": "3030 LABS INC",
+          "total_funding": 5432499.0,
+          "latest_funding_stage": "Seed",
+          "latest_funding_date": "2024-06-12"
+        }
+      ],
+      "why_it_matters": "A firm has filed job titles only if it has already sponsored someone, so the title filter selects on the very outcome the engine predicts. These firms are not ranked low \u2014 they never enter the pool at all. The gate's refusal to read a blank cell as a zero protects the arithmetic and does nothing for these firms, because the pool never sees them. They are also exactly the recently-funded companies the domain's funding thesis says to surface.",
+      "why_the_engine_cannot_fix_it": "The fit vote is computed from filed titles. With no titles there is no fit vote, so the composite cannot exceed sponsorship x 0.35 x timeline = 0.30 even if sponsorship were imputed at its maximum. These firms are structurally unreachable, not merely disadvantaged, and the Monte Carlo missingness scenarios cannot rescue them."
+    }
+  }
+}

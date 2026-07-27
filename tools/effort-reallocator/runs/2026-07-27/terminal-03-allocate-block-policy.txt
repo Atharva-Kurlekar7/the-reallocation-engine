@@ -1,0 +1,70 @@
+==========================================================================
+REALLOCATION PROPOSAL — application slots (nothing has moved)
+==========================================================================
+  objective: maximise expected sponsored-interview yield per slot, subject to a per-company cap — with Chapter 15's >=50% skip rate reported as a dial, not enforced as a constraint, because it is a process metric a human reads in two directions
+  omits:     referrals, my own application quality, interview conversion, salary, team quality, and every firm with no filing record and no supported ATS board
+
+  evaluated 15 companies → Apply 15 · Consider 0 · Skip 0
+  skip rate 0.0% (target ≥50.0%) — BELOW the >=50% target — the filter is too loose. Reported, NOT enforced: raising the threshold until the skip rate hits 50% would be optimising the dial instead of the decision, which is Goodhart's law with extra steps. A human decides whether to tighten the profile or accept a loose filter.
+
+  THE MOVE
+    move 1 slot(s) [80% CI 1.0–1.0] stability 100.00%
+      from  ACME ANALYTICS LLC
+      to    MAPLEBEAR INC  (sponsorship p=0.950, CI80 0.950–0.950, 498 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 100.00%
+      from  ACME ANALYTICS LLC
+      to    ROKU INC  (sponsorship p=0.950, CI80 0.950–0.950, 654 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 100.00%
+      from  DOCUSIGN INC
+      to    ROBLOX CORP  (sponsorship p=0.950, CI80 0.950–0.950, 856 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 100.00%
+      from  DOCUSIGN INC
+      to    TWILIO INC  (sponsorship p=0.950, CI80 0.950–0.950, 802 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 98.00%
+      from  ZOOX INC
+      to    MOLOCO INC  (sponsorship p=0.841, CI80 0.830–0.848, 200 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 99.85%
+      from  ZOOX INC
+      to    NEXTDOOR INC  (sponsorship p=0.836, CI80 0.822–0.849, 222 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 97.60%
+      from  LINKEDIN CORP
+      to    REDDIT INC  (sponsorship p=0.938, CI80 0.927–0.948, 408 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 90.40%
+      from  LINKEDIN CORP
+      to    FIGMA INC  (sponsorship p=0.830, CI80 0.819–0.838, 188 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 0.0–1.0] stability 86.05%
+      from  ETSY INC
+      to    PELOTON INTERACTIVE INC  (sponsorship p=0.897, CI80 0.886–0.908, 310 approvals)
+      verdict: directional — the move survives resampling
+
+  expected gain +0.184 expected responses per week  80% CI [+0.185, +0.203]
+                ....0...............................|==]....  axis -0.024 to +0.228
+                (0 = no change · [ ] = 80% CI · | = point estimate)
+  The gain is positive in 100.0% of draws and the 80% interval [+0.185, +0.203] excludes zero — under the model's own assumptions. That is not the same as being right about the world.
+  NOTE: the point estimate is outside its own interval — see proposal.md, it is a finding about an unpinned weight, not a bug
+  optimizer's curse: re-optimising per draw would report +0.194 instead of +0.194 — 0.1% of that gain is the optimiser fitting noise
+
+  TARGET ALLOCATION (11 of 11 slots)
+    slots  composite  sponsorship p (80% CI)        company
+        1      0.428  0.950 [0.950–0.950]           MAPLEBEAR INC
+        1      0.428  0.950 [0.950–0.950]           ROKU INC
+        1      0.405  0.950 [0.950–0.950]           AIRBNB INC
+        1      0.405  0.950 [0.950–0.950]           LINKEDIN CORP
+        1      0.405  0.950 [0.950–0.950]           ROBLOX CORP
+        1      0.405  0.950 [0.950–0.950]           TWILIO INC
+        1      0.395  0.841 [0.830–0.848]           MOLOCO INC
+        1      0.394  0.836 [0.822–0.849]           NEXTDOOR INC
+        1      0.378  0.938 [0.927–0.948]           REDDIT INC
+        1      0.369  0.830 [0.819–0.838]           FIGMA INC
+        1      0.366  0.897 [0.886–0.908]           PELOTON INTERACTIVE INC
+
+  artifacts: tools/effort-reallocator/out/proposal.md · tools/effort-reallocator/out/proposal.json
+  nothing has moved: `execute` requires --approve --approver --reason

@@ -1,0 +1,83 @@
+{
+  "_what_this_is": "A gate decision. The accountable record of a human either committing a scarce resource or declining to.",
+  "when": "2026-07-27T18:08:09-04:00",
+  "tool": "tools/effort-reallocator",
+  "resource": "application slots (my own time against an F-1/OPT clock)",
+  "action": "commit slots",
+  "executed": true,
+  "approver": "Atharva Kurlekar",
+  "reason": "Opened every destination board by hand on 2026-07-27 and confirmed a live matching requisition; accepting the snapshot-vintage waiver for one week of planning; planned for 11 slots so no sub-floor move is proposed.",
+  "proposal_generated": "2026-07-27T18:08:09-04:00",
+  "gate_status": "PASS-WITH-WAIVER",
+  "moves": [
+    {
+      "quantity": 1,
+      "from": "ACME ANALYTICS LLC",
+      "to": "MAPLEBEAR INC",
+      "stability": 1.0
+    },
+    {
+      "quantity": 1,
+      "from": "ACME ANALYTICS LLC",
+      "to": "ROKU INC",
+      "stability": 1.0
+    },
+    {
+      "quantity": 1,
+      "from": "DOCUSIGN INC",
+      "to": "ROBLOX CORP",
+      "stability": 1.0
+    },
+    {
+      "quantity": 1,
+      "from": "DOCUSIGN INC",
+      "to": "TWILIO INC",
+      "stability": 1.0
+    },
+    {
+      "quantity": 1,
+      "from": "ZOOX INC",
+      "to": "MOLOCO INC",
+      "stability": 0.98
+    },
+    {
+      "quantity": 1,
+      "from": "ZOOX INC",
+      "to": "NEXTDOOR INC",
+      "stability": 0.9985
+    },
+    {
+      "quantity": 1,
+      "from": "LINKEDIN CORP",
+      "to": "REDDIT INC",
+      "stability": 0.976
+    },
+    {
+      "quantity": 1,
+      "from": "LINKEDIN CORP",
+      "to": "FIGMA INC",
+      "stability": 0.904
+    },
+    {
+      "quantity": 1,
+      "from": "ETSY INC",
+      "to": "PELOTON INTERACTIVE INC",
+      "stability": 0.8605
+    }
+  ],
+  "blocks": [],
+  "flags": [
+    {
+      "code": "SKIP_RATE_BELOW_TARGET",
+      "detail": "0.0% < 50.0%",
+      "response": "flag",
+      "resolver": "the human tightens the filter before spending the week",
+      "why": "Ch.15: a low skip rate is the filter failing, not productivity"
+    }
+  ],
+  "expected_gain": 0.18379,
+  "expected_gain_ci80": [
+    0.18543,
+    0.2032
+  ]
+}

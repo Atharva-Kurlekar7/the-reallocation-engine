@@ -1,0 +1,1492 @@
+{
+  "_what_this_is": "Exact Shapley attribution over the 5-feature composite, plus the counterfactual flip distance, plus the specific cases where that explanation is accurate and misleading.",
+  "generated": "2026-07-27T18:07:39-04:00",
+  "method": {
+    "name": "exact Shapley by coalition enumeration",
+    "features": [
+      "sponsorship",
+      "fit",
+      "role_quality",
+      "liveness",
+      "timeline"
+    ],
+    "coalitions": 32,
+    "why_not_shap": "With five features the exact values are cheap, so an approximation would add sampling error for nothing. The additivity identity is asserted in code.",
+    "reference_point": "pool-median vote values; gates at 1.0. The attribution is relative to that reference and changes if the reference changes \u2014 a property of every Shapley explanation that plots rarely mention."
+  },
+  "explanations": [
+    {
+      "company_name": "MAPLEBEAR INC",
+      "normalized": "MAPLEBEAR",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.428,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.04995,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06583
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.42797,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2542,
+        "from": 0.85,
+        "to": 0.5958,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.4302,
+            "from": 0.95,
+            "to": 0.5198,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.5019,
+            "from": 0.57,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.299,
+            "from": 1.0,
+            "to": 0.701,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2542,
+            "from": 0.85,
+            "to": 0.5958,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2542,
+          "from": 0.85,
+          "to": 0.5958,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 498.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "ROKU INC",
+      "normalized": "ROKU",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.428,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.04995,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06583
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.42797,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2542,
+        "from": 0.85,
+        "to": 0.5958,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.4302,
+            "from": 0.95,
+            "to": 0.5198,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.5019,
+            "from": 0.57,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.299,
+            "from": 1.0,
+            "to": 0.701,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2542,
+            "from": 0.85,
+            "to": 0.5958,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2542,
+          "from": 0.85,
+          "to": 0.5958,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 654.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "AIRBNB INC",
+      "normalized": "AIRBNB",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 1000.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "DOCUSIGN INC",
+      "normalized": "DOCUSIGN",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 1082.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "HUMAN INC",
+      "normalized": "HUMAN",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 1382.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "LINKEDIN CORP",
+      "normalized": "LINKEDIN",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 4962.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "PINTEREST INC",
+      "normalized": "PINTEREST",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 1364.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "ROBLOX CORP",
+      "normalized": "ROBLOX",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 856.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "TELADOC HEALTH INC",
+      "normalized": "TELADOC HEALTH",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 510.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "TWILIO INC",
+      "normalized": "TWILIO",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (checkable-but-unchecked)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.405,
+      "shapley": {
+        "sponsorship": 0.06957,
+        "fit": 0.02497,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06381
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.40502,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": 0.06957
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2204,
+        "from": 0.85,
+        "to": 0.6296,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.353,
+            "from": 0.95,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.4119,
+            "from": 0.48,
+            "to": 0.0681,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2593,
+            "from": 1.0,
+            "to": 0.7407,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2204,
+            "from": 0.85,
+            "to": 0.6296,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2204,
+          "from": 0.85,
+          "to": 0.6296,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.95,
+        0.95
+      ],
+      "sponsorship_ci_width": 0.0,
+      "approvals": 802.0,
+      "liveness_status": "checkable-but-unchecked"
+    },
+    {
+      "company_name": "VISICON TECHNOLOGIES INC",
+      "normalized": "VISICON",
+      "why_explained": "in the proposed allocation",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Apply",
+      "composite": 0.3976,
+      "shapley": {
+        "sponsorship": 0.06145,
+        "fit": 0.02498,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.06315
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.39756,
+      "coalitions_evaluated": 32,
+      "additivity_error": 6.938893903907228e-18,
+      "exact": true,
+      "top_contributor": {
+        "feature": "timeline",
+        "phi": -0.06315
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": -0.2086,
+        "from": 0.85,
+        "to": 0.6414,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": -0.3279,
+            "from": 0.9249,
+            "to": 0.597,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": -0.3826,
+            "from": 0.48,
+            "to": 0.0974,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": -0.2454,
+            "from": 1.0,
+            "to": 0.7546,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "timeline",
+            "delta": -0.2086,
+            "from": 0.85,
+            "to": 0.6414,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": -0.2086,
+          "from": 0.85,
+          "to": 0.6414,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.9187,
+        0.9302
+      ],
+      "sponsorship_ci_width": 0.0115,
+      "approvals": 330.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "BENEFITS SCIENCE LLC",
+      "normalized": "BENEFITS SCIENCE",
+      "why_explained": "thinnest filing record in the Apply/Consider tier \u2014 included on purpose to test whether the explanation distinguishes it from a deep record",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Consider",
+      "composite": 0.2792,
+      "shapley": {
+        "sponsorship": -0.0923,
+        "fit": 0.04995,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.05271
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.27923,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": -0.0923
+      },
+      "cheapest_lever": {
+        "feature": "timeline",
+        "delta": 0.0632,
+        "from": 0.85,
+        "to": 0.9132,
+        "reachable": true,
+        "note": "within range",
+        "source": "your-input"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": 0.0698,
+            "from": 0.45,
+            "to": 0.5198,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "fit",
+            "delta": 0.0815,
+            "from": 0.57,
+            "to": 0.6515,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": 0.0744,
+            "from": 1.0,
+            "to": 1.0744,
+            "reachable": false,
+            "note": "would require a gate outside [0,1] \u2014 unreachable"
+          },
+          {
+            "feature": "timeline",
+            "delta": 0.0632,
+            "from": 0.85,
+            "to": 0.9132,
+            "reachable": true,
+            "note": "within range",
+            "source": "your-input"
+          }
+        ],
+        "cheapest": {
+          "feature": "timeline",
+          "delta": 0.0632,
+          "from": 0.85,
+          "to": 0.9132,
+          "reachable": true,
+          "note": "within range",
+          "source": "your-input"
+        }
+      },
+      "sponsorship_ci80": [
+        0.4189,
+        0.4712
+      ],
+      "sponsorship_ci_width": 0.0523,
+      "approvals": 18.0,
+      "liveness_status": "unverifiable"
+    },
+    {
+      "company_name": "YOSHI INC",
+      "normalized": "YOSHI",
+      "why_explained": "widest sponsorship credible interval in the pool",
+      "feature_sources": {
+        "sponsorship": "derived",
+        "fit": "model-judgment",
+        "role_quality": "derived",
+        "liveness": "derived (unverifiable)",
+        "timeline": "your-input"
+      },
+      "recommendation": "Skip",
+      "composite": 0.1646,
+      "shapley": {
+        "sponsorship": -0.16705,
+        "fit": 0.0,
+        "role_quality": 0.0,
+        "liveness": 0.0,
+        "timeline": -0.0426
+      },
+      "baseline_value": 0.37428,
+      "full_value": 0.16463,
+      "coalitions_evaluated": 32,
+      "additivity_error": 0.0,
+      "exact": true,
+      "top_contributor": {
+        "feature": "sponsorship",
+        "phi": -0.16705
+      },
+      "cheapest_lever": {
+        "feature": "sponsorship",
+        "delta": 0.455,
+        "from": 0.2191,
+        "to": 0.6741,
+        "reachable": true,
+        "note": "within range",
+        "source": "derived"
+      },
+      "flip_distance": {
+        "target_threshold": 0.3,
+        "per_feature": [
+          {
+            "feature": "sponsorship",
+            "delta": 0.455,
+            "from": 0.2191,
+            "to": 0.6741,
+            "reachable": true,
+            "note": "within range",
+            "source": "derived"
+          },
+          {
+            "feature": "fit",
+            "delta": 0.5309,
+            "from": 0.39,
+            "to": 0.9209,
+            "reachable": true,
+            "note": "within range"
+          },
+          {
+            "feature": "role_quality",
+            "delta": null,
+            "reachable": false,
+            "note": "weight is zero \u2014 this feature cannot move the decision at all"
+          },
+          {
+            "feature": "liveness",
+            "delta": 0.8222,
+            "from": 1.0,
+            "to": 1.8222,
+            "reachable": false,
+            "note": "would require a gate outside [0,1] \u2014 unreachable"
+          },
+          {
+            "feature": "timeline",
+            "delta": 0.6989,
+            "from": 0.85,
+            "to": 1.5489,
+            "reachable": false,
+            "note": "would require a gate outside [0,1] \u2014 unreachable"
+          }
+        ],
+        "cheapest": {
+          "feature": "sponsorship",
+          "delta": 0.455,
+          "from": 0.2191,
+          "to": 0.6741,
+          "reachable": true,
+          "note": "within range",
+          "source": "derived"
+        }
+      },
+      "sponsorship_ci80": [
+        0.1586,
+        0.2722
+      ],
+      "sponsorship_ci_width": 0.1136,
+      "approvals": 6.0,
+      "liveness_status": "unverifiable"
+    }
+  ],
+  "critique": {
+    "case_a_additive_over_multiplicative": [
+      {
+        "company_name": "MAPLEBEAR INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2542 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "ROKU INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2542 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "AIRBNB INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "DOCUSIGN INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "HUMAN INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "LINKEDIN CORP",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "PINTEREST INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "ROBLOX CORP",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "TELADOC HEALTH INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "TWILIO INC",
+        "explanation_says": "sponsorship is the largest contributor (phi = +0.0696)",
+        "action_actually_cheapest": "timeline \u2014 a change of -0.2204 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      },
+      {
+        "company_name": "BENEFITS SCIENCE LLC",
+        "explanation_says": "sponsorship is the largest contributor (phi = -0.0923)",
+        "action_actually_cheapest": "timeline \u2014 a change of +0.0632 crosses the threshold",
+        "why_it_misleads": "The attribution is additive; the composite is multiplicative through the gates. Credit for size and leverage for action are different orderings. A reader who trusts the ranking spends effort on sponsorship when the decision actually turns on timeline."
+      }
+    ],
+    "case_b_hidden_sample_size": [
+      {
+        "pair": [
+          "MAPLEBEAR INC",
+          "LINKEDIN CORP"
+        ],
+        "sponsorship_phi": [
+          0.06957,
+          0.06957
+        ],
+        "phi_identical": true,
+        "approvals": {
+          "MAPLEBEAR INC": 498.0,
+          "LINKEDIN CORP": 4962.0
+        },
+        "approvals_ratio": 10.0,
+        "ci_widths": {
+          "MAPLEBEAR INC": 0.0,
+          "LINKEDIN CORP": 0.0
+        },
+        "why_it_misleads": "MAPLEBEAR INC (498 approvals) and LINKEDIN CORP (4962 approvals) receive a byte-identical sponsorship attribution (+0.06957 vs +0.06957) on records that differ by 10.0x. The attribution is a function of p, and p is capped at 0.95, so every large sponsor collapses onto the same number and the credible intervals collapse with it. A reader comparing these two explanations sees no difference in the evidence, because the explanation has removed it."
+      },
+      {
+        "pair": [
+          "TELADOC HEALTH INC",
+          "LINKEDIN CORP"
+        ],
+        "sponsorship_phi": [
+          0.06957,
+          0.06957
+        ],
+        "phi_identical": true,
+        "approvals": {
+          "TELADOC HEALTH INC": 510.0,
+          "LINKEDIN CORP": 4962.0
+        },
+        "approvals_ratio": 9.7,
+        "ci_widths": {
+          "TELADOC HEALTH INC": 0.0,
+          "LINKEDIN CORP": 0.0
+        },
+        "why_it_misleads": "TELADOC HEALTH INC (510 approvals) and LINKEDIN CORP (4962 approvals) receive a byte-identical sponsorship attribution (+0.06957 vs +0.06957) on records that differ by 9.7x. The attribution is a function of p, and p is capped at 0.95, so every large sponsor collapses onto the same number and the credible intervals collapse with it. A reader comparing these two explanations sees no difference in the evidence, because the explanation has removed it."
+      },
+      {
+        "pair": [
+          "ROKU INC",
+          "LINKEDIN CORP"
+        ],
+        "sponsorship_phi": [
+          0.06957,
+          0.06957
+        ],
+        "phi_identical": true,
+        "approvals": {
+          "ROKU INC": 654.0,
+          "LINKEDIN CORP": 4962.0
+        },
+        "approvals_ratio": 7.6,
+        "ci_widths": {
+          "ROKU INC": 0.0,
+          "LINKEDIN CORP": 0.0
+        },
+        "why_it_misleads": "ROKU INC (654 approvals) and LINKEDIN CORP (4962 approvals) receive a byte-identical sponsorship attribution (+0.06957 vs +0.06957) on records that differ by 7.6x. The attribution is a function of p, and p is capped at 0.95, so every large sponsor collapses onto the same number and the credible intervals collapse with it. A reader comparing these two explanations sees no difference in the evidence, because the explanation has removed it."
+      }
+    ],
+    "case_c_unverified_gate_reads_as_verified": [
+      {
+        "company_name": "MAPLEBEAR INC",
+        "liveness_status": "checkable-but-unchecked",
+        "liveness_phi": 0.0,
+        "why_it_misleads": "The explanation reports a liveness contribution as if liveness were measured. It was not: this run made no network call, and the gate value reflects ATS provider coverage only. Nothing in the attribution distinguishes 'checked and live' from 'never checked' \u2014 the number is identical either way."
+      },
+      {
+        "company_name": "ROKU INC",
+        "liveness_status": "checkable-but-unchecked",
+        "liveness_phi": 0.0,
+        "why_it_misleads": "The explanation reports a liveness contribution as if liveness were measured. It was not: this run made no network call, and the gate value reflects ATS provider coverage only. Nothing in the attribution distinguishes 'checked and live' from 'never checked' \u2014 the number is identical either way."
+      },
+      {
+        "company_name": "AIRBNB INC",
+        "liveness_status": "checkable-but-unchecked",
+        "liveness_phi": 0.0,
+        "why_it_misleads": "The explanation reports a liveness contribution as if liveness were measured. It was not: this run made no network call, and the gate value reflects ATS provider coverage only. Nothing in the attribution distinguishes 'checked and live' from 'never checked' \u2014 the number is identical either way."
+      }
+    ],
+    "case_d_nearest_edge_is_an_assumption": [
+      {
+        "company_name": "MAPLEBEAR INC",
+        "cheapest_lever": "timeline",
+        "source": "your-input",
+        "delta_to_flip": -0.2542,
+        "why_it_misleads": "The smallest change that would flip this recommendation is -0.2542 on `timeline`, whose provenance is `your-input` \u2014 my own assumption or an unverified gate, not a filing record. The explanation presents evidence and assumption in the same units and the same chart, so a reader cannot see that the decision's nearest edge is a number I chose rather than a number I found."
+      },
+      {
+        "company_name": "ROKU INC",
+        "cheapest_lever": "timeline",
+        "source": "your-input",
+        "delta_to_flip": -0.2542,
+        "why_it_misleads": "The smallest change that would flip this recommendation is -0.2542 on `timeline`, whose provenance is `your-input` \u2014 my own assumption or an unverified gate, not a filing record. The explanation presents evidence and assumption in the same units and the same chart, so a reader cannot see that the decision's nearest edge is a number I chose rather than a number I found."
+      },
+      {
+        "company_name": "AIRBNB INC",
+        "cheapest_lever": "timeline",
+        "source": "your-input",
+        "delta_to_flip": -0.2204,
+        "why_it_misleads": "The smallest change that would flip this recommendation is -0.2204 on `timeline`, whose provenance is `your-input` \u2014 my own assumption or an unverified gate, not a filing record. The explanation presents evidence and assumption in the same units and the same chart, so a reader cannot see that the decision's nearest edge is a number I chose rather than a number I found."
+      },
+      {
+        "company_name": "DOCUSIGN INC",
+        "cheapest_lever": "timeline",
+        "source": "your-input",
+        "delta_to_flip": -0.2204,
+        "why_it_misleads": "The smallest change that would flip this recommendation is -0.2204 on `timeline`, whose provenance is `your-input` \u2014 my own assumption or an unverified gate, not a filing record. The explanation presents evidence and assumption in the same units and the same chart, so a reader cannot see that the decision's nearest edge is a number I chose rather than a number I found."
+      }
+    ],
+    "summary": "All four cases are technically accurate arithmetic. Each one misleads a reader who would act on it: A points effort at the wrong term, B implies two firms are equally well-evidenced, C implies liveness was checked, and D hides that the decision's nearest edge is an assumption rather than a record."
+  }
+}

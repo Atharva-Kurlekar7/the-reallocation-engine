@@ -67,7 +67,9 @@ data/BLS/db_30_2_mysql/
 **/*.resume.pdf
 **/resume.pdf
 resume.json
-# search/ personal layer — private-notes stays out; the three assignment files are committed.
+# search/ personal layer — private-notes stays out; résumé lives under private/.
 search/private-notes.md
-# Override the global resume.json rule for the search/ folder (assignment requires it committed).
-!search/resume.json
+
+# effort-reallocator: out/ is regenerable scratch; runs/ is the committed sample run.
+/tools/effort-reallocator/out/
+**/__pycache__/

@@ -1,0 +1,46 @@
+{
+  "_what_this_is": "A synthetic-but-representative candidate profile. Committed on purpose so the tool runs from a clean clone with no private data. It carries no real tracker, no real contacts, no real outcomes.",
+  "_what_it_does_not_capture": "A real profile would carry referral relationships, interview history, and materials quality — the three things most predictive of an offer and entirely absent here. Read every yield number in this tool as conditional on that absence.",
+  "profile_id": "erp-to-ai-f1-opt",
+  "situation": "ERP/AMS support engineer pivoting to applied AI/ML. F-1, OPT not yet filed, needs H-1B sponsorship, no PhD.",
+  "authorization": "F-1 student, requires H-1B sponsorship",
+  "target_titles": [
+    "data engineer",
+    "machine learning engineer",
+    "ml engineer",
+    "data scientist",
+    "software engineer",
+    "analytics engineer",
+    "data analyst"
+  ],
+  "excluded_titles": [
+    "research scientist",
+    "intern",
+    "phd",
+    "postdoc",
+    "principal",
+    "director",
+    "vice president"
+  ],
+  "entry_rung_titles": [
+    "software engineer",
+    "data engineer",
+    "data analyst",
+    "data scientist",
+    "machine learning engineer",
+    "ml engineer",
+    "analytics engineer"
+  ],
+  "target_soc_codes": ["15-2051", "15-1252", "15-1211"],
+  "_target_soc_note": "15-2051 Data Scientists · 15-1252 Software Developers · 15-1211 Computer Systems Analysts. Used to pull the BLS/O*NET median wage and cognitive-pivot score for the role-quality vote.",
+  "timeline": {
+    "factor": 0.85,
+    "source": "your-input",
+    "basis": "OPT start window against a typical 8-12 week time-to-offer. A judgment about my own clock, not a record. Applies uniformly to every company because per-posting start dates are not in this dataset."
+  },
+  "base_response_rate": 0.06,
+  "_base_response_rate_note": "My own historical responses per application. Converts a unitless composite into 'expected responses'. Every yield figure in the tool scales linearly with this one assumption.",
+  "slots_per_week": 12,
+  "per_company_cap": 3,
+  "repeat_slot_decay": 0.5
+}

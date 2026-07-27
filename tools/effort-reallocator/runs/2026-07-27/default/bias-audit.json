@@ -1,0 +1,374 @@
+{
+  "_what_this_is": "Bias traced from collection to output, with two fairness metrics that cannot both be satisfied and a stated choice.",
+  "generated": "2026-07-27T18:07:42-04:00",
+  "who_is_affected": "The engine allocates MY attention, so the parties advantaged or starved are employers. The harm is not to a protected class of people; it is a systematic, self-reinforcing pattern in which firms ever see an application from a candidate who needs sponsorship.",
+  "mechanisms": [
+    {
+      "stage": "sampling",
+      "mechanism": "a firm appears only if it filed an H-1B petition; non-filers are indistinguishable from would-be sponsors",
+      "evidence": "94.9% of dataset rows (28,812 of 30,369) carry no H-1B fields, measured by the gate in this run"
+    },
+    {
+      "stage": "labels",
+      "mechanism": "Approval_Rate is the government's decision on a candidate the firm had already selected \u2014 not willingness, and not about me",
+      "evidence": "the column is approvals/(approvals+denials) over filed petitions"
+    },
+    {
+      "stage": "coverage",
+      "mechanism": "only greenhouse / lever / ashby boards are checkable, so everything else is either flagged or zeroed by policy",
+      "evidence": "AMGEN INC, 1,882 approvals, scored 0.000 in the earlier worked run because its board is Workday"
+    },
+    {
+      "stage": "objective",
+      "mechanism": "expected yield per slot rewards filing volume, a proxy for firm size",
+      "evidence": "the volume factor saturates at 500 approvals \u2014 a your-input parameter"
+    },
+    {
+      "stage": "feedback",
+      "mechanism": "no slots -> no outcomes -> no evidence -> no slots",
+      "evidence": "322 thin-record firms received zero slots in this run"
+    }
+  ],
+  "groupings": {
+    "ats_coverage": {
+      "why_this_grouping": "Can the repo's scanner even check this firm's postings? greenhouse / lever / ashby only.",
+      "groups": [
+        {
+          "group": "supported ATS board",
+          "eligible": 15,
+          "apply_tier": 15,
+          "slots": 6,
+          "evidence_yield": 0.34224000000000004,
+          "companies_with_slots": 6,
+          "eligible_share": 0.0258,
+          "slot_share": 0.5,
+          "evidence_share": 0.04,
+          "slots_per_eligible_company": 0.4,
+          "parity_gap": 0.4742,
+          "calibration_gap": 0.46
+        },
+        {
+          "group": "no supported board",
+          "eligible": 566,
+          "apply_tier": 134,
+          "slots": 6,
+          "evidence_yield": 8.203457999999966,
+          "companies_with_slots": 6,
+          "eligible_share": 0.9742,
+          "slot_share": 0.5,
+          "evidence_share": 0.96,
+          "slots_per_eligible_company": 0.0106,
+          "parity_gap": -0.4742,
+          "calibration_gap": -0.46
+        }
+      ],
+      "allocation_parity": {
+        "metric": "disparate impact ratio = min(slots per eligible company) / max(...)",
+        "value": 0.0265,
+        "interpretation": "1.0 is exact parity. The conventional 0.8 rule of thumb is borrowed from employment law and is a weak analogy here \u2014 reported because it is legible, not because it is apt.",
+        "passes_four_fifths": false,
+        "worst_served_group": "no supported board",
+        "worst_served_gap": -0.4742
+      },
+      "calibration": {
+        "metric": "slot share minus evidence share, by group",
+        "largest_deviation_group": "supported ATS board",
+        "largest_deviation": 0.46,
+        "interpretation": "0.0 means slots track the evidence exactly. This is the definition the engine optimises."
+      }
+    },
+    "evidence_depth": {
+      "why_this_grouping": "How many filings stand behind the sponsorship estimate.",
+      "groups": [
+        {
+          "group": "deep record (>=25 approvals)",
+          "eligible": 259,
+          "apply_tier": 149,
+          "slots": 12,
+          "evidence_yield": 4.887312000000001,
+          "companies_with_slots": 12,
+          "eligible_share": 0.4458,
+          "slot_share": 1.0,
+          "evidence_share": 0.5719,
+          "slots_per_eligible_company": 0.04633,
+          "parity_gap": 0.5542,
+          "calibration_gap": 0.4281
+        },
+        {
+          "group": "thin record (<25 approvals)",
+          "eligible": 322,
+          "apply_tier": 0,
+          "slots": 0,
+          "evidence_yield": 3.6583859999999957,
+          "companies_with_slots": 0,
+          "eligible_share": 0.5542,
+          "slot_share": 0.0,
+          "evidence_share": 0.4281,
+          "slots_per_eligible_company": 0.0,
+          "parity_gap": -0.5542,
+          "calibration_gap": -0.4281
+        }
+      ],
+      "allocation_parity": {
+        "metric": "disparate impact ratio = min(slots per eligible company) / max(...)",
+        "value": 0.0,
+        "interpretation": "1.0 is exact parity. The conventional 0.8 rule of thumb is borrowed from employment law and is a weak analogy here \u2014 reported because it is legible, not because it is apt.",
+        "passes_four_fifths": false,
+        "worst_served_group": "thin record (<25 approvals)",
+        "worst_served_gap": -0.5542
+      },
+      "calibration": {
+        "metric": "slot share minus evidence share, by group",
+        "largest_deviation_group": "deep record (>=25 approvals)",
+        "largest_deviation": 0.4281,
+        "interpretation": "0.0 means slots track the evidence exactly. This is the definition the engine optimises."
+      }
+    },
+    "funding_stage": {
+      "why_this_grouping": "Stage of the LAST Form D filing \u2014 not the firm's current stage. The gate flags this; the grouping inherits the flaw and says so.",
+      "groups": [
+        {
+          "group": "late stage (per last Form D)",
+          "eligible": 128,
+          "apply_tier": 63,
+          "slots": 6,
+          "evidence_yield": 2.2473179999999986,
+          "companies_with_slots": 6,
+          "eligible_share": 0.2203,
+          "slot_share": 0.5,
+          "evidence_share": 0.263,
+          "slots_per_eligible_company": 0.04688,
+          "parity_gap": 0.2797,
+          "calibration_gap": 0.237
+        },
+        {
+          "group": "mid stage (per last Form D)",
+          "eligible": 239,
+          "apply_tier": 51,
+          "slots": 5,
+          "evidence_yield": 3.5408759999999977,
+          "companies_with_slots": 5,
+          "eligible_share": 0.4114,
+          "slot_share": 0.4167,
+          "evidence_share": 0.4143,
+          "slots_per_eligible_company": 0.02092,
+          "parity_gap": 0.0053,
+          "calibration_gap": 0.0023
+        },
+        {
+          "group": "early stage (per last Form D)",
+          "eligible": 210,
+          "apply_tier": 32,
+          "slots": 1,
+          "evidence_yield": 2.685077999999997,
+          "companies_with_slots": 1,
+          "eligible_share": 0.3614,
+          "slot_share": 0.0833,
+          "evidence_share": 0.3142,
+          "slots_per_eligible_company": 0.00476,
+          "parity_gap": -0.2781,
+          "calibration_gap": -0.2309
+        },
+        {
+          "group": "no stage on record",
+          "eligible": 4,
+          "apply_tier": 3,
+          "slots": 0,
+          "evidence_yield": 0.07242599999999999,
+          "companies_with_slots": 0,
+          "eligible_share": 0.0069,
+          "slot_share": 0.0,
+          "evidence_share": 0.0085,
+          "slots_per_eligible_company": 0.0,
+          "parity_gap": -0.0069,
+          "calibration_gap": -0.0085
+        }
+      ],
+      "allocation_parity": {
+        "metric": "disparate impact ratio = min(slots per eligible company) / max(...)",
+        "value": 0.0,
+        "interpretation": "1.0 is exact parity. The conventional 0.8 rule of thumb is borrowed from employment law and is a weak analogy here \u2014 reported because it is legible, not because it is apt.",
+        "passes_four_fifths": false,
+        "worst_served_group": "early stage (per last Form D)",
+        "worst_served_gap": -0.2781
+      },
+      "calibration": {
+        "metric": "slot share minus evidence share, by group",
+        "largest_deviation_group": "late stage (per last Form D)",
+        "largest_deviation": 0.237,
+        "interpretation": "0.0 means slots track the evidence exactly. This is the definition the engine optimises."
+      }
+    }
+  },
+  "starved_despite_strong_evidence": [
+    {
+      "company_name": "INTEL CORP",
+      "approvals": 13318.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "MICROSOFT CORP",
+      "approvals": 12226.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "UBER TECHNOLOGIES INC",
+      "approvals": 3984.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "ICON TECHNOLOGY INC",
+      "approvals": 2200.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "DELOITTE TAX LLP",
+      "approvals": 2176.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "AMGEN INC",
+      "approvals": 1882.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "SNOWFLAKE INC",
+      "approvals": 1816.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "DATABRICKS INC",
+      "approvals": 1640.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "STRIPE INC",
+      "approvals": 1250.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "JUNIPER NETWORKS INC",
+      "approvals": 1244.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "NUTANIX INC",
+      "approvals": 1118.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "ROBINHOOD MARKETS INC",
+      "approvals": 824.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "PURE STORAGE INC",
+      "approvals": 822.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "ZSCALER INC",
+      "approvals": 802.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    },
+    {
+      "company_name": "ARISTA NETWORKS INC",
+      "approvals": 702.0,
+      "sponsorship_p": 0.95,
+      "composite": 0.3821,
+      "recommendation": "Apply",
+      "liveness_status": "unverifiable",
+      "why_starved": "no supported ATS board \u2014 the scanner cannot reach it"
+    }
+  ],
+  "starved_despite_strong_evidence_count": 238,
+  "thin_record_zero_slot_count": 322,
+  "fairness_tradeoff": {
+    "definition_1": {
+      "name": "allocation parity across ATS coverage",
+      "requires": "slots per eligible company equal across groups",
+      "disparate_impact_ratio": 0.0265,
+      "cost_if_chosen": "slots would go to firms whose postings nobody can verify, so some fraction of the week would be spent applying into voids \u2014 the exact waste the liveness gate exists to prevent"
+    },
+    "definition_2": {
+      "name": "calibration to evidence",
+      "requires": "slot share equals evidence-weighted yield share",
+      "largest_deviation": 0.46,
+      "cost_if_chosen": "firms with thin or no filing record are starved by construction, including the small Form D-funded firms the book's own funding thesis says to surface"
+    },
+    "incompatible_because": "Parity demands slots for the groups with the least evidence; calibration demands slots follow evidence. With a fixed 12-slot budget, satisfying one violates the other \u2014 there is no allocation that does both.",
+    "chosen": "calibration to evidence",
+    "why_chosen": "The resource is a week of my own life against an OPT clock. I am not a regulator distributing a public good; I am one candidate with twelve applications. Parity across employers is not a duty I owe, and the cost of parity here is applications sent into unverifiable voids.",
+    "what_it_costs": {
+      "slots_parity_would_redistribute": {
+        "supported ATS board": -5.69,
+        "no supported board": 5.69
+      },
+      "firms_with_deep_records_starved": 238,
+      "thin_record_firms_starved": 322,
+      "internal_contradiction": "This choice starves early-stage firms, which contradicts the book's own thesis that recent Form D funding is a hiring signal worth chasing. The engine's objective and the domain's premise disagree, and the objective currently wins."
+    }
+  },
+  "highest_leverage_intervention": {
+    "point": "ATS provider coverage \u2014 a Workday/proprietary-board adapter",
+    "why": "It is the only mechanism here that is a tooling gap rather than a data limitation, so it is fixable by writing code rather than by assuming something unknowable. Every other mechanism (missing filings, selection-conditioned labels, size proxy) needs data that does not exist. Coverage needs a provider module.",
+    "expected_effect": "238 firms with >= 25 approvals currently get zero slots because nobody can check them. Adding one provider moves them from 'flagged, human must verify' to 'checked', which is where the engine's gate is supposed to operate.",
+    "not_the_leverage_point": "Reweighting the composite. Tuning weights redistributes among firms the engine can already see, which leaves the mechanism untouched."
+  }
+}
