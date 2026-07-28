@@ -5,6 +5,23 @@
 Tool: `tools/effort-reallocator/` · Sample run: `tools/effort-reallocator/runs/2026-07-27/`
 Journal: `FRICTIONAL-JOURNAL.md` · Acceptance gate: `constraints.md`
 
+## Canvas submission comment
+
+Paste into the Canvas assignment comment:
+
+```
+Name: Atharva Kurlekar
+Assignment: The Reallocation Engine, Audited
+
+Repo: https://github.com/Atharva-Kurlekar7/the-reallocation-engine/tree/mode/atharva-kurlekar-erp-to-ai
+Tool: tools/effort-reallocator/
+Run: python3 tools/effort-reallocator/reallocate.py all
+
+Report: Kurlekar_Atharva_ReallocationEngine.md
+Journal: FRICTIONAL-JOURNAL.md
+Video: https://youtu.be/dZcid2Jc2fg
+```
+
 Every number below is copied from a committed artifact of the run in
 `tools/effort-reallocator/runs/2026-07-27/`, and each section names the file it came from.
 Nothing in this report was typed from memory.
