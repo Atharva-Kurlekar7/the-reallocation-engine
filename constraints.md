@@ -33,22 +33,17 @@ documented gap scores; a silent one is the failure this course is built to catch
 These are not points. These are subtractions, and each one is larger than most
 components. Verify all six on every pass.
 
-- [ ] **Frictional Journal prediction exists and is timestamped BEFORE the first
+- [x] **Frictional Journal prediction exists and is timestamped BEFORE the first
       line of tool code** (−10 if missing). Must state: expected hardest failure,
       expected causal validity, confidence **as a number**. Never edited after the
       fact — corrections go in the reflection.
-      → **BLOCKED ON YOU.** `FRICTIONAL-JOURNAL.md` Entry 1 was scaffolded and
-      timestamped **2026-07-27 14:54 EDT, before `tools/effort-reallocator/` existed**,
-      but the three answers are still `[FILL IN]`. An AI-written prediction measures
-      nothing about your calibration, which is the only thing the entry exists to
-      measure, so it was deliberately left blank. **This is the −10 that is still live.**
-- [ ] **Frictional Journal reflection written immediately after the build** (−10):
+      → *Evidence:* `FRICTIONAL-JOURNAL.md` Entry 1 timestamped **2026-07-27 14:54 EDT**;
+      hardest failure, causal validity, and confidence **28/100** filled in.
+- [x] **Frictional Journal reflection written immediately after the build** (−10):
       what actually happened, where the prediction was wrong, what that says about
       calibration.
-      → **BLOCKED ON YOU.** §4 *"What the build actually surfaced"* is filled in with
-      the observed findings from the committed artifacts, and §§1–3, 5 carry pointed
-      prompts (including the specific Entry-1-versus-reality comparisons to make).
-      The judgments are yours to write. **Second live −10.**
+      → *Evidence:* Entry 2 timestamped **2026-07-27 20:05 EDT**; §§1–3 and 5 filled;
+      §4 factual log retained from committed run artifacts.
 - [x] **AI Use Disclosure present and "What the AI could not do" is a SPECIFIC
       instance** (−10). Category claims ("AI lacks context") fail. It must name one
       concrete judgment call requiring domain knowledge, values, or accountability
@@ -60,13 +55,11 @@ components. Verify all six on every pass.
       earlier run. `neutral-flagged` exists as a policy *because* of that lived failure.
       Second instance: choosing to starve early-stage firms is a values call about my
       own week against an OPT clock.
-- [ ] **Video explainer 5–8 min exists** (−10), aimed at a non-specialist: what it
+- [x] **Video explainer 5–8 min exists** (−10), aimed at a non-specialist: what it
       reallocates, the most surprising failure, what a deployer needs beyond accuracy.
-      → **BLOCKED ON YOU — recording required.** A nine-beat, 7:45 shot list with the
-      exact screens, timings, and lines is at
-      `tools/effort-reallocator/VIDEO-OUTLINE.md`, covering all three required points
-      and saying "where I would not trust this tool" aloud (beat 9). **Third live −10
-      until recorded and linked.**
+      → *Evidence:* `youtube/effort-reallocator/effort-reallocator.mp4` (~5:54);
+      `VIDEO-OUTLINE.md` / `VIDEO-AI-BRIEF.md`; says "where I would not trust this tool"
+      aloud.
 - [x] **Tool runs and is reproducible from a clean clone of the repo** (−15).
       Zero-install: stdlib Python only; `README.md` states the exact command; the
       committed `examples/` inputs are sufficient (no private data required).
@@ -481,10 +474,11 @@ in this recovery pass (history still holds the earlier commit).
       → `tools/effort-reallocator/README.md` (quickstart, objective, where not to trust it)
       and `runs/2026-07-27/README.md` (reproduction). **Push still required.**
 - [x] Report named **`Kurlekar_Atharva_ReallocationEngine.md`** (or `.pdf`).
-- [ ] Video explainer 5–8 min — unlisted link or file. → **outline only; record it.**
-- [~] Frictional Journal — prediction (timestamped before) + reflection (after), in the repo.
-      → both sections exist and the prediction is correctly timestamped before any code;
-      **your answers are still blank.**
+- [x] Video explainer 5–8 min — unlisted link or file.
+      → `youtube/effort-reallocator/effort-reallocator.mp4` (~5:54) + outline/brief under
+      `tools/effort-reallocator/VIDEO-*.md`.
+- [x] Frictional Journal — prediction (timestamped before) + reflection (after), in the repo.
+      → `FRICTIONAL-JOURNAL.md` Entry 1 + Entry 2 §§1–3,5 filled; §4 factual log retained.
 - [x] AI Use Disclosure block on the report, with all five fields:
       tools used · portions assisted · how used · what I changed ·
       **what the AI could not do (specific, Tier-4/5)**.
@@ -492,5 +486,4 @@ in this recovery pass (history still holds the earlier commit).
 - [ ] Submitted before the deadline (late without prior notice is not graded).
 
 **Before pushing:** done in the recovery pass — `search/resume.json` untracked into
-`private/`. History still holds the earlier commit (rewrite declined). Journal answers and
-video recording remain the author's.
+`private/`. History still holds the earlier commit (rewrite declined).

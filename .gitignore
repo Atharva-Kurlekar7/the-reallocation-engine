@@ -73,3 +73,11 @@ search/private-notes.md
 # effort-reallocator: out/ is regenerable scratch; runs/ is the committed sample run.
 /tools/effort-reallocator/out/
 **/__pycache__/
+
+# Video build intermediates (keep final mp4 + srt + factcheck tracked).
+/youtube/**/clips/
+/youtube/**/media/
+/youtube/**/mp3/
+/youtube/**/manim/
+/youtube/**/review-frames/
+/youtube/**/*-slate.mp4

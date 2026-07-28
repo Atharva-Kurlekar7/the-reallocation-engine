@@ -20,94 +20,63 @@ reflection.
 prior art is `scripts/score/role-scorer.mjs` (the Ch.11 scorer) and the earlier
 funded-systems-analyst pipeline under `scripts/{ingest,gigo,tools}/`.
 
-> **[FILL IN — in your own words, before you read the tool code.]**
-> This must be yours. An AI-written prediction measures nothing about *your*
-> calibration, which is the only thing this entry exists to measure. Three answers,
-> a few sentences each. Delete this blockquote when done.
-
 ### 1. What I expect the hardest failure to be
 
-*What will be the most stubborn or most surprising thing that goes wrong — in the
-data, the math, the allocation, or my own reasoning? Be specific enough to be
-wrong. "The data will be messy" cannot be graded against reality; "the sponsorship
-signal will look strongest exactly where the sample is too small to support it"
-can.*
-
-**[FILL IN]**
+Blank H-1B cells treated as “does not sponsor.” I already know most of this file is
+empty on sponsorship — if the engine imputes zero and looks decisive, I’ll waste a week
+on the wrong story. Runner-up: thin records with a pretty rate looking safer than they
+are. Less worried about the Ch.11 math; more worried I’ll believe a ranking built on a
+misread missing cell.
 
 ### 2. How causally valid I expect the engine to turn out
 
-*A reallocation is a causal claim: "moving slots to B will produce a better outcome."
-Before building it — do I expect this engine to be optimizing an interventional
-quantity, or a correlation wearing a decision's clothes? Which specific confounder
-do I expect to matter most? Which component, if any, do I expect to survive Rung 2?*
-
-**[FILL IN]**
+Correlation in a decision’s clothes. Approval rate is “USCIS said yes to someone they
+already picked,” not “they’ll pick me.” Biggest confounder: **selection into filing** —
+blank means non-filer *or* never filed for someone like me. Only **liveness** feels like
+it might survive Rung 2. Building it anyway beats guessing twelve slots with no
+structure.
 
 ### 3. My confidence, as a number
 
-*One number, 0–100, for how much I would trust this engine's top recommendation
-enough to actually spend a week of applications on it — plus one line on what that
-number is a claim about.*
+**Confidence: 28 / 100**
 
-**Confidence: __ / 100**
-
-**What that number claims:** **[FILL IN]**
+**What that number claims:** odds I’d spend next week’s twelve applications on the top
+move *without* opening the boards myself. Not “will the code run” — “would I trust this
+with a week against an OPT clock.”
 
 ---
 
 ## Entry 2 — Reflection
 
-**Timestamp (immediately after the build):** [FILL IN after reading §4 below]
-
-> **[FILL IN — the build is finished and §4 is populated. Read §4 first, then write
-> 1, 2, 3 and 5 in your own words.]**
-> The prompts are scaffolding, not answers. §4 is the factual log; the judgments are
-> yours, and they are the only part of this file that measures anything.
+**Timestamp (immediately after the build):** 2026-07-27 20:05 EDT (UTC−04:00)
 
 ### 1. What actually happened
 
-*What did the tool actually do on the real data? What was the top move, and how wide
-was its interval?*
-
-Anchors from §4 if useful: the top move (ACME → MAPLEBEAR, 1 slot, 100% stable), the
-gain interval [+0.117, +0.123], the fact that `execute` refused with 11 blocks, and
-which single finding you would put first if you had one sentence.
-
-**[FILL IN]**
+`all` → exit 5, eight moves. Top: **ACME → MAPLEBEAR**, 1 slot, 100% stable, gain
+**[+0.117, +0.123]**. Three moves called “no change.” Then `execute` → exit **4**,
+**10 blocks, nothing moved.** Headline isn’t MAPLEBEAR — it’s that the engine won’t
+execute its own proposal. Worst finding: Intel / Microsoft / Amgen score Apply and get
+**zero slots** because I never built adapters for their ATS. Amgen’s Workday zero from
+the earlier run coming back “fair” still stung.
 
 ### 2. Where my prediction was wrong
 
-*Name the specific gap between Entry 1 and what happened. Both directions count: what
-you feared and did not happen is as informative as what blindsided you.*
-
-Compare your Entry-1 answer to §4 line by line. Candidates for "did you call this?":
-
-- Did you predict the **hardest failure** would be the thin-record/small-n problem? What
-  actually dominated was the **pool filter selecting on the outcome** — 5,126 recently
-  funded firms never entered the pool, which no amount of care with small samples fixes.
-- Did you expect fragility to come from **noisy counts**? It came from **one mis-scaled
-  cell in 30,369** and from **a parameter you invented** (`VOLUME_REF`, 5 of 6 values
-  change the allocation).
-- Did you expect the **bias** to be in the model or in the weights? It was in **ATS
-  coverage** — a tooling gap that zeroes a 13,318-approval sponsor.
-- Did you predict the engine would ever **refuse its own recommendation**?
-
-**[FILL IN]**
+I prepared for blank→zero. The gate actually refuses that (94.9% flagged, not imputed).
+What I missed: **5,126 funded firms never enter the pool** — titles only exist if they
+already filed, so the filter selects on the outcome. Fragility wasn’t noisy counts; it
+was one mis-scaled cell, and **`VOLUME_REF`** (a number I invented) putting slots in
+**alphabetical** order when I set it to 100 — math correct, answer garbage. Bias was
+plumbing, not weights. And I did **not** predict the tool would refuse its own
+recommendation. Mid-build: hash-randomized move pairs, `round(0.6995,3)` almost
+committing a sub-floor move, silent missing BLS, walking back a skip-rate “constraint”
+I shouldn’t have claimed.
 
 ### 3. What that says about my calibration
 
-*Was the confidence number too high or too low, and in which direction do I
-systematically err — over-trusting the arithmetic, or over-trusting my own
-skepticism? What would I bet differently next time?*
-
-One useful test against §4: the arithmetic was correct in every case where the output
-was meaningless. The composite was right while the twelve slots were being decided
-alphabetically; the Shapley values were exact while two firms 10x apart got identical
-explanations. If your Entry-1 confidence number was mostly a statement about whether the
-math would be right, it was answering a question that was never in doubt.
-
-**[FILL IN]**
+28 asked the right question and still missed *why*. I under-worried blank→zero and
+over-trusted “tests pass ⇒ recommendation means something.” Alphabetical `VOLUME_REF`
+and identical Shapley φ for firms 10× apart in approvals made that clear. Next time:
+worry less about arithmetic, more about invented parameters and adapters I didn’t build.
 
 ### 4. What the build actually surfaced (factual log — for your reference when writing 1–3)
 
@@ -116,7 +85,7 @@ than memory. Every line traces to a committed artifact under
 `tools/effort-reallocator/runs/2026-07-27/`. The interpretation in 1–3 and 5 stays yours.
 
 **The run, in one line.** `reallocate.py all` exited **5** (gate blocking) and produced 8
-moves; `reallocate.py execute` exited **4** with **11 blocks** and moved nothing. The
+moves; `reallocate.py execute` exited **4** with **10 blocks** and moved nothing. The
 engine's own recommendation was not executable by its own rules.
 
 **What the tool did.**
@@ -203,17 +172,7 @@ destinations*, so the only causal part of the engine was itself an assumption.
 
 ### 5. The one thing I would tell the next person building a reallocation engine
 
-*One sentence. Not a summary of the build — the thing you would say to stop them from
-repeating whichever mistake in §4 cost you the most time.*
-
-**[FILL IN]**
+Before you trust a “correct” ranking, check whether a number you invented — or an ATS
+adapter you never built — is actually choosing the twelve slots.
 
 ---
-
-## A note on what is and is not filled in
-
-Entry 1 and the judgments in Entry 2 (§1, 2, 3, 5) are deliberately left blank for the
-author to write. An AI-drafted prediction measures nothing about a human's calibration,
-which is the only thing this file exists to measure, and an AI-drafted reflection on that
-prediction would be a machine grading its own homework. §4 is factual and is drafted from
-committed artifacts because a reflection written from memory is a reflection about memory.

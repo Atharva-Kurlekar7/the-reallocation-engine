@@ -1,0 +1,372 @@
+1
+00:00:00,000 --> 00:00:04,881
+I get about twelve job applications' worth
+of real effort in a week. I'm an
+
+2
+00:00:04,931 --> 00:00:09,813
+international student, so the visa clock
+does not pause. This tool decides where
+
+3
+00:00:09,863 --> 00:00:14,744
+those twelve go — and every week I guess
+wrong, I'm guessing with something I
+
+4
+00:00:14,794 --> 00:00:17,210
+cannot get back.
+
+5
+00:00:17,260 --> 00:00:22,820
+One sentence of objective: maximise
+expected sponsored-interview yield per
+
+6
+00:00:22,870 --> 00:00:28,430
+application slot. What that leaves out is
+almost everything that actually matters
+
+7
+00:00:28,480 --> 00:00:34,040
+day to day — referrals, how good my
+application is, pay, team quality, and
+
+8
+00:00:34,090 --> 00:00:39,650
+every firm with no filing record and no
+job board my scanner can read.
+
+9
+00:00:39,700 --> 00:00:43,510
+Naming the omissions up front is the
+posture of the tool.
+
+10
+00:00:43,560 --> 00:00:48,558
+The tool checks itself here, too. Chapter
+fifteen sets a skip rate target of at
+
+11
+00:00:48,608 --> 00:00:53,606
+least fifty percent — how many companies
+should get filtered out before they are
+
+12
+00:00:53,656 --> 00:00:58,654
+even scored. This run skips only thirty-
+one point five percent. That is reported
+
+13
+00:00:58,704 --> 00:01:03,702
+as a dial, not enforced as a rule, because
+tightening it until the number looks right
+
+14
+00:01:03,752 --> 00:01:08,750
+would just be optimizing the dial instead
+of the decision.
+
+15
+00:01:08,800 --> 00:01:14,170
+When I run it on the real public dataset —
+thirty thousand three hundred sixty-nine
+
+16
+00:01:14,220 --> 00:01:19,590
+rows — the gate reports that ninety-four
+point nine percent of those rows have no
+
+17
+00:01:19,640 --> 00:01:22,300
+H-1B data at all.
+
+18
+00:01:22,350 --> 00:01:27,250
+The single most important line of code in
+this thing is the one that refuses to read
+
+19
+00:01:27,300 --> 00:01:32,200
+a blank cell as a zero. "We have no
+evidence" and "we have evidence of no" are
+
+20
+00:01:32,250 --> 00:01:37,150
+different sentences, and only one of them
+is true here.
+
+21
+00:01:37,200 --> 00:01:42,315
+The output is not a ranked list. It is a
+move: shift one slot from company A to
+
+22
+00:01:42,365 --> 00:01:47,480
+company B, with an interval on the gain
+and a stability percentage.
+
+23
+00:01:47,530 --> 00:01:52,804
+Two of those moves survive almost every
+resample — those bars are full. Three are
+
+24
+00:01:52,854 --> 00:01:58,128
+stubs. The tool is not saying "move a
+little." It is saying "I cannot tell these
+
+25
+00:01:58,178 --> 00:02:00,790
+apart from doing nothing."
+
+26
+00:02:00,840 --> 00:02:05,774
+Under the model's own assumptions, the
+expected gain band clears zero — about
+
+27
+00:02:05,824 --> 00:02:10,758
+plus zero point one two responses per
+week. That is not the same as being right
+
+28
+00:02:10,808 --> 00:02:13,250
+about the world.
+
+29
+00:02:13,300 --> 00:02:18,690
+The tool measures its own overconfidence,
+too. If you let it re-optimize inside
+
+30
+00:02:18,740 --> 00:02:24,130
+every resample, it reports a gain of plus
+zero point one two eight. Held fixed to
+
+31
+00:02:24,180 --> 00:02:29,570
+the one allocation it actually recommends,
+the honest number is plus zero point one
+
+32
+00:02:29,620 --> 00:02:35,010
+two. The gap — about six percent — is the
+optimizer fitting noise nobody can see.
+
+33
+00:02:35,060 --> 00:02:40,450
+Reporting only the first number would have
+been the easier, more flattering lie.
+
+34
+00:02:40,500 --> 00:02:42,730
+Here is the surprising failure.
+
+35
+00:02:42,780 --> 00:02:48,446
+Intel: thirteen thousand three hundred
+eighteen sponsorships. Microsoft: twelve
+
+36
+00:02:48,496 --> 00:02:54,162
+thousand two hundred twenty-six. Amgen:
+one thousand eight hundred eighty-two. All
+
+37
+00:02:54,212 --> 00:02:57,020
+score Apply. All get zero slots.
+
+38
+00:02:57,070 --> 00:03:01,613
+Not because they are bad targets — because
+their job boards run on software my
+
+39
+00:03:01,663 --> 00:03:03,910
+scanner cannot read.
+
+40
+00:03:03,960 --> 00:03:09,054
+The bias in this tool is not in the model.
+It is in which companies I built an
+
+41
+00:03:09,104 --> 00:03:14,198
+adapter for. Nothing in the math is wrong,
+and the answer is still shaped by a
+
+42
+00:03:14,248 --> 00:03:16,770
+plumbing decision I made months ago.
+
+43
+00:03:16,820 --> 00:03:21,600
+There were two ways to define fair here,
+and they cannot both hold. Parity says
+
+44
+00:03:21,650 --> 00:03:26,430
+every company gets slots in proportion to
+how many are eligible. Calibration says
+
+45
+00:03:26,480 --> 00:03:31,260
+slots follow the evidence. Choosing parity
+would mean spending real weeks applying
+
+46
+00:03:31,310 --> 00:03:36,090
+into postings nobody can verify. Choosing
+calibration — what this tool does — means
+
+47
+00:03:36,140 --> 00:03:40,920
+two hundred thirty-eight companies with
+deep sponsorship records, and three
+
+48
+00:03:40,970 --> 00:03:45,750
+hundred twenty-two more with thin ones,
+get nothing either way. There is no
+
+49
+00:03:45,800 --> 00:03:50,580
+allocation that satisfies both definitions
+at once.
+
+50
+00:03:50,630 --> 00:03:55,700
+It is also fragile in ways nobody usually
+tests. One mis-typed cell out of thirty
+
+51
+00:03:55,750 --> 00:04:00,820
+thousand three hundred sixty-nine —
+writing zero point nine five where a
+
+52
+00:04:00,870 --> 00:04:05,940
+percentage should be — removes the top
+company's slot.
+
+53
+00:04:05,990 --> 00:04:11,164
+And five of six reasonable values for a
+parameter I invented change the whole
+
+54
+00:04:11,214 --> 00:04:16,388
+allocation. It is more sensitive to a
+number I made up than to a whole year of
+
+55
+00:04:16,438 --> 00:04:18,1000
+missing government filings.
+
+56
+00:04:19,050 --> 00:04:24,300
+Then I ask it to execute — to actually
+commit the slots. It refuses. Exit code
+
+57
+00:04:24,350 --> 00:04:29,600
+four. Ten blocks. This is the tool's own
+recommendation, and the tool will not let
+
+58
+00:04:29,650 --> 00:04:32,250
+me act on it.
+
+59
+00:04:32,300 --> 00:04:37,858
+Six destinations have postings nobody has
+checked. Three of the moves are coin
+
+60
+00:04:37,908 --> 00:04:43,466
+flips. There is no force flag. If I want
+to move a slot, I have to type my name and
+
+61
+00:04:43,516 --> 00:04:46,270
+a reason, and that goes in a log.
+
+62
+00:04:46,320 --> 00:04:51,380
+A deployer needs more than accuracy. They
+need to know who is accountable when it is
+
+63
+00:04:51,430 --> 00:04:56,490
+wrong, what the tool cannot see, and what
+it refuses to do.
+
+64
+00:04:56,540 --> 00:05:01,444
+This tool's arithmetic checks out. It is
+also reallocating on correlation dressed
+
+65
+00:05:01,494 --> 00:05:06,399
+up as causation — the data measures
+whether the government approved someone
+
+66
+00:05:06,449 --> 00:05:11,353
+the company had already chosen, not
+whether they would choose me. Accuracy was
+
+67
+00:05:11,403 --> 00:05:13,830
+never the hard part.
+
+68
+00:05:13,880 --> 00:05:16,500
+Here is where I would not trust this tool.
+
+69
+00:05:16,550 --> 00:05:20,727
+One: any claim that moving slots raises my
+odds of an interview — it measures a
+
+70
+00:05:20,777 --> 00:05:22,840
+different thing.
+
+71
+00:05:22,890 --> 00:05:28,456
+Two: any company missing from the list,
+because five thousand one hundred twenty-
+
+72
+00:05:28,506 --> 00:05:34,072
+six funded firms never even enter the
+pool, and hundreds of deep sponsors are
+
+73
+00:05:34,122 --> 00:05:36,880
+invisible because of an ATS gap.
+
+74
+00:05:36,930 --> 00:05:41,133
+Three: every "posting is live" value in
+this default run, because not one was
+
+75
+00:05:41,183 --> 00:05:43,260
+actually checked.
+
+76
+00:05:43,310 --> 00:05:47,372
+The tool that tells me where to send
+twelve applications is also the tool
+
+77
+00:05:47,422 --> 00:05:51,484
+telling me it might be wrong about all
+twelve. That's the version I'd actually
+
+78
+00:05:51,534 --> 00:05:53,540
+use.

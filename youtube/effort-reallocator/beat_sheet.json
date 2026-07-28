@@ -1,0 +1,961 @@
+{
+  "metadata": {
+    "slug": "effort-reallocator",
+    "title": "The Reallocation Engine, Audited",
+    "topic": "Effort Reallocator — auditing a tool that reallocates scarce job-application slots",
+    "purpose": "INFO 7375 graduate course video: what the tool reallocates, its most surprising failure (ATS coverage bias), and what a deployer needs beyond accuracy.",
+    "voice_kokoro": "am_michael",
+    "clock": "narration",
+    "style_preset": "dark-terminal-documentary",
+    "build": {
+      "at": "2026-07-27T20:42:51",
+      "cut": "master",
+      "filled": 26,
+      "of": 26,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B01",
+      "act": "The resource",
+      "narration_text": "I get about twelve job applications' worth of real effort in a week. I'm an international student, so the visa clock does not pause. This tool decides where those twelve go — and every week I guess wrong, I'm guessing with something I cannot get back.",
+      "new_visual_element": "12 empty week boxes on black",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "WeekSlotsCard",
+          "props": {
+            "total": 12,
+            "label": "12 application slots / week"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B01.mp3",
+      "actual_duration_s": 17.26,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "The objective",
+      "narration_text": "One sentence of objective: maximise expected sponsored-interview yield per application slot. What that leaves out is almost everything that actually matters day to day — referrals, how good my application is, pay, team quality, and every firm with no filing record and no job board my scanner can read.",
+      "new_visual_element": "objective sentence + omissions",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "THE OBJECTIVE",
+            "headline": "Maximise sponsored-interview yield per slot.",
+            "detail": "Leaves out: referrals · application quality · pay · team quality · unread boards",
+            "align": "left"
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B02.mp3",
+      "actual_duration_s": 22.44,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "The objective",
+      "narration_text": "Naming the omissions up front is the posture of the tool.",
+      "new_visual_element": "objective card holds",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "hold",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "THE OBJECTIVE",
+            "headline": "Maximise sponsored-interview yield per slot.",
+            "detail": "Leaves out: referrals · application quality · pay · team quality · unread boards",
+            "align": "left"
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B03.mp3",
+      "actual_duration_s": 3.86,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B02B",
+      "act": "The objective",
+      "narration_text": "The tool checks itself here, too. Chapter fifteen sets a skip rate target of at least fifty percent — how many companies should get filtered out before they are even scored. This run skips only thirty-one point five percent. That is reported as a dial, not enforced as a rule, because tightening it until the number looks right would just be optimizing the dial instead of the decision.",
+      "new_visual_element": "skip rate: 31.5% vs >=50% target, reported not enforced",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "THE TOOL CHECKS ITSELF",
+            "headline": "skip rate 31.5% — target ≥50%",
+            "detail": "Reported as a dial, not enforced as a rule.",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B02B.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B02B.mp3",
+      "actual_duration_s": 25.24,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02B.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "Run it / missing data",
+      "narration_text": "When I run it on the real public dataset — thirty thousand three hundred sixty-nine rows — the gate reports that ninety-four point nine percent of those rows have no H-1B data at all.",
+      "new_visual_element": "terminal scroll: gate report",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "kinetic",
+        "remotion": {
+          "pattern": "TerminalScrollCard",
+          "props": {
+            "lines": [
+              "==========================================================================",
+              "GIGO GATE — data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv",
+              "==========================================================================",
+              "  rows                     30,369",
+              "  rows with H-1B fields    1,557 (5.1%)",
+              "  H-1B fields ABSENT       94.9% — flagged unknown, NEVER imputed to zero",
+              "",
+              "  check                          sev       count   rate",
+              "  H1B_FIELDS_ABSENT              flag       28,812 94.9%"
+            ],
+            "stampLine": "94.9% NO H-1B DATA",
+            "stampTone": "warn"
+          },
+          "rendered": {
+            "out": "media/B04.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B04.mp3",
+      "actual_duration_s": 13.55,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "Run it / missing data",
+      "narration_text": "The single most important line of code in this thing is the one that refuses to read a blank cell as a zero. \"We have no evidence\" and \"we have evidence of no\" are different sentences, and only one of them is true here.",
+      "new_visual_element": "blank ≠ zero statement",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "annotate",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "",
+            "headline": "blank ≠ zero",
+            "detail": "\"No evidence\" and \"evidence of no\" are different sentences.",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B05.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B05.mp3",
+      "actual_duration_s": 14.85,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "The move and its uncertainty",
+      "narration_text": "The output is not a ranked list. It is a move: shift one slot from company A to company B, with an interval on the gain and a stability percentage.",
+      "new_visual_element": "MOVE card: from/to/stability",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "MoveCard",
+          "props": {
+            "from": "ACME ANALYTICS LLC",
+            "to": "MAPLEBEAR INC",
+            "stabilityPct": 100.0,
+            "label": "THE MOVE"
+          },
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B06.mp3",
+      "actual_duration_s": 10.33,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "The move and its uncertainty",
+      "narration_text": "Two of those moves survive almost every resample — those bars are full. Three are stubs. The tool is not saying \"move a little.\" It is saying \"I cannot tell these apart from doing nothing.\"",
+      "new_visual_element": "8 stability bars, 70% floor line",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "StabilityBarsCard",
+          "props": {
+            "bars": [
+              {
+                "name": "MAPLEBEAR INC",
+                "pct": 100.0
+              },
+              {
+                "name": "ROKU INC",
+                "pct": 99.95
+              },
+              {
+                "name": "PINTEREST INC",
+                "pct": 70.7
+              },
+              {
+                "name": "ROBLOX CORP",
+                "pct": 70.25
+              },
+              {
+                "name": "TWILIO INC",
+                "pct": 72.55
+              },
+              {
+                "name": "HUMAN INC",
+                "pct": 20.7
+              },
+              {
+                "name": "TELADOC HEALTH INC",
+                "pct": 18.45
+              },
+              {
+                "name": "VISICON TECHNOLOGIES INC",
+                "pct": 5.2
+              }
+            ],
+            "floorPct": 70
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B07.mp3",
+      "actual_duration_s": 13.31,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "The move and its uncertainty",
+      "narration_text": "Under the model's own assumptions, the expected gain band clears zero — about plus zero point one two responses per week. That is not the same as being right about the world.",
+      "new_visual_element": "gain interval, 0 marker",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "GainIntervalCard",
+          "props": {
+            "axisMin": -0.015,
+            "axisMax": 0.138,
+            "ciLow": 0.117,
+            "ciHigh": 0.123,
+            "point": 0.121,
+            "label": "+0.121 [+0.117, +0.123] responses/week"
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B08.mp3",
+      "actual_duration_s": 12.46,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B08B",
+      "act": "The move and its uncertainty",
+      "narration_text": "The tool measures its own overconfidence, too. If you let it re-optimize inside every resample, it reports a gain of plus zero point one two eight. Held fixed to the one allocation it actually recommends, the honest number is plus zero point one two. The gap — about six percent — is the optimizer fitting noise nobody can see. Reporting only the first number would have been the easier, more flattering lie.",
+      "new_visual_element": "optimizer's curse: fixed vs re-optimized gain",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "TwoNumbersCompareCard",
+          "props": {
+            "eyebrow": "THE OPTIMIZER'S CURSE",
+            "leftLabel": "held fixed to the recommended allocation",
+            "leftValue": 0.11989,
+            "rightLabel": "re-optimized inside every resample",
+            "rightValue": 0.12766,
+            "gapLabel": "+0.00777 · 6.1% is the optimizer fitting noise"
+          },
+          "rendered": {
+            "out": "media/B08B.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B08B.mp3",
+      "actual_duration_s": 27.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08B.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "The surprising failure",
+      "narration_text": "Here is the surprising failure.",
+      "new_visual_element": "segment title card",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "hold",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "",
+            "headline": "THE SURPRISING FAILURE",
+            "detail": "",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B09.mp3",
+      "actual_duration_s": 2.28,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "The surprising failure",
+      "narration_text": "Intel: thirteen thousand three hundred eighteen sponsorships. Microsoft: twelve thousand two hundred twenty-six. Amgen: one thousand eight hundred eighty-two. All score Apply. All get zero slots.",
+      "new_visual_element": "starved-firms table",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "StarvedTableCard",
+          "props": {
+            "rows": [
+              {
+                "company": "INTEL CORP",
+                "approvals": 13318
+              },
+              {
+                "company": "MICROSOFT CORP",
+                "approvals": 12226
+              },
+              {
+                "company": "AMGEN INC",
+                "approvals": 1882
+              }
+            ],
+            "stamp": "Apply → 0 slots"
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B10.mp3",
+      "actual_duration_s": 14.29,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "The surprising failure",
+      "narration_text": "Not because they are bad targets — because their job boards run on software my scanner cannot read.",
+      "new_visual_element": "bias = unsupported ATS statement",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "annotate",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "",
+            "headline": "Bias = unsupported ATS",
+            "detail": "",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B11.mp3",
+      "actual_duration_s": 6.89,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "The surprising failure",
+      "narration_text": "The bias in this tool is not in the model. It is in which companies I built an adapter for. Nothing in the math is wrong, and the answer is still shaped by a plumbing decision I made months ago.",
+      "new_visual_element": "ATS coverage ratio bars",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "RatioBarsCard",
+          "props": {
+            "groups": [
+              {
+                "name": "supported ATS board",
+                "evidencePct": 4,
+                "slotsPct": 50
+              },
+              {
+                "name": "no supported board",
+                "evidencePct": 96,
+                "slotsPct": 50
+              }
+            ],
+            "ratioLabel": "disparate impact ratio 0.0265"
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B12.mp3",
+      "actual_duration_s": 12.86,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B12B",
+      "act": "The surprising failure",
+      "narration_text": "There were two ways to define fair here, and they cannot both hold. Parity says every company gets slots in proportion to how many are eligible. Calibration says slots follow the evidence. Choosing parity would mean spending real weeks applying into postings nobody can verify. Choosing calibration — what this tool does — means two hundred thirty-eight companies with deep sponsorship records, and three hundred twenty-two more with thin ones, get nothing either way. There is no allocation that satisfies both definitions at once.",
+      "new_visual_element": "parity vs calibration tradeoff",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "TradeoffCard",
+          "props": {
+            "leftName": "PARITY",
+            "leftCost": "ratio 0.0265 — slots into unverifiable postings",
+            "rightName": "CALIBRATION",
+            "rightCost": "238 deep-record + 322 thin-record firms get nothing",
+            "footer": "No allocation satisfies both at once."
+          },
+          "rendered": {
+            "out": "media/B12B.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B12B.mp3",
+      "actual_duration_s": 33.81,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12B.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "Fragility",
+      "narration_text": "It is also fragile in ways nobody usually tests. One mis-typed cell out of thirty thousand three hundred sixty-nine — writing zero point nine five where a percentage should be — removes the top company's slot.",
+      "new_visual_element": "one highlighted cell in a grid",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "annotate",
+        "remotion": {
+          "pattern": "FragilityGridCard",
+          "props": {
+            "cols": 24,
+            "rows": 14,
+            "highlightLabel": "1 wrong cell → MAPLEBEAR INC loses its slot"
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B13.mp3",
+      "actual_duration_s": 15.36,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "Fragility",
+      "narration_text": "And five of six reasonable values for a parameter I invented change the whole allocation. It is more sensitive to a number I made up than to a whole year of missing government filings.",
+      "new_visual_element": "VOLUME_REF parameter sweep",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "ParameterSweepCard",
+          "props": {
+            "paramName": "VOLUME_REF",
+            "values": [
+              {
+                "value": "25",
+                "changed": true
+              },
+              {
+                "value": "50",
+                "changed": true
+              },
+              {
+                "value": "100",
+                "changed": true
+              },
+              {
+                "value": "250",
+                "changed": true
+              },
+              {
+                "value": "500",
+                "changed": false
+              },
+              {
+                "value": "1000",
+                "changed": true
+              }
+            ],
+            "label": "5 of 6 plausible values change the allocation"
+          },
+          "rendered": {
+            "out": "media/B14.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B14.mp3",
+      "actual_duration_s": 13.06,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "The hard stop",
+      "narration_text": "Then I ask it to execute — to actually commit the slots. It refuses. Exit code four. Ten blocks. This is the tool's own recommendation, and the tool will not let me act on it.",
+      "new_visual_element": "terminal refusal scroll",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "kinetic",
+        "remotion": {
+          "pattern": "TerminalScrollCard",
+          "props": {
+            "lines": [
+              "==========================================================================",
+              "HARD STOP — committing application slots",
+              "==========================================================================",
+              "  gate status: BLOCKED",
+              "  moves:       8",
+              "",
+              "  BLOCKED — approval cannot clear these:",
+              "    [block] POSTING_NOT_VERIFIED (x6)",
+              "    [block] MOVE_NOT_STABLE (x3)",
+              "",
+              "  NOTHING MOVED."
+            ],
+            "stampLine": "HARD STOP · exit 4 · 10 blocks",
+            "stampTone": "danger"
+          },
+          "rendered": {
+            "out": "media/B15.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B15.mp3",
+      "actual_duration_s": 13.25,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "The hard stop",
+      "narration_text": "Six destinations have postings nobody has checked. Three of the moves are coin flips. There is no force flag. If I want to move a slot, I have to type my name and a reason, and that goes in a log.",
+      "new_visual_element": "block reasons list",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "kinetic",
+        "remotion": {
+          "pattern": "TerminalScrollCard",
+          "props": {
+            "lines": [
+              "  6 x POSTING_NOT_VERIFIED",
+              "     resolver: a human opens the careers page and confirms a live posting",
+              "  3 x MOVE_NOT_STABLE",
+              "     resolver: the human decides whether to move anyway",
+              "",
+              "  There is no --force flag.",
+              "  python3 reallocate.py execute \\",
+              "    --approve --approver \"Your Name\" --reason \"what you verified\""
+            ],
+            "stampLine": "no --force",
+            "stampTone": "danger"
+          },
+          "rendered": {
+            "out": "media/B16.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B16.mp3",
+      "actual_duration_s": 14.02,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "Beyond accuracy",
+      "narration_text": "A deployer needs more than accuracy. They need to know who is accountable when it is wrong, what the tool cannot see, and what it refuses to do.",
+      "new_visual_element": "three cards",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "ThreeCardsCard",
+          "props": {
+            "cards": [
+              "Who is accountable?",
+              "What can't it see?",
+              "What does it refuse?"
+            ],
+            "footer": ""
+          },
+          "rendered": {
+            "out": "media/B17.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B17.mp3",
+      "actual_duration_s": 10.22,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B17.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "Beyond accuracy",
+      "narration_text": "This tool's arithmetic checks out. It is also reallocating on correlation dressed up as causation — the data measures whether the government approved someone the company had already chosen, not whether they would choose me. Accuracy was never the hard part.",
+      "new_visual_element": "cards hold, causal-honesty footer",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "hold",
+        "remotion": {
+          "pattern": "ThreeCardsCard",
+          "props": {
+            "cards": [
+              "Who is accountable?",
+              "What can't it see?",
+              "What does it refuse?"
+            ],
+            "footer": "The data measures who the firm already chose — not whether they'd choose me."
+          },
+          "rendered": {
+            "out": "media/B18.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B18.mp3",
+      "actual_duration_s": 17.34,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B18.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "Where I would not trust it",
+      "narration_text": "Here is where I would not trust this tool.",
+      "new_visual_element": "segment title card",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "hold",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "",
+            "headline": "WHERE I WOULD NOT TRUST THIS TOOL",
+            "detail": "",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B19.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B19.mp3",
+      "actual_duration_s": 2.67,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B19.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "Where I would not trust it",
+      "narration_text": "One: any claim that moving slots raises my odds of an interview — it measures a different thing.",
+      "new_visual_element": "bullet 1",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "BulletListCard",
+          "props": {
+            "priorBullets": [],
+            "activeBullet": "1. Any claim this raises my odds of an interview — it measures a different thing."
+          },
+          "rendered": {
+            "out": "media/B20.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B20.mp3",
+      "actual_duration_s": 6.34,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B20.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "Where I would not trust it",
+      "narration_text": "Two: any company missing from the list, because five thousand one hundred twenty-six funded firms never even enter the pool, and hundreds of deep sponsors are invisible because of an ATS gap.",
+      "new_visual_element": "bullet 2",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "BulletListCard",
+          "props": {
+            "priorBullets": [
+              "1. Any claim this raises my odds of an interview — it measures a different thing."
+            ],
+            "activeBullet": "2. Any company missing — 5,126 funded firms never enter the pool."
+          },
+          "rendered": {
+            "out": "media/B21.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B21.mp3",
+      "actual_duration_s": 14.04,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B21.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "Where I would not trust it",
+      "narration_text": "Three: every \"posting is live\" value in this default run, because not one was actually checked.",
+      "new_visual_element": "bullet 3",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "drawon",
+        "remotion": {
+          "pattern": "BulletListCard",
+          "props": {
+            "priorBullets": [
+              "1. Any claim this raises my odds of an interview — it measures a different thing.",
+              "2. Any company missing — 5,126 funded firms never enter the pool."
+            ],
+            "activeBullet": "3. Every \"posting is live\" value — none was checked."
+          },
+          "rendered": {
+            "out": "media/B22.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B22.mp3",
+      "actual_duration_s": 6.38,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B22.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "Where I would not trust it",
+      "narration_text": "The tool that tells me where to send twelve applications is also the tool telling me it might be wrong about all twelve. That's the version I'd actually use.",
+      "new_visual_element": "closing line on black",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "motion": "hold",
+        "remotion": {
+          "pattern": "TerminalTextCard",
+          "props": {
+            "eyebrow": "",
+            "headline": "Might be wrong about all twelve.",
+            "detail": "",
+            "align": "center"
+          },
+          "rendered": {
+            "out": "media/B23.mp4",
+            "at": ""
+          }
+        }
+      },
+      "audio_file": "mp3/beat-B23.mp3",
+      "actual_duration_s": 10.28,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B23.mp4",
+        "filled_by": "media",
+        "at": "2026-07-27T20:42:51"
+      }
+    }
+  ]
+}

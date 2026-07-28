@@ -1,0 +1,197 @@
+==========================================================================
+GIGO GATE — data/80-days-to-stay/data/SEC_DOL_H1b_data_mapped.csv
+==========================================================================
+  rows                     30,369
+  rows with H-1B fields    1,557 (5.1%)
+  H-1B fields ABSENT       94.9% — flagged unknown, NEVER imputed to zero
+
+  check                          sev       count   rate
+  DATASET_NO_RECORD_PROVENANCE   blocking   30,369 100.0%
+  ENTITY_COLLISION               flag            9 0.0%
+  IDENTITY_AMBIGUOUS             reject         81 0.3%
+  WAGE_IN_TITLE                  flag            3 0.0%
+  FUNDING_STAGE_IMPLAUSIBLE      flag           31 0.1%
+  FUNDING_DATE_STALE             flag       22,451 73.9%
+  H1B_FIELDS_ABSENT              flag       28,812 94.9%
+
+  rejected rows            81 (IDENTITY_AMBIGUOUS=81)
+  STATUS                   BLOCKED
+
+  !! BLOCKING — the dataset does not meet the stated standard:
+     DATASET_NO_RECORD_PROVENANCE: every record has a collection timestamp and a source
+
+==========================================================================
+REALLOCATION PROPOSAL — application slots (nothing has moved)
+==========================================================================
+  objective: maximise expected sponsored-interview yield per slot, subject to a per-company cap — with Chapter 15's >=50% skip rate reported as a dial, not enforced as a constraint, because it is a process metric a human reads in two directions
+  omits:     referrals, my own application quality, interview conversion, salary, team quality, and every firm with no filing record and no supported ATS board
+
+  evaluated 581 companies → Apply 149 · Consider 249 · Skip 183
+  skip rate 31.5% (target ≥50.0%) — BELOW the >=50% target — the filter is too loose. Reported, NOT enforced: raising the threshold until the skip rate hits 50% would be optimising the dial instead of the decision, which is Goodhart's law with extra steps. A human decides whether to tighten the profile or accept a loose filter.
+
+  THE MOVE
+    move 1 slot(s) [80% CI 1.0–1.0] stability 100.00%
+      from  ACME ANALYTICS LLC
+      to    MAPLEBEAR INC  (sponsorship p=0.950, CI80 0.950–0.950, 498 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 1.0–1.0] stability 99.95%
+      from  ACME ANALYTICS LLC
+      to    ROKU INC  (sponsorship p=0.950, CI80 0.950–0.950, 654 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 0.0–1.0] stability 20.70%
+      from  LINKEDIN CORP
+      to    HUMAN INC  (sponsorship p=0.950, CI80 0.950–0.950, 1382 approvals)
+      verdict: NOT distinguishable from no change — the move appears in only 20.70% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.
+      !! posting NOT verifiable by the scanner — the hard stop will block this until a human confirms a live posting
+    move 1 slot(s) [80% CI 0.0–1.0] stability 70.70%
+      from  LINKEDIN CORP
+      to    PINTEREST INC  (sponsorship p=0.950, CI80 0.950–0.950, 1364 approvals)
+      verdict: directional — the move survives resampling
+      !! posting NOT verifiable by the scanner — the hard stop will block this until a human confirms a live posting
+    move 1 slot(s) [80% CI 0.0–1.0] stability 70.25%
+      from  ETSY INC
+      to    ROBLOX CORP  (sponsorship p=0.950, CI80 0.950–0.950, 856 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 0.0–1.0] stability 18.45%
+      from  AIRBNB INC
+      to    TELADOC HEALTH INC  (sponsorship p=0.950, CI80 0.950–0.950, 510 approvals)
+      verdict: NOT distinguishable from no change — the move appears in only 18.45% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.
+      !! posting NOT verifiable by the scanner — the hard stop will block this until a human confirms a live posting
+    move 1 slot(s) [80% CI 0.0–1.0] stability 72.55%
+      from  DOCUSIGN INC
+      to    TWILIO INC  (sponsorship p=0.950, CI80 0.950–0.950, 802 approvals)
+      verdict: directional — the move survives resampling
+    move 1 slot(s) [80% CI 0.0–0.0] stability 5.20%
+      from  ZOOX INC
+      to    VISICON TECHNOLOGIES INC  (sponsorship p=0.925, CI80 0.919–0.930, 330 approvals)
+      verdict: NOT distinguishable from no change — the move appears in only 5.20% of draws, below the 70.00% floor. Treat as 'no evidence to move', not 'evidence to move a little'.
+      !! posting NOT verifiable by the scanner — the hard stop will block this until a human confirms a live posting
+
+  expected gain +0.121 expected responses per week  80% CI [+0.117, +0.123]
+                ....0................................[|]....  axis -0.015 to +0.138
+                (0 = no change · [ ] = 80% CI · | = point estimate)
+  The gain is positive in 100.0% of draws and the 80% interval [+0.117, +0.123] excludes zero — under the model's own assumptions. That is not the same as being right about the world.
+  optimizer's curse: re-optimising per draw would report +0.128 instead of +0.120 — 6.1% of that gain is the optimiser fitting noise
+
+  TARGET ALLOCATION (12 of 12 slots)
+    slots  composite  sponsorship p (80% CI)        company
+        1      0.428  0.950 [0.950–0.950]           MAPLEBEAR INC
+        1      0.428  0.950 [0.950–0.950]           ROKU INC
+        1      0.405  0.950 [0.950–0.950]           AIRBNB INC
+        1      0.405  0.950 [0.950–0.950]           DOCUSIGN INC !verify
+        1      0.405  0.950 [0.950–0.950]           HUMAN INC !verify
+        1      0.405  0.950 [0.950–0.950]           LINKEDIN CORP
+        1      0.405  0.950 [0.950–0.950]           PINTEREST INC !verify
+        1      0.405  0.950 [0.950–0.950]           ROBLOX CORP
+        1      0.405  0.950 [0.950–0.950]           TELADOC HEALTH INC !verify
+        1      0.405  0.950 [0.950–0.950]           TWILIO INC
+        1      0.405  0.950 [0.950–0.950]           ZOOX INC !verify
+        1      0.398  0.925 [0.919–0.930]           VISICON TECHNOLOGIES INC !verify
+
+  artifacts: tools/effort-reallocator/out/proposal.md · tools/effort-reallocator/out/proposal.json
+  nothing has moved: `execute` requires --approve --approver --reason
+
+==========================================================================
+EXPLANATION — exact Shapley (32 coalitions, no approximation)
+==========================================================================
+  MAPLEBEAR INC  composite 0.428 → Apply
+      sponsorship    φ +0.0696  ######--------------
+      timeline       φ -0.0658  #####---------------
+      fit            φ +0.0500  ####----------------
+      role_quality   φ +0.0000  --------------------
+      liveness       φ +0.0000  --------------------
+      additivity check: Σφ = v(full) − v(∅) OK (exact)
+      cheapest lever to flip: timeline (-0.2542)
+
+  ROKU INC  composite 0.428 → Apply
+      sponsorship    φ +0.0696  ######--------------
+      timeline       φ -0.0658  #####---------------
+      fit            φ +0.0500  ####----------------
+      role_quality   φ +0.0000  --------------------
+      liveness       φ +0.0000  --------------------
+      additivity check: Σφ = v(full) − v(∅) OK (exact)
+      cheapest lever to flip: timeline (-0.2542)
+
+  AIRBNB INC  composite 0.405 → Apply
+      sponsorship    φ +0.0696  ######--------------
+      timeline       φ -0.0638  #####---------------
+      fit            φ +0.0250  ##------------------
+      role_quality   φ +0.0000  --------------------
+      liveness       φ +0.0000  --------------------
+      additivity check: Σφ = v(full) − v(∅) OK (exact)
+      cheapest lever to flip: timeline (-0.2204)
+
+  DOCUSIGN INC  composite 0.405 → Apply
+      sponsorship    φ +0.0696  ######--------------
+      timeline       φ -0.0638  #####---------------
+      fit            φ +0.0250  ##------------------
+      role_quality   φ +0.0000  --------------------
+      liveness       φ +0.0000  --------------------
+      additivity check: Σφ = v(full) − v(∅) OK (exact)
+      cheapest lever to flip: timeline (-0.2204)
+
+  HUMAN INC  composite 0.405 → Apply
+      sponsorship    φ +0.0696  ######--------------
+      timeline       φ -0.0638  #####---------------
+      fit            φ +0.0250  ##------------------
+      role_quality   φ +0.0000  --------------------
+      liveness       φ +0.0000  --------------------
+      additivity check: Σφ = v(full) − v(∅) OK (exact)
+      cheapest lever to flip: timeline (-0.2204)
+
+  WHERE THIS EXPLANATION MISLEADS
+    additive-over-multiplicative cases: 11
+    hidden-sample-size pairs:           3
+    unverified-gate cases:              3
+    nearest-edge-is-an-assumption:      4
+    e.g. MAPLEBEAR INC: explanation credits sponsorship is the largest contributor (phi = +0.0696), but timeline — a change of -0.2542 crosses the threshold
+
+  artifacts: tools/effort-reallocator/out/explanation.md
+
+
+==========================================================================
+BIAS AUDIT
+==========================================================================
+  by ATS coverage (the sharpest mechanism — tooling, not model):
+    group                      eligible  slots  slot%  evid%  slots/firm
+    supported ATS board             15      6    50%     4%     0.4000
+    no supported board             566      6    50%    96%     0.0106
+    disparate impact ratio 0.0265 (FAILS the 4/5 rule of thumb)
+
+  starved despite deep records: 238 firms
+    INTEL CORP — 13,318 approvals, 0 slots (no supported ATS board — the scanner cannot reach it)
+    MICROSOFT CORP — 12,226 approvals, 0 slots (no supported ATS board — the scanner cannot reach it)
+    UBER TECHNOLOGIES INC — 3,984 approvals, 0 slots (no supported ATS board — the scanner cannot reach it)
+
+  two definitions in tension: allocation parity across ATS coverage vs calibration to evidence
+  chosen: calibration to evidence — The resource is a week of my own life against an OPT clock. I am not a regulator distributing a public good; I am one ca...
+  cost:   238 deep-record firms and 322 thin-record firms get nothing
+  leverage point: ATS provider coverage — a Workday/proprietary-board adapter
+
+==========================================================================
+ADVERSARIAL FRAGILITY
+==========================================================================
+  P1 vintage shift — one fiscal year of filings removed   see below
+     the allocation changes once approvals are discounted to 70% of their stated value
+  P2 units error — one Approval_Rate cell on a 0-1 scale  FLIPS
+     one cell in 30,369 rows moves MAPLEBEAR INC from 1 slots to 0
+  P3 gamed input — an evergreen 'talent pipeline' requisi see below
+     zero data change required — the posting is real. No check in this tool can distinguish an evergreen req from a live one
+  P4 entity split — one firm's history across two legal n holds
+     2 edited cells out of 581 candidate rows move MAPLEBEAR INC from 1 slots to 1
+  P5 parameter sweep — VOLUME_REF and repeat-slot decay   see below
+     5 of 6 plausible VOLUME_REF values and 1 of 6 plausible decay values change the allocation
+
+  liveness policy comparison (what the coverage bias costs):
+     neutral-flagged  apply-tier   149 · skip 32% · zeroed by policy 0
+     legacy-zero      apply-tier    15 · skip 97% · zeroed by policy 566
+
+  The engine is robust to the perturbation everyone tests (proportional noise on the counts) and fragile to the ones nobody does: a single mis-scaled cell, a two-cell identity split, and an evergreen requisition it cannot see at all.
+
+  artifacts: tools/effort-reallocator/out/bias-audit.md · tools/effort-reallocator/out/fragility.md
+
+==========================================================================
+NOTHING HAS MOVED. The engine recommends; a named human commits.
+  next: python3 tools/effort-reallocator/reallocate.py execute \
+          --approve --approver "Your Name" --reason "what you verified"
+==========================================================================
