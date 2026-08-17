@@ -80,3 +80,6 @@ resume.json
 
 # Generated PDF renders of submission markdown (rebuild with scripts/md-to-pdf.sh)
 assignments/submissions/**/*.pdf
+
+# Personal markdown->PDF helper; the repo already ships scripts/resumes/generate-pdf.mjs
+scripts/md-to-pdf.sh
