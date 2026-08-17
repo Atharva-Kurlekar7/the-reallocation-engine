@@ -1,0 +1,9 @@
+side,AREA,AREA_TITLE,GeoFIPS,GeoName
+bls_only,10380,"Aguadilla, PR",,
+bls_only,11640,"Arecibo, PR",,
+bls_only,25020,"Guayama, PR",,
+bls_only,32420,"Mayaguez, PR",,
+bls_only,38660,"Ponce, PR",,
+bls_only,41980,"San Juan-Bayamon-Caguas, PR",,
+bea_only,,,00000,United States
+bea_only,,,00999,United States (Nonmetropolitan Portion) *

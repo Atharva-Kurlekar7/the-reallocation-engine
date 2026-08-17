@@ -90,7 +90,7 @@ function frontmatter(txt) {
 }
 
 const recipes = fs.readdirSync('recipes')
-  .filter((f) => f.endsWith('.md') && f !== 'README.md' && !f.includes('.template.'));
+  .filter((f) => f.endsWith('.md') && f !== 'README.md' && !f.includes('.template.') && !f.includes('.card.'));
 const byStatus = {}; let withFm = 0, declaredTodos = 0, bodyTodos = 0;
 const missing = [], mismatched = [];
 for (const f of recipes) {

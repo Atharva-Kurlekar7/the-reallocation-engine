@@ -1,0 +1,113 @@
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+"New York-Newark-Jersey City, NY-NJ",13-1111,ok,,129500.00,110950.00,112.5630,75211.22,144114.85,98567.02,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-1211,ok,,127470.00,127150.00,112.5630,85871.91,141707.31,112958.97,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-1252,ok,,161090.00,161970.00,112.5630,112061.69,169078.65,143892.75,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-1243,ok,,143220.00,137290.00,112.5630,91646.46,153087.60,121967.25,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-2051,ok,,139810.00,130710.00,112.5630,81723.12,150511.27,116121.64,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-2031,ok,,121230.00,118320.00,112.5630,71062.43,127928.36,105114.47,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",15-1299,ok,,127150.00,115480.00,112.5630,68841.45,147917.17,102591.44,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"New York-Newark-Jersey City, NY-NJ",11-3021,ok,,224020.00,212400.00,112.5630,150102.61,,188694.33,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",13-1111,ok,,141310.00,128120.00,115.6130,79532.58,144802.06,110817.99,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-1211,ok,,149600.00,145440.00,115.6130,100507.73,149109.53,125799.00,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-1252,ok,,187840.00,174910.00,115.6130,138444.64,184598.62,151289.21,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-1243,ok,,177900.00,170700.00,115.6130,122209.44,180533.33,147647.76,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-2051,ok,,164690.00,166300.00,115.6130,110800.69,174098.07,143841.96,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-2031,ok,,124750.00,110000.00,115.6130,72068.02,133324.11,95145.01,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",15-1299,ok,,150750.00,157380.00,115.6130,86530.06,170171.17,136126.56,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Francisco-Oakland-Fremont, CA",11-3021,ok,,238050.00,221810.00,115.6130,158122.36,,191855.59,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",13-1111,ok,,163740.00,141150.00,110.4230,97506.86,162864.62,127826.63,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-1211,ok,,161480.00,160800.00,110.4230,112159.60,176321.96,145621.84,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-1252,ok,,226510.00,208270.00,110.4230,155411.46,201543.16,188611.07,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-1243,ok,,180700.00,166210.00,110.4230,113192.00,199913.06,150521.18,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-2051,ok,,225590.00,173160.00,110.4230,133097.27,197350.19,156815.16,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-2031,ok,,125900.00,112550.00,110.4230,83859.34,142687.66,101926.23,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",15-1299,ok,,181720.00,168070.00,110.4230,113427.46,192405.57,152205.61,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"San Jose-Sunnyvale-Santa Clara, CA",11-3021,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",13-1111,ok,,149850.00,134580.00,108.2660,93501.19,156392.59,124304.95,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-1211,ok,,126830.00,123550.00,108.2660,90914.97,140358.01,114117.08,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-1252,ok,,154840.00,154240.00,108.2660,117728.56,159763.91,142463.93,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-1243,ok,,162780.00,162310.00,108.2660,122531.54,167845.86,149917.80,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-2051,ok,,138180.00,131830.00,108.2660,94581.86,153981.86,121764.91,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-2031,ok,,100520.00,92470.00,108.2660,72414.24,111918.79,85410.01,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",15-1299,ok,,115870.00,106430.00,108.2660,73541.09,133735.43,98304.18,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Boston-Cambridge-Newton, MA-NH",11-3021,ok,,207950.00,207150.00,108.2660,156106.26,207830.71,191334.31,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",13-1111,ok,,133240.00,129900.00,111.1330,90765.12,148416.76,116886.97,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-1211,ok,,138380.00,132580.00,111.1330,93833.51,146383.16,119298.50,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-1252,ok,,181040.00,169340.00,111.1330,122384.89,190393.49,152375.98,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-1243,ok,,155100.00,155880.00,111.1330,111632.01,157774.92,140264.37,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-2051,ok,,163640.00,157290.00,111.1330,93941.49,163920.71,141533.12,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-2031,ok,,111030.00,107360.00,111.1330,70267.16,123554.66,96604.97,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",15-1299,ok,,139570.00,134230.00,111.1330,89037.46,156326.20,120783.21,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Seattle-Tacoma-Bellevue, WA",11-3021,ok,,242770.00,212450.00,111.1330,154949.47,,191167.34,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",13-1111,ok,,106740.00,102530.00,98.0660,68219.36,126445.46,104552.04,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-1211,ok,,111430.00,101550.00,98.0660,83708.93,136346.95,103552.71,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-1252,ok,,139390.00,133070.00,98.0660,105367.81,168814.88,135694.33,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-1243,ok,,149470.00,139010.00,98.0660,119358.39,173566.78,141751.47,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-2051,ok,,124780.00,122440.00,98.0660,88093.73,160402.18,124854.69,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-2031,ok,,93150.00,83990.00,98.0660,71380.50,109660.84,85646.40,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",15-1299,ok,,120220.00,124150.00,98.0660,79640.24,159566.01,126598.41,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Austin-Round Rock-San Marcos, TX",11-3021,ok,,187260.00,173300.00,98.0660,144678.07,220749.29,176717.72,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",13-1111,ok,,127990.00,120140.00,103.5950,79984.56,156696.75,115970.85,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-1211,ok,,100020.00,99510.00,103.5950,71933.97,121540.61,96056.76,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-1252,ok,,130930.00,130030.00,103.5950,98498.96,156194.80,125517.64,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-1243,ok,,137130.00,134900.00,103.5950,100255.80,158260.53,130218.64,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-2051,ok,,119790.00,112640.00,103.5950,79299.19,142024.23,108731.12,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-2031,ok,,105300.00,99890.00,103.5950,73941.79,122206.67,96423.57,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",15-1299,ok,,107890.00,102080.00,103.5950,65215.50,131985.13,98537.57,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Chicago-Naperville-Elgin, IL-IN",11-3021,ok,,173630.00,168230.00,103.5950,127168.30,201042.52,162392.01,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",13-1111,ok,,110510.00,99740.00,103.0900,74488.31,127131.63,96750.41,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-1211,ok,,120350.00,117040.00,103.0900,83480.45,135987.97,113531.87,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-1252,ok,,135190.00,131490.00,103.0900,100620.82,157435.25,127548.74,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-1243,ok,,136110.00,135730.00,103.0900,107692.31,156106.31,131661.65,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-2051,ok,,119130.00,120840.00,103.0900,82170.92,136618.49,117217.96,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-2031,ok,,111010.00,102140.00,103.0900,76001.55,128703.07,99078.48,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",15-1299,ok,,118710.00,121050.00,103.0900,78494.52,151003.98,117421.67,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Dallas-Fort Worth-Arlington, TX",11-3021,ok,,180740.00,169860.00,103.0900,132389.17,203598.80,164768.65,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",13-1111,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-1211,ok,,112220.00,108570.00,100.0580,82712.03,132882.93,108507.07,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-1252,ok,,130920.00,130830.00,100.0580,103350.06,159807.31,130754.16,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-1243,ok,,143420.00,135280.00,100.0580,130494.31,169951.43,135201.58,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-2051,ok,,114960.00,104480.00,100.0580,83171.76,137680.15,104419.44,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-2031,ok,,82840.00,74880.00,100.0580,57966.38,101810.95,74836.59,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",15-1299,ok,,108720.00,102770.00,100.0580,77964.78,133632.49,102710.43,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Atlanta-Sandy Springs-Roswell, GA",11-3021,ok,,184140.00,171360.00,100.0580,138779.51,212067.00,171260.67,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",13-1111,ok,,131060.00,125820.00,108.8840,91014.29,137302.08,115554.17,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-1211,ok,,129700.00,126170.00,108.8840,88534.59,148818.93,115875.61,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-1252,ok,,151000.00,150880.00,108.8840,110659.05,159380.63,138569.49,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-1243,ok,,183530.00,188120.00,108.8840,129771.13,207909.33,172771.02,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-2051,ok,,143670.00,135190.00,108.8840,91941.88,167370.78,124159.66,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-2031,ok,,125490.00,124090.00,108.8840,78092.28,149342.42,113965.32,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",15-1299,ok,,141060.00,144040.00,108.8840,106269.06,154907.98,132287.57,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",11-3021,ok,,204270.00,191880.00,108.8840,155449.84,206467.43,176224.24,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",13-1111,ok,,126340.00,107470.00,113.5660,70223.48,144796.86,94632.20,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-1211,ok,,124220.00,126520.00,113.5660,86751.32,125310.39,111406.58,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-1252,ok,,157390.00,155330.00,113.5660,108254.23,153496.65,136775.09,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-1243,ok,,151430.00,145300.00,113.5660,96270.01,155847.70,127943.22,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-2051,ok,,130550.00,124270.00,113.5660,72935.56,144321.36,109425.36,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-2031,ok,,101330.00,88150.00,113.5660,64094.89,105823.93,77620.06,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",15-1299,ok,,116120.00,101840.00,113.5660,61708.61,133675.57,89674.73,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Los Angeles-Long Beach-Anaheim, CA",11-3021,ok,,201330.00,191410.00,113.5660,136422.87,199901.38,168545.16,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",13-1111,ok,,117120.00,104660.00,105.7820,76251.16,133510.43,98939.33,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-1211,ok,,125600.00,122950.00,105.7820,93787.22,138161.50,116229.60,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-1252,ok,,142530.00,134120.00,105.7820,101888.79,157928.57,126789.06,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-1243,ok,,147920.00,150210.00,105.7820,119235.79,157938.02,141999.58,ok,135980.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-2051,ok,,115540.00,105380.00,105.7820,82395.87,123886.86,99619.97,ok,112590.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-2031,ok,,104150.00,102710.00,105.7820,61636.20,122090.71,97095.91,ok,91290.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",15-1299,ok,,123090.00,122500.00,105.7820,86423.02,143408.14,115804.20,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Denver-Aurora-Centennial, CO",11-3021,ok,,195980.00,183050.00,105.7820,151944.57,207719.65,173044.56,ok,171200.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",13-1111,ok,,97100.00,82460.00,94.8660,64048.24,135485.84,86922.61,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-1211,ok,,97090.00,96820.00,94.8660,69382.08,119147.01,102059.75,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-1252,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-1243,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-2051,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-2031,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",15-1299,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Glens Falls, NY",11-3021,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",13-1111,ok,,91700.00,92380.00,96.8450,65723.58,118870.36,95389.54,ok,101190.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-1211,ok,,87250.00,70130.00,96.8450,72414.68,84485.52,72414.68,ok,103790.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-1252,ok,,116820.00,97470.00,96.8450,76803.14,173132.32,100645.36,ok,133080.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-1243,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-2051,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-2031,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",15-1299,ok,,81290.00,83050.00,96.8450,75667.30,95833.55,85755.59,ok,108970.00,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15
+"Great Falls, MT",11-3021,missing,suppressed-small-sample,,,,,,,,,data/bls/local-wage/metro_oews.csv,data/bls/local-wage/bea_rpp.csv,2026-08-15

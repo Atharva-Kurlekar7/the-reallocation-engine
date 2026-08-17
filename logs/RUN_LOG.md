@@ -150,3 +150,32 @@ private emails, or sensitive application notes.
 - **Rebuilt:** `node scripts/build-instructions.mjs --promote` → `AGENTS.md` + `CLAUDE.md` regenerated; `CLAUDE.md` now imports `@SNICKERDOODLE.md`.
 - **Untouched:** `data/` CSVs (real company names containing "mycroft") and prior RUN_LOG history (append-only).
 - **Result:** conformance + doctor green; no stale `MYCROFT.md` outside data/history.
+
+## 2026-08-15 -- local-wage-adjustment: first sample run (metro OEWS × BEA RPP)
+
+- **Recipe:** `local-wage-adjustment` (Ch 9 national-vs-local wage gap), **sample mode**, run id `local-wage-adjustment-2026-08-15-001`.
+- **Commands:** `python3 scripts/bls/local-wage-adjustment.py --sample data/bls/local-wage/sample.csv --aggregate --json --output reports/generated/local-wage-adjustment-20260815.csv`, plus four break tests (Glens Falls suppression, `New Yrok`, `Ponce, PR`, off-list Austin SOC).
+- **Inputs:** frozen `data/bls/local-wage/sample.csv` (112 pairs), `metro_oews.csv`, `bea_rpp.csv`, `bls_bea_msa_crosswalk.csv` (387 exact matches), `data/bls/compact/soc_occupation_compact.csv` (G4 only). Public BLS/BEA only — no `private/`, no `data/ats/`.
+- **Result:** coverage **100/112** (script-output); 12 missing, reported at the time as all `suppressed-small-sample`. G4 review count 0. Mean adjusted median `124695.1482` over the 100 ok rows, missing excluded (never zero).
+- **Gates:** G1/G2/G3 fail paths all observed; G4 pass path observed, no rewrites. Human adequacy signed by Atharva Kurlekar, 2026-08-15 (`logs/attestations/local-wage-adjustment.md`).
+- **Artifacts:** `logs/local-wage-adjustment-20260815.json`, `reports/generated/local-wage-adjustment-20260815.{md,csv}`.
+- **Open issues (closed 2026-08-16, see next entry):** the 12-row missing breakdown was wrong — G2 emitted `suppressed-small-sample` for absent OEWS rows too. This entry was appended late; the run itself is 2026-08-15.
+
+## 2026-08-16 -- local-wage-adjustment: G2 reason-code split + corrected re-run
+
+- **Recipe:** `local-wage-adjustment` v0.2.0, **sample mode**, run id `local-wage-adjustment-2026-08-17-001` (`run_date` cells are UTC; executed 2026-08-16 evening local).
+- **Defect fixed:** `evaluate_pair` in `scripts/bls/local-wage-adjustment.py` returned `suppressed-small-sample` both for a suppression token (`*` / `**` / `#`) **and** for a `(AREA, SOC)` pair with no detailed OEWS row. Absent rows now emit the new code `no-occupation-row`. Reason codes locked in `data/BLS/local-wage-adjustment-audit.md`; recipe required-read #4 now cites that audit instead of the gitignored `Projects/target.md`.
+- **Commands:** `python3 scripts/bls/local-wage-adjustment.py --sample data/bls/local-wage/sample.csv --aggregate --json --output reports/generated/local-wage-adjustment-20260817.csv`, plus five break tests including the new `no-occupation-row` fixture (`--metro "Glens Falls, NY" --soc 15-1243`).
+- **Result:** coverage **100/112** unchanged; missing 12 now split **6 `suppressed-small-sample` + 6 `no-occupation-row`**. Six rows reclassified, **no wage cell changed**; mean adjusted median still `124695.1482`. G4 review count 0. New York × 15-1252 → `143892.75` unchanged.
+- **Gates:** G1 ✓ fail path · G2 suppression ✓ fail path · G2 absent row ✓ fail path (new) · G3 ✓ fail path · G4 pass, 0 auto-corrects. Human adequacy signed by Atharva Kurlekar, 2026-08-16.
+- **Artifacts:** `logs/local-wage-adjustment-20260817.json`, `reports/generated/local-wage-adjustment-20260817.{md,csv}`, portfolio at `assignments/submissions/atharva-kurlekar/local-wage-adjustment-portfolio.md`. The 2026-08-15 report is kept (superseded, not deleted) with a correction header.
+- **Open issues:** none blocking at time of entry. Explainer video's live-terminal beat was rebuilt from a real recorded run — see `youtube/national-pay-is-not-local-pay/`. (Superseded by the 2026-08-16 entry below: that rebuild was later overwritten by a re-render.)
+
+## 2026-08-16 -- local-wage-adjustment: contribution branch re-cut off upstream/main; video regression found
+
+- **Why:** the contribution branch `contrib/atharva-kurlekar-local-wage-adjustment` was cut from a fork `main` that carried an unrelated personal-assignment layer. The resulting upstream PR (#43) therefore contained `search/resume.json`, `search/gaps.md`, and `search/profile.yml` — real personal contact and immigration data — in a public diff, and `npm run doctor` failed its privacy gate on `search/resume.json` from inside the contribution's own diff.
+- **Did:** re-cut `contrib/local-wage-adjustment-v2` from `upstream/main` and re-applied only the contribution's files (script, recipe, card, compact BLS/BEA extracts, sample, audit, reports, logs, attestation, portfolio, `package.json` target, `scripts/doctor.mjs` card-exclusion fix). Dropped all three `search/` files and the `.gitignore` `!search/resume.json` override that had un-ignored the résumé. `logs/RUN_LOG.md` rebuilt from the upstream base plus the two local-wage entries only.
+- **Not done:** `data/BLS/local-wage/metro_oews.csv` (150,176 rows) is kept whole. Filtering it to the 8 sampled SOC codes would shrink the diff by ~98%, but a later query for any unsampled `(metro, SOC)` would then return `no-occupation-row` for an occupation BLS actually publishes — a fabricated miss. Reviewability loses to correctness; the file is an 11-column compact extract of the federal OEWS metro release, not a raw dump.
+- **Defect found (explainer video):** the delivered film at `youtube/national-pay-is-not-local-pay/mp4/national-pay-is-not-local-pay.mp4` had regressed. A re-render against a new voiceover dropped the spliced real terminal recording and restored the earlier Manim-drawn terminal — including a truncated line no program printed — reducing the segment from 44.79s (two real commands) to 8.15s (one drawn one). `live/take.cast` was never re-spliced. Measured: 258.69s film, silence only 182.14–190.29s, video stream 254.54s vs audio 258.69s.
+- **Result:** clean branch carries no `private/`, no `data/ats/`, and no `search/` personal data.
+- **Open issues:** film rebuild pending; runtime must also clear the 5:00 floor (was 4:19).

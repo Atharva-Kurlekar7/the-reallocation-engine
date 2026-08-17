@@ -9,6 +9,7 @@
     "eval:score": "node scripts/eval/score-run.mjs",
     "eval:report": "node scripts/eval/report.mjs",
     "doctor": "node scripts/doctor.mjs",
+    "bls:local-wage": "python3 scripts/bls/local-wage-adjustment.py",
     "build-instructions": "node scripts/build-instructions.mjs",
     "to-markdown": "node scripts/to-markdown.mjs",
     "score": "node scripts/score/role-scorer.mjs",

@@ -1,0 +1,62 @@
+{
+  "workflow": "local-wage-adjustment",
+  "run_id": "local-wage-adjustment-2026-08-15-001",
+  "mode": "sample",
+  "recipe": "recipes/local-wage-adjustment.md",
+  "script": "scripts/bls/local-wage-adjustment.py",
+  "steps_completed": [
+    "read-audit",
+    "coverage-sample",
+    "break-g2-suppression",
+    "break-g1-spelling",
+    "break-g3-ponce",
+    "break-off-list-soc",
+    "aggregate-ok-only",
+    "g4-scan"
+  ],
+  "records_seen": 112,
+  "ok": 100,
+  "missing": 12,
+  "coverage": "100/112",
+  "missing_reason": {
+    "suppressed-small-sample": 12
+  },
+  "aggregate": {
+    "ok_rows_in_mean": 100,
+    "missing_rows_excluded": 12,
+    "mean_adjusted_median": 124695.1482,
+    "note": "missing rows are excluded; never treated as zero"
+  },
+  "g4_review_count": 0,
+  "superseded_by": "logs/local-wage-adjustment-20260817.json",
+  "superseded_reason": "missing_reason breakdown below is wrong — G2 emitted suppressed-small-sample for absent OEWS rows too; 6 of the 12 are no-occupation-row. Coverage and every wage cell are unaffected.",
+  "flags": [
+    "first off-list SOC 11-1011 in Austin was suppressed-small-sample; 11-1021 processed ok — list is a sample filter, not a wage restriction",
+    "npm run doctor privacy flag is pre-existing tracked search/resume.json, not introduced by this run"
+  ],
+  "stop_conditions": [],
+  "todo_items": [],
+  "source_files": [
+    "data/bls/local-wage/sample.csv",
+    "data/bls/local-wage/metro_oews.csv",
+    "data/bls/local-wage/bea_rpp.csv",
+    "data/bls/local-wage/bls_bea_msa_crosswalk.csv",
+    "data/bls/compact/soc_occupation_compact.csv"
+  ],
+  "gate_decisions": {
+    "g1": "fail path observed — New Yrok -> no-metro-match",
+    "g2": "fail path observed — Glens Falls NY 15-1252 -> suppressed-small-sample",
+    "g3": "fail path observed — Ponce PR 15-1252 -> no-crosswalk-match",
+    "g4": "100/100 ok rows plausibility_flag=ok; 0 review; no rewrite",
+    "human_adequacy": "SIGNED — Atharva Kurlekar, 2026-08-15, adequate as sample run, logs/attestations/local-wage-adjustment.md"
+  },
+  "logged_at": "2026-08-15T22:40:00Z",
+  "logged_at_note": "wall-clock when this log was hand-recorded; your-input, not emitted by the script. Superseded — removed invented rejects/duplicates fields the script never computes (see superseded_by).",
+  "raw_output_paths": [
+    "reports/generated/local-wage-adjustment-20260815.csv"
+  ],
+  "verified_output_paths": [
+    "reports/generated/local-wage-adjustment-20260815.md"
+  ],
+  "report_path": "reports/generated/local-wage-adjustment-20260815.md"
+}

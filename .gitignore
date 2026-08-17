@@ -15,6 +15,11 @@
 # Environment files
 /.env
 
+# Python virtualenvs (never commit; install with .venv/bin/pip only)
+.venv/
+.venv-*/
+__pypackages__/
+
 # Angular CLI and build artefacts
 /.angular-cli.json
 /.ng/
@@ -49,6 +54,11 @@ data/BLS/db_30_2_mysql/
 # >>> large files auto-ignored (>25MB) — managed by scripts/gitignore-large.sh
 /data/bls/db-30-2-text/Work Context.txt
 /data/bls/zip/db_30_2_excel.zip
+/data/bls/local-wage/raw/
+
+# Capstone process notes (local only — not part of the contribution)
+/Projects/target.md
+/Projects/update-tracker.md
 /data/sec/form-d/processed/companies-sec-2025q2-d.json
 /data/sec/form-d/processed/companies-sec-2025q3-d.json
 /data/sec/form-d/processed/companies-sec-2025q4-d.json
