@@ -77,3 +77,6 @@ data/BLS/db_30_2_mysql/
 **/*.resume.pdf
 **/resume.pdf
 resume.json
+
+# Generated PDF renders of submission markdown (rebuild with scripts/md-to-pdf.sh)
+assignments/submissions/**/*.pdf
