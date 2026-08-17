@@ -15,13 +15,14 @@
 | What | Link |
 |---|---|
 | **Pull request (the graded PR)** | https://github.com/nikbearbrown/the-reallocation-engine/pull/43 |
-| **Explainer video** | `[PASTE YOUR YOUTUBE LINK HERE]` |
+| **Explainer video** | https://youtu.be/tmo4-csCJCM |
 | **My fork** | https://github.com/Atharva-Kurlekar7/the-reallocation-engine |
 | **Upstream repo** | https://github.com/nikbearbrown/the-reallocation-engine |
 | **Branch** | `contrib/atharva-kurlekar-local-wage-adjustment` |
 
-**PR state at submission:** OPEN · MERGEABLE · 26 files changed · 6 commits · no PII in the diff.
-`npm run verify` and `npm run doctor` both pass on the branch head.
+**PR state at submission:** OPEN · MERGEABLE · no PII in the diff.
+`npm run verify` and `npm run doctor` both pass on the branch head. (File and commit
+counts are on the PR itself — quoting them here only guarantees they go stale.)
 
 ---
 

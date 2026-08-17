@@ -3,7 +3,7 @@
 **Atharva Kurlekar** · August 2026
 Contribution to [The Reallocation Engine](https://github.com/nikbearbrown/the-reallocation-engine), an evidence-first job-search system for international students.
 
-Pull request: [nikbearbrown/the-reallocation-engine#43](https://github.com/nikbearbrown/the-reallocation-engine/pull/43) · Runnable in three commands (below). Note on the video footage at the end.
+Pull request: [nikbearbrown/the-reallocation-engine#43](https://github.com/nikbearbrown/the-reallocation-engine/pull/43) · Walkthrough: [youtu.be/tmo4-csCJCM](https://youtu.be/tmo4-csCJCM) (4:19) · Runnable in three commands (below). Note on the video footage at the end.
 
 ---
 
@@ -96,7 +96,7 @@ python3 scripts/bls/local-wage-adjustment.py \
   --sample data/bls/local-wage/sample.csv --aggregate --json
 ```
 
-**On the video footage.** The terminal sequence in the current cut is an animated reconstruction, not a live screen capture: the text came from a real run, but two lines are truncated with `...` to fit a slide. I flag it rather than let the footage imply otherwise — a rendered terminal that looks live is the same class of error this contribution exists to catch. A genuine 44.79s capture of both commands in a real pty exists at `youtube/national-pay-is-not-local-pay/live/take.cast`; the regression that dropped it from the cut is logged in `logs/RUN_LOG.md`. The reliable check on this page is the three commands above.
+**On the video footage.** The terminal sequence in the [walkthrough](https://youtu.be/tmo4-csCJCM) is an animated reconstruction, not a live screen capture: the text came from a real run, but two lines are truncated with `...` to fit a slide. I flag it rather than let the footage imply otherwise — a rendered terminal that looks live is the same class of error this contribution exists to catch. A genuine 44.79s capture of both commands in a real pty exists at `youtube/national-pay-is-not-local-pay/live/take.cast`; the regression that dropped it from the cut is logged in `logs/RUN_LOG.md`. The reliable check on this page is the three commands above.
 
 Full trail: recipe `recipes/local-wage-adjustment.md` · card `recipes/local-wage-adjustment.card.md` · report `reports/generated/local-wage-adjustment-20260817.md` · attestation `logs/attestations/local-wage-adjustment.md` · provenance `data/BLS/local-wage-adjustment-audit.md` · history `logs/RUN_LOG.md`.
 
