@@ -20,7 +20,8 @@
 | **Upstream repo** | https://github.com/nikbearbrown/the-reallocation-engine |
 | **Branch** | `contrib/atharva-kurlekar-local-wage-adjustment` |
 
-**PR state at submission:** OPEN · MERGEABLE · 24 files changed · 3 commits · no PII in the diff.
+**PR state at submission:** OPEN · MERGEABLE · 26 files changed · 6 commits · no PII in the diff.
+`npm run verify` and `npm run doctor` both pass on the branch head.
 
 ---
 
