@@ -4,7 +4,7 @@
 Contribution to [The Reallocation Engine](https://github.com/nikbearbrown/the-reallocation-engine), an evidence-first job-search system for international students.
 
 Pull request: [nikbearbrown/the-reallocation-engine#43](https://github.com/nikbearbrown/the-reallocation-engine/pull/43)
-Demo: `youtube/national-pay-is-not-local-pay/mp4/national-pay-is-not-local-pay.mp4` (4:38, includes a 44.8s uncut recording of the tool running)
+Demo: `youtube/national-pay-is-not-local-pay/mp4/national-pay-is-not-local-pay.mp4` (4:19). **The terminal shown in the current cut is an animated reconstruction, not a screen capture** — see "About the demo footage" at the end. The tool itself is runnable in four commands; those are in "How to check any of this" below, and they are the honest way to verify this page.
 
 ---
 
@@ -113,7 +113,13 @@ python3 scripts/bls/local-wage-adjustment.py \
   --sample data/bls/local-wage/sample.csv --aggregate --json
 ```
 
-The video's live segment is one unbroken 44.8s recording of the first and third commands above, with no narration over it, captured with `asciinema` and spliced in whole (`youtube/national-pay-is-not-local-pay/live/take.cast`).
+## About the demo footage
+
+The terminal sequence in the current cut of the video is **an animated reconstruction of the first and third commands above, not a live screen capture.** The text it displays was copied from a real run, and two of its lines are visibly truncated with `...` because they were laid out to fit a slide — no program printed them in that form. I am flagging this rather than letting the footage imply otherwise, because a rendered terminal that looks live is the same class of error this contribution exists to catch: output that is well-formed, plausible, and not produced by the thing it appears to come from.
+
+A genuine capture does exist and is kept in the repository: `youtube/national-pay-is-not-local-pay/live/take.cast`, a 44.79s `asciinema` recording of both commands run back to back in a real pty, with the script's real stdout. An earlier cut of the film had it spliced in; a later re-render against a new voiceover dropped it, and the reconstruction is what currently ships. The regression is logged in `logs/RUN_LOG.md` (2026-08-16). In that recording the keystrokes are replayed at a fixed rate — the command text is typed programmatically, the **output** is whatever the script printed.
+
+The reliable way to check this page is not the footage. It is the four commands above, run against the committed extracts, which reproduce every number quoted here.
 
 Full trail: recipe `recipes/local-wage-adjustment.md` · card `recipes/local-wage-adjustment.card.md` · report `reports/generated/local-wage-adjustment-20260817.md` · machine log `logs/local-wage-adjustment-20260817.json` · signed attestation `logs/attestations/local-wage-adjustment.md` · provenance `data/BLS/local-wage-adjustment-audit.md` · run history `logs/RUN_LOG.md`.
 
