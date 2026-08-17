@@ -17,29 +17,31 @@ command -v pandoc >/dev/null || { echo "pandoc not found (brew install pandoc)" 
 [[ $# -gt 0 ]] || { echo "usage: $0 FILE.md [FILE2.md ...]" >&2; exit 1; }
 
 CSS="$(cat <<'STYLE'
-@page { size: Letter; margin: 0.75in; }
+@page { size: Letter; margin: 0.7in; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 10.5pt; line-height: 1.5; color: #1a1a1a; max-width: none; margin: 0;
+  font-size: 10pt; line-height: 1.4; color: #1a1a1a; max-width: none; margin: 0;
 }
-h1 { font-size: 20pt; margin: 0 0 .3em; border-bottom: 3px solid #c8102e; padding-bottom: .25em; }
-h2 { font-size: 13pt; margin: 1.4em 0 .5em; color: #c8102e; page-break-after: avoid; }
-h3 { font-size: 11pt; margin: 1.1em 0 .4em; page-break-after: avoid; }
-p, li { orphans: 3; widows: 3; }
-table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: 9.5pt;
+h1 { font-size: 17pt; margin: 0 0 .25em; border-bottom: 2.5px solid #c8102e; padding-bottom: .2em; }
+h2 { font-size: 12pt; margin: 1em 0 .35em; color: #c8102e; page-break-after: avoid; }
+h3 { font-size: 10.5pt; margin: .8em 0 .3em; page-break-after: avoid; }
+p { margin: .5em 0; orphans: 3; widows: 3; }
+li { margin: .25em 0; orphans: 3; widows: 3; }
+table { border-collapse: collapse; width: 100%; margin: .6em 0; font-size: 9pt;
         page-break-inside: avoid; }
-th, td { border: 1px solid #d0d0d0; padding: 5px 8px; text-align: left; vertical-align: top; }
+th, td { border: 1px solid #d0d0d0; padding: 4px 7px; text-align: left; vertical-align: top; }
 th { background: #f4f4f4; font-weight: 600; }
-code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9pt;
-       background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 8.5pt;
+       background: #f4f4f4; padding: 1px 3px; border-radius: 3px; }
 pre { background: #f7f7f7; border: 1px solid #e0e0e0; border-left: 3px solid #c8102e;
-      padding: 9px 11px; overflow-x: auto; page-break-inside: avoid; border-radius: 3px; }
-pre code { background: none; padding: 0; font-size: 8.5pt; line-height: 1.4; }
-blockquote { border-left: 3px solid #c8102e; margin: .8em 0; padding: .3em 0 .3em 1em;
+      padding: 7px 10px; margin: .6em 0; overflow-x: auto; page-break-inside: avoid;
+      border-radius: 3px; }
+pre code { background: none; padding: 0; font-size: 8pt; line-height: 1.35; }
+blockquote { border-left: 3px solid #c8102e; margin: .6em 0; padding: .25em 0 .25em .9em;
              color: #444; background: #fafafa; }
 a { color: #0b5fff; text-decoration: none; word-break: break-all; }
-hr { border: none; border-top: 1px solid #ddd; margin: 1.6em 0; }
+hr { border: none; border-top: 1px solid #ddd; margin: 1.1em 0; }
 STYLE
 )"
 
